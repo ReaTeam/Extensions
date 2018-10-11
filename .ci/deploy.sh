@@ -13,8 +13,9 @@ ssh-add deploy_key
 git config push.default simple
 git config user.name 'ReaTeam Bot'
 git config user.email 'reateam-bot@cfillion.ca'
-git remote add deploy 'git@github.com:ReaTeam/Extensions.git'
 
+git checkout "$APPVEYOR_REPO_BRANCH"
 reapack-index --commit
 
+git remote add deploy 'git@github.com:ReaTeam/Extensions.git'
 git push deploy "$APPVEYOR_REPO_BRANCH"
