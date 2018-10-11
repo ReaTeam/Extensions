@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions">
+<index version="1" name="ReaTeam Extensions" commit="859ab472619be9067f0c29d1ef0dea16a4c50579">
+  <category name="API">
+    <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/juliansader</link>
+      </metadata>
+      <version name="0.93" author="juliansader" time="2018-10-11T12:01:40Z">
+        <changelog><![CDATA[Initial beta release]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.93/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.93/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.93/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.93/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.93/reaper_js_ReaScriptAPI32.so</source>
+      </version>
+    </reapack>
+  </category>
   <metadata>
     <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
