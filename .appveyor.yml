@@ -1,0 +1,11 @@
+image: Ubuntu1804
+stack: ruby 2.5
+install:
+  - gem install reapack-index --pre
+
+  - sudo apt-get update -qq
+  - sudo apt-get install pandoc -qq
+build: off
+test_script: reapack-index --check
+deploy_script:
+  if [[ "$APPVEYOR_REPO_BRANCH" == "master" ]]; then .ci/deploy.sh; fi
