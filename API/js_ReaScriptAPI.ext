@@ -1,0 +1,11 @@
+@description js_ReaScriptAPI: API functions for ReaScripts
+@version 0.93
+@author juliansader
+@donation https://www.paypal.me/juliansader
+@provides
+  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+@changelog Initial beta release
