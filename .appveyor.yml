@@ -1,5 +1,8 @@
 image: Ubuntu1804
 stack: ruby 2.5
+skip_commits:
+  files:
+    - index.xml
 install:
   - gem install reapack-index --pre
 
