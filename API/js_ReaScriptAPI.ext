@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.93
+@version 0.94
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -8,4 +8,6 @@
   [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-@changelog Initial beta release
+@changelog
+  New WAV writer functions by Xenakios.
+  Fixed bug in JS_Window_GetRelated.
