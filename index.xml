@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="5564467a781ff26cb8b9a686fab17d4d457f2bb1">
+<index version="1" name="ReaTeam Extensions" commit="0d89a5040fdaf6e433bde33e79a146e629ee9b3b">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -21,6 +21,7 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.94/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.94/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.94/reaper_js_ReaScriptAPI32.so</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.94/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
   </category>
