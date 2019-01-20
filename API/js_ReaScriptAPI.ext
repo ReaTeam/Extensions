@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.962
+@version 0.963
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,9 +10,6 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * New functions: Browse for files and folders.
-  * New functions: Various ListView.
-  * New function: FindChildByID.
-  * Changed functions: Functions that previously stored strings in ExtStates, now return the strings directly. 
-  * Requirements: On Windows OS, C++ redistributable not required anymore.
-  * Requirements: REAPER v5.965 or later.
+  * Find window functions: Fix bug for macOS.
+  * LoadCursorFromFile: new optional parameter to re-use cursors.
+  * Window_FindEx.
