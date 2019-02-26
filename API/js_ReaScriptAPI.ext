@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.964
+@version 0.970
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,4 +10,9 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * JS_Window_IsWindow implemented on macOS and Linux.
+  * BrowseForOpenFiles: On Windows, returns folder with terminal backslash.
+  * All file dialogs: On Windows, accept forward slashes in initial folder.
+  * IsWindow function: Improved on Linux and macOS.
+  * New functions: Memory allocation and access.
+  * Deprecated function: StrToPtr.
+  * WindowMessage functions: Recognize ComboBox message names such as "CB_GETCURSEL".
