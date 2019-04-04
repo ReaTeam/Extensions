@@ -1,14 +1,14 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.980
+@version 0.980a
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
-  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
+  [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
+  [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
+  [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
+  [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
+  [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.980/$path
 @changelog
   * New JS_Composite functions for compositing LICE bitmaps into REAPER windows.
   * New JS_VKeys functions for intercepting virtual keys / keyboard input.
