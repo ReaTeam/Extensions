@@ -10,7 +10,6 @@ eval "$(ssh-agent -s)"
 chmod 600 deploy_key
 ssh-add deploy_key
 
-mkdir ~/.ssh
 echo "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 git config push.default simple
