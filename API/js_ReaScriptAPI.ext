@@ -10,6 +10,5 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * JS_GDI: Improved handling of GDI HDCs.
-  * JS_Composite: Composited bitmaps can automatically stretch to fill destination windows.
-  * JS_WindowMessage: Large pointer values can be Sent and Posted.
+  * New Xen_ functions for audio preview.
+  * JS_Composite: Some improvements, including src and dest RECTs can be changed without first unlinking.
