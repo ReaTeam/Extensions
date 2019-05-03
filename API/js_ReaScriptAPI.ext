@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.985
+@version 0.986
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,7 +10,4 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * VKeys: Keyboard intercepts are first in queue, so work in MIDI editor too.
- * VKeys: Cutoff time, new functions for KeyUp and KeyDown.
- * LICE: MeasureText.
- * BrowseForOpenFiles: On WindowsOS, prevent creation of new files.
+ * New function: JS_LICE_WritePNG
