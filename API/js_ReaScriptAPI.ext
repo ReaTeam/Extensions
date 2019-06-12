@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.987
+@version 0.988
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,7 +10,4 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * New functions and options for color processing LICE bitmaps:
-  * LICE_Blit options "BLUR", "ALPHAMUL" and "CHANCOPY_XTOY"
-  * LICE_ProcessRect
-  * LICE_AlterRect/BitmapHSV
+  * New: JS_Mouse_GetCursor
