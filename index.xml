@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="bc9650c76249327c250b12834843c41f7842a96f">
+<index version="1" name="ReaTeam Extensions" commit="7b3166de533a47934008b965b858ca7c2c8cc647">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -205,6 +205,16 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.988/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.988/reaper_js_ReaScriptAPI32.so</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.988/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="0.989" author="juliansader" time="2019-06-14T09:51:45Z">
+        <changelog><![CDATA[* Fix: Help text for Window_Find.
+* New: Window_FindTop.]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI32.so</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.989/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
   </category>
