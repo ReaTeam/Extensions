@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.990
+@version 0.991
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,8 +10,6 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * Fix: Window_SetOpacity works on macOS.
- * New: JS_Window_Create.
- * New: JS_ListView_EnsureVisible.
- * New: More options for Window_Show.
- * New: JS_Window_SetZOrder options work on macOS.
+ * New: JS_Window_SetStyle: Change frame styles of gfx and other windows. 
+ * Improved: JS_Window_SetPosition: Full functionality of SetWindowPos.
+ * Improved: Xen_StartSourcePreview: Add support for setting hardware output channels for PCM_source previews.
