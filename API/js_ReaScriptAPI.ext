@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.992
+@version 0.993
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,5 +10,4 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * Support Unicode characters for file dialog functions, SetTitle, GetClassName, and GDI_DrawText. GetTitle does not yet work for all Unicode.
- * VKeys functions ignore repeated KEYDOWNs.
+ * VKeys functions: Improved disregard auto-repeated KEYDOWN messages.
