@@ -1,0 +1,7 @@
+@description ReaKontrol
+@author brumbear
+@version 0.94
+@provides [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v0.94/reaper_kontrol.dll
+@link https://github.com/brummbrum/reaKontrol/releases
+@screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v093pp.png
+@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v094_Manual.pdf
