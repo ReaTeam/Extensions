@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="177113e74544015bb951b1ed17eb8db0023a5ab2">
+<index version="1" name="ReaTeam Extensions" commit="f139e63c1adeaf7a152284b6eb025507ec63bfdd">
   <category name="API">
+    <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v094_Manual.pdf\par}
+}
+]]></description>
+        <link rel="website">https://github.com/brummbrum/reaKontrol/releases</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v093pp.png</link>
+      </metadata>
+      <version name="0.94" author="brumbear" time="2019-10-01T10:53:52Z">
+        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.94/reaper_kontrol.dll</source>
+      </version>
+    </reapack>
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
         <link rel="donation">https://www.paypal.me/juliansader</link>
