@@ -4,12 +4,14 @@ set -e
 
 cd "$(dirname "$0")"
 
-echo $DEPLOY_KEY_PASSPHRASE | gpg --batch --passphrase-fd 0 deploy_key.gpg
+echo $DEPLOY_KEY_PASSPHRASE |
+  gpg --decrypt-files --batch --passphrase-fd 0 deploy_key.gpg
 
 eval "$(ssh-agent -s)"
 chmod 600 deploy_key
 ssh-add deploy_key
 
+mkdir -p ~/.ssh
 echo "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 git config push.default simple
