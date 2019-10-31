@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="f139e63c1adeaf7a152284b6eb025507ec63bfdd">
+<index version="1" name="ReaTeam Extensions" commit="d6f9c04d52bcd9af22f3f0f52426d160406c4afe">
   <category name="API">
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
       <metadata>
@@ -274,6 +274,24 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.993/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.993/reaper_js_ReaScriptAPI32.so</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.993/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="0.994" author="juliansader" time="2019-10-31T10:14:49Z">
+        <changelog><![CDATA[* Fixed: Script-created windows crashing when subclassing.]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI32.so</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.994/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="0.995" author="juliansader" time="2019-10-31T13:10:22Z">
+        <changelog><![CDATA[* Fixed: Script-created windows crashing when subclassing.]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux32" file="reaper_js_ReaScriptAPI32.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI32.so</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v0.995/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
   </category>
