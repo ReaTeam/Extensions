@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.995
+@version 0.996
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,4 +10,4 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * Fixed: Script-created windows crashing when subclassing.
+ * JS_Window_SetParent
