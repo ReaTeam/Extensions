@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.996
+@version 0.997
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,4 +10,4 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * JS_Window_SetParent
+ * JS_WindowMessage_Send and _Post behave similarly when message is being intercepted by scripts.
