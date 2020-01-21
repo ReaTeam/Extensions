@@ -1,11 +1,12 @@
 @description ReaKontrol
 @author brumbear
-@version 0.95
+@version 0.96
 @changelog
-  - Improved keyboard detection and connection mechanism
-  - Diagnostic messages to user about connection state
-  - Allow hot plugging of keyboard after launch of Reaper
-@provides [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v0.95/reaper_kontrol.dll
+  - Code Optimization (reduced CPU load)
+  - COUNT IN behavior optimized (see Reaper forum for details)
+  - MIDI protocol pinned to NIHIA version 2
+@provides [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v0.96/reaper_kontrol.dll
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v095pp.png
-@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v095_Manual.pdf
+@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v096_Manual.pdf
+
