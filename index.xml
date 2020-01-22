@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="6f8c21f6558b1aee310f3f574b67b66eb2023916">
+<index version="1" name="ReaTeam Extensions" commit="ec003c272009e391f00e71f4bc7e08f28172ae60">
   <category name="API">
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
       <metadata>
@@ -7,7 +7,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v095_Manual.pdf\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v096_Manual.pdf\par}
 }
 ]]></description>
         <link rel="website">https://github.com/brummbrum/reaKontrol/releases</link>
@@ -21,6 +21,12 @@
 - Diagnostic messages to user about connection state
 - Allow hot plugging of keyboard after launch of Reaper]]></changelog>
         <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.95/reaper_kontrol.dll</source>
+      </version>
+      <version name="0.96" author="brumbear" time="2020-01-22T05:54:19Z">
+        <changelog><![CDATA[- Code Optimization (reduced CPU load)
+- COUNT IN behavior optimized (see Reaper forum for details)
+- MIDI protocol pinned to NIHIA version 2]]></changelog>
+        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.96/reaper_kontrol.dll</source>
       </version>
     </reapack>
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
