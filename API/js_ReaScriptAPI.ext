@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 0.998
+@version 0.999
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -10,4 +10,6 @@
   [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * Linux: Proper linking against GDK.
+ * JS_Window functions: On Linux and macOS, don't crash if handle is invalid.
+ * JS_Mouse_LoadCursorFromFile: On Windows, accept Unicode paths.
+ * JS_GDI_ReleaseDC: Can release screen HDCs.
