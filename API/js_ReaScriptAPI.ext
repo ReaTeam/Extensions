@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.001
+@version 1.002
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -7,7 +7,9 @@
   [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [linux32]  reaper_js_ReaScriptAPI32.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * Safely delete resources if REAPER is closed while script is running.
+  * Linux and macOS: JS_Window_GetForeground returns top-level window.
+  * Linux and macOS: Various tweaks in JS_Composite to reduce glitching.
+  * WindowsOS: New JS_Composite_Delay function to reduce flickering.
+  * JS_Composite: Auto-update now optional parameter.
