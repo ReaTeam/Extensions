@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.002
+@version 1.01
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -9,7 +9,4 @@
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * Linux and macOS: JS_Window_GetForeground returns top-level window.
-  * Linux and macOS: Various tweaks in JS_Composite to reduce glitching.
-  * WindowsOS: New JS_Composite_Delay function to reduce flickering.
-  * JS_Composite: Auto-update now optional parameter.
+  * Better handling of partially invalidated composited windows.
