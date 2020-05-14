@@ -1,12 +1,13 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.010
+@version 1.210
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
-  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.01/$path
-  [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.01/$path
-  [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.01/$path
-  [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.01/$path
-  [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.01/$path
+  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
+  [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * Better handling of partially invalidated composited windows.
+  * macOS: JS_Window_EnableMetal returns correct modes.
+  * macOS: Compositing still doesn't work if Metal graphics is enabled.
