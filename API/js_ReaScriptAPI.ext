@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.210
+@version 1.215
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -9,5 +9,6 @@
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * macOS: JS_Window_EnableMetal returns correct modes.
-  * macOS: Compositing still doesn't work if Metal graphics is enabled.
+  * Fixed: LICE_WritePNG when image has transparency.
+  * New: LICE_LoadJPG, LICE_WriteJPG.
+  * Updated: If Metal graphics, JS_Composite clips to client area.
