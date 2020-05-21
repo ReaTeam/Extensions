@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="91fc8269885716c6bd53106cfee832e5cc7ac297">
+<index version="1" name="ReaTeam Extensions" commit="285a7d9df6cc7d082b0c7fd282e7b83b27a70a45">
   <category name="API">
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
       <metadata>
@@ -391,6 +391,16 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.210/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.210/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.210/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="1.215" author="juliansader" time="2020-05-21T16:46:48Z">
+        <changelog><![CDATA[* Fixed: LICE_WritePNG when image has transparency.
+* New: LICE_LoadJPG, LICE_WriteJPG.
+* Updated: If Metal graphics, JS_Composite clips to client area.]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
   </category>
