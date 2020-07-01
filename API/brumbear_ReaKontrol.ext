@@ -1,12 +1,13 @@
 @description ReaKontrol
 @author brumbear
-@version 0.96
+@version 1.00
 @changelog
-  - Code Optimization (reduced CPU load)
-  - COUNT IN behavior optimized (see Reaper forum for details)
-  - MIDI protocol pinned to NIHIA version 2
-@provides [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v0.96/reaper_kontrol.dll
+  - added CUSTOM ACTIONS functionality
+  - user editable configuration file
+@provides
+  reaper_kontrol.dll https://stash.reaper.fm/39829/reaper_kontrol.dll
+  ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/manage_file/39830/reakontrol.ini
 @link https://github.com/brummbrum/reaKontrol/releases
-@screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v095pp.png
-@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v096_Manual.pdf
+@screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
+@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf
 
