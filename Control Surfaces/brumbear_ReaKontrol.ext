@@ -1,6 +1,6 @@
 @description ReaKontrol
 @author brumbear
-@version 1.00a
+@version 1.00
 @changelog
   - added CUSTOM ACTIONS functionality
   - user editable configuration file
@@ -11,4 +11,3 @@
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
 @about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf
-
