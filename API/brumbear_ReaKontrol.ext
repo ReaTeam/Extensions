@@ -1,12 +1,14 @@
 @description ReaKontrol
 @author brumbear
-@version 1.00
+@version 1.00a
 @changelog
   - added CUSTOM ACTIONS functionality
   - user editable configuration file
+  - v1.00a: fixed URL link to reakontrol.ini
 @provides
   reaper_kontrol.dll https://stash.reaper.fm/39829/reaper_kontrol.dll
-  ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/v/39830/reakontrol.ini
+  ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/39830/reakontrol.ini
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
 @about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf
+
