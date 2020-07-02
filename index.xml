@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="9fee1ceb662f87770307cd01c6cda6782a2d4b62">
+<index version="1" name="ReaTeam Extensions" commit="ba6f7d47f54690e3058769ba57c17d36a6433878">
   <category name="API">
-    <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf\par}
-}
-]]></description>
-        <link rel="website">https://github.com/brummbrum/reaKontrol/releases</link>
-        <link rel="screenshot">https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png</link>
-      </metadata>
-      <version name="0.94" author="brumbear" time="2019-10-01T10:53:52Z">
-        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.94/reaper_kontrol.dll</source>
-      </version>
-      <version name="0.95" author="brumbear" time="2020-01-03T12:47:13Z">
-        <changelog><![CDATA[- Improved keyboard detection and connection mechanism
-- Diagnostic messages to user about connection state
-- Allow hot plugging of keyboard after launch of Reaper]]></changelog>
-        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.95/reaper_kontrol.dll</source>
-      </version>
-      <version name="0.96" author="brumbear" time="2020-01-22T05:54:19Z">
-        <changelog><![CDATA[- Code Optimization (reduced CPU load)
-- COUNT IN behavior optimized (see Reaper forum for details)
-- MIDI protocol pinned to NIHIA version 2]]></changelog>
-        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v0.96/reaper_kontrol.dll</source>
-      </version>
-      <version name="1.00" author="brumbear" time="2020-07-01T15:16:43Z">
-        <changelog><![CDATA[- added CUSTOM ACTIONS functionality
-- user editable configuration file]]></changelog>
-        <source file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
-        <source file="ReaKontrolConfig/reakontrol.ini">https://stash.reaper.fm/v/39830/reakontrol.ini</source>
-      </version>
-    </reapack>
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
         <link rel="donation">https://www.paypal.me/juliansader</link>
@@ -407,6 +373,27 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Control Surfaces">
+    <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf\par}
+}
+]]></description>
+        <link rel="website">https://github.com/brummbrum/reaKontrol/releases</link>
+        <link rel="screenshot">https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png</link>
+      </metadata>
+      <version name="1.00" author="brumbear" time="2020-07-02T01:57:54Z">
+        <changelog><![CDATA[- added CUSTOM ACTIONS functionality
+- user editable configuration file]]></changelog>
+        <source file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
+        <source file="ReaKontrolConfig/reakontrol.ini">https://stash.reaper.fm/39830/reakontrol.ini</source>
       </version>
     </reapack>
   </category>
