@@ -4,7 +4,6 @@
 @changelog
   - added CUSTOM ACTIONS functionality
   - user editable configuration file
-  - v1.00a: fixed URL link to reakontrol.ini
 @provides
   reaper_kontrol.dll https://stash.reaper.fm/39829/reaper_kontrol.dll
   ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/39830/reakontrol.ini
