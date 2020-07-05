@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="ba6f7d47f54690e3058769ba57c17d36a6433878">
+<index version="1" name="ReaTeam Extensions" commit="8eed87056655cee3f9abc5009f0ad166aac7ae42">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -392,8 +392,9 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
       <version name="1.00" author="brumbear" time="2020-07-02T01:57:54Z">
         <changelog><![CDATA[- added CUSTOM ACTIONS functionality
 - user editable configuration file]]></changelog>
-        <source file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
+        <source platform="win64" file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
         <source file="ReaKontrolConfig/reakontrol.ini">https://stash.reaper.fm/39830/reakontrol.ini</source>
+        <source platform="darwin64" file="reaper_kontrol.dylib">https://stash.reaper.fm/38633/reaper_kontrol.dylib</source>
       </version>
     </reapack>
   </category>
