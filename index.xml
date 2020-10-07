@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="8eed87056655cee3f9abc5009f0ad166aac7ae42">
+<index version="1" name="ReaTeam Extensions" commit="49b1e52e0ebadc45f2825e8459b24439c3d2374b">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -373,6 +373,15 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.215/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="1.217" author="juliansader" time="2020-10-07T15:36:24Z">
+        <changelog><![CDATA[* New: Various ListView functions
+* New: JS_File_Stat]]></changelog>
+        <source platform="darwin32" file="reaper_js_ReaScriptAPI32.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.217/reaper_js_ReaScriptAPI32.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.217/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.217/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.217/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.217/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
   </category>
