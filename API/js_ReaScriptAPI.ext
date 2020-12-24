@@ -1,5 +1,5 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.217
+@version 1.220
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
@@ -9,5 +9,5 @@
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
-  * New: Various ListView functions
-  * New: JS_File_Stat
+ * New: Functions for editing action shortcuts.
+ * Changed: SetParent accepts null parent on WindowsOS.
