@@ -422,10 +422,7 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaTeam Extension Repository\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://ci.appveyor.com/project/cfillion/extensions/branch/master"}}{\fldrslt{\ul
-{\cf1 [image: https://ci.appveyor.com/api/projects/status/frp1wl4xh2u5bfex/branch/master?svg=true]\cf0}
-}}}
-\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/ReaTeam/Extensions/workflows/check/badge.svg]\cf0}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Community-maintained collection of extension plugins for REAPER.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
