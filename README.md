@@ -1,6 +1,6 @@
 # ReaTeam Extension Repository
 
-[![Build status](https://ci.appveyor.com/api/projects/status/frp1wl4xh2u5bfex/branch/master?svg=true)](https://ci.appveyor.com/project/cfillion/extensions/branch/master)
+![check](https://github.com/ReaTeam/Extensions/workflows/check/badge.svg)
 
 Community-maintained collection of extension plugins for REAPER.
 
