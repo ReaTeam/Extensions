@@ -15,6 +15,8 @@
   [script main] reaper_imgui/ReaImGui_Hello World.eel
 @link
   cfillion.ca https://cfillion.ca
+  GitHub repository https://github.com/cfillion/reaimgui
+  Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
   dear imgui FAQ https://www.dearimgui.org/faq
 @screenshot https://i.imgur.com/SQpGdWi.png
