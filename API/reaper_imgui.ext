@@ -1,0 +1,36 @@
+@description ReaImGui: ReaScript binding for Dear ImGui
+@author cfillion
+@version 0.1
+@provides
+  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [script main] reaper_imgui/ReaImGui_Demo.lua
+  [script main] reaper_imgui/ReaImGui_Hello World.eel
+@link
+  cfillion.ca https://cfillion.ca
+  GitHub repository https://github.com/cfillion/reaimgui
+  Issue tracker https://github.com/cfillion/reaimgui/issues
+  dearimgui.org https://www.dearimgui.org/
+  Dear ImGui FAQ https://www.dearimgui.org/faq
+@screenshot https://i.imgur.com/SQpGdWi.png
+@donation
+  Donate via PayPal https://paypal.me/cfillion
+  Sponsor on GitHub https://github.com/sponsors/cfillion
+  Support ReaPack https://reapack.com/donate
+@about
+  # ReaImGui: ReaScript binding for Dear ImGui
+
+  ReaImGui is a ReaScript binding for the [Dear ImGui](https://www.dearimgui.org/) toolkit. It adds over 300 ReaScript API functions (over 600 including constants!) for creating GPU-rendered GUI interfaces.
+
+  See Dear ImGui's [FAQ](https://www.dearimgui.org/faq/).
+
+  ## Contributing
+
+  Send bug reports on the [issue tracker](https://github.com/cfillion/reaimgui/issues). The source code is provided under LGPLv3 on [GitHub](https://github.com/cfillion/reaimgui). Patches can be submitted as pull requests.
