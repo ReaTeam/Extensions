@@ -1,24 +1,39 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.1
+@version 0.1.1
+@changelog
+  • Add EEL2 example using the legacy < 5.24 syntax [#1]
+  • Fix first frame having twice the contents in the example scripts
+  • macOS: process the first click over an unfocused window
+  • Remove focus from ImGui input controls when the context window itself loses focus
+
+  Docking bugfixes:
+  • Fix keyboard input going to REAPER when docked
+  • Skip rendering when docked and another docker tab is active
+  • Linux & Windows: fix mousewheel events leaking to REAPER
+  • Linux: fix crashes, flickering and incomplete rendering
+  • macOS: update viewport size if it changed while another docker tab was active
+  • Windows: don't lose focus when Tab is pressed
 @provides
-  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/$version/$path
   [script main] reaper_imgui/ReaImGui_Demo.lua
   [script main] reaper_imgui/ReaImGui_Hello World.eel
+  [script main] reaper_imgui/ReaImGui_Hello World (legacy syntax).eel
 @link
   cfillion.ca https://cfillion.ca
   GitHub repository https://github.com/cfillion/reaimgui
   Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
   Dear ImGui FAQ https://www.dearimgui.org/faq
+  Forum thread https://forum.cockos.com/showthread.php?t=250419
 @screenshot https://i.imgur.com/SQpGdWi.png
 @donation
   Donate via PayPal https://paypal.me/cfillion
@@ -34,3 +49,4 @@
   ## Contributing
 
   Send bug reports on the [issue tracker](https://github.com/cfillion/reaimgui/issues). The source code is provided under LGPLv3 on [GitHub](https://github.com/cfillion/reaimgui). Patches can be submitted as pull requests.
+
