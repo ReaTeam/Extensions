@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="bacaf418256855bae016805bbda0f36dbe159894">
+<index version="1" name="ReaTeam Extensions" commit="b3030d0b1c0059357313ba53dbca3bff6e78c4f9">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -443,7 +443,7 @@ GitHub
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/9fdb8559739314176b68418820eb31ebd32f1675/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
       </version>
       <version name="0.1.1" author="cfillion" time="2021-03-08T10:10:31Z">
-        <changelog><![CDATA[• Add EEL2 example using the legacy < 5.24 syntax [#1]
+        <changelog><![CDATA[• Add EEL2 example using the legacy < 6.24 syntax [#1]
 • Fix first frame having twice the contents in the example scripts
 • macOS: process the first click over an unfocused window
 • Remove focus from ImGui input controls when the context window itself loses focus
@@ -464,9 +464,9 @@ Docking bugfixes:
         <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-aarch64.so</source>
         <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x86.dll</source>
         <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x64.dll</source>
-        <source main="main" type="script" file="reaper_imgui/ReaImGui_Demo.lua">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Demo.lua</source>
-        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
-        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World (legacy syntax).eel">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Hello%20World%20(legacy%20syntax).eel</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Demo.lua">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Demo.lua</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World (legacy syntax).eel">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Hello%20World%20(legacy%20syntax).eel</source>
       </version>
     </reapack>
   </category>
