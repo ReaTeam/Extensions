@@ -15,25 +15,25 @@
   • macOS: update viewport size if it changed while another docker tab was active
   • Windows: don't lose focus when Tab is pressed
 @provides
-  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/$version/$path
-  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/$version/$path
+  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] reaper_imgui/ReaImGui_Demo.lua
   [script main] reaper_imgui/ReaImGui_Hello World.eel
   [script main] reaper_imgui/ReaImGui_Hello World (legacy syntax).eel
 @link
   cfillion.ca https://cfillion.ca
+  Forum thread https://forum.cockos.com/showthread.php?t=250419
   GitHub repository https://github.com/cfillion/reaimgui
   Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
   Dear ImGui FAQ https://www.dearimgui.org/faq
-  Forum thread https://forum.cockos.com/showthread.php?t=250419
 @screenshot https://i.imgur.com/SQpGdWi.png
 @donation
   Donate via PayPal https://paypal.me/cfillion
