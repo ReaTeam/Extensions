@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="9fdb8559739314176b68418820eb31ebd32f1675">
+<index version="1" name="ReaTeam Extensions" commit="bacaf418256855bae016805bbda0f36dbe159894">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -419,6 +419,7 @@ GitHub
 }
 ]]></description>
         <link rel="website" href="https://cfillion.ca">cfillion.ca</link>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=250419">Forum thread</link>
         <link rel="website" href="https://github.com/cfillion/reaimgui">GitHub repository</link>
         <link rel="website" href="https://github.com/cfillion/reaimgui/issues">Issue tracker</link>
         <link rel="website" href="https://www.dearimgui.org/">dearimgui.org</link>
@@ -440,6 +441,32 @@ GitHub
         <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.1/reaper_imgui-x64.dll</source>
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Demo.lua">https://github.com/ReaTeam/Extensions/raw/9fdb8559739314176b68418820eb31ebd32f1675/API/reaper_imgui/ReaImGui_Demo.lua</source>
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/9fdb8559739314176b68418820eb31ebd32f1675/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
+      </version>
+      <version name="0.1.1" author="cfillion" time="2021-03-08T10:10:31Z">
+        <changelog><![CDATA[• Add EEL2 example using the legacy < 5.24 syntax [#1]
+• Fix first frame having twice the contents in the example scripts
+• macOS: process the first click over an unfocused window
+• Remove focus from ImGui input controls when the context window itself loses focus
+
+Docking bugfixes:
+• Fix keyboard input going to REAPER when docked
+• Skip rendering when docked and another docker tab is active
+• Linux & Windows: fix mousewheel events leaking to REAPER
+• Linux: fix crashes, flickering and incomplete rendering
+• macOS: update viewport size if it changed while another docker tab was active
+• Windows: don't lose focus when Tab is pressed]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.1.1/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Demo.lua">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Demo.lua</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
+        <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World (legacy syntax).eel">https://github.com/ReaTeam/Extensions/raw/bacaf418256855bae016805bbda0f36dbe159894/API/reaper_imgui/ReaImGui_Hello%20World%20(legacy%20syntax).eel</source>
       </version>
     </reapack>
   </category>
