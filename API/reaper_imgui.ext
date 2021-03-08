@@ -1,6 +1,19 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.1
+@version 0.1.1
+@changelog
+  • Add EEL2 example using the legacy < 5.24 syntax [#1]
+  • Fix first frame having twice the contents in the example scripts
+  • macOS: process the first click over an unfocused window
+  • Remove focus from ImGui input controls when the context window itself loses focus
+
+  Docking bugfixes:
+  • Fix keyboard input going to REAPER when docked
+  • Skip rendering when docked and another docker tab is active
+  • Linux & Windows: fix mousewheel events leaking to REAPER
+  • Linux: fix crashes, flickering and incomplete rendering
+  • macOS: update viewport size if it changed while another docker tab was active
+  • Windows: don't lose focus when Tab is pressed
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -13,8 +26,10 @@
   [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] reaper_imgui/ReaImGui_Demo.lua
   [script main] reaper_imgui/ReaImGui_Hello World.eel
+  [script main] reaper_imgui/ReaImGui_Hello World (legacy syntax).eel
 @link
   cfillion.ca https://cfillion.ca
+  Forum thread https://forum.cockos.com/showthread.php?t=250419
   GitHub repository https://github.com/cfillion/reaimgui
   Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
