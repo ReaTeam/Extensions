@@ -2,7 +2,7 @@
 @author cfillion
 @version 0.1.1
 @changelog
-  • Add EEL2 example using the legacy < 5.24 syntax [#1]
+  • Add EEL2 example using the legacy < 6.24 syntax [#1]
   • Fix first frame having twice the contents in the example scripts
   • macOS: process the first click over an unfocused window
   • Remove focus from ImGui input controls when the context window itself loses focus
