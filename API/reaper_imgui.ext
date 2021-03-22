@@ -1,32 +1,41 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.1.1
+@version 0.2
 @changelog
-  • Add EEL2 example using the legacy < 6.24 syntax [#1]
-  • Fix first frame having twice the contents in the example scripts
-  • macOS: process the first click over an unfocused window
-  • Remove focus from ImGui input controls when the context window itself loses focus
+  • Add a C++ header for using ReaImGui in third-party extensions on GitHub/releases
+  • Fix a crash when an ImGui assertion occurs during DestroyContext [p=2421480]
+  • Fix InputTextMultiline, {Drag,Slider}Double{2..4} incorrectly sanitizing the flags
+  • Fix screen bound clamping when calculating the default window position
+  • Input*, Color{Edit,Picker}*: avoid copying data to the output buffers at every frame
+  • Linux: Fix undocked windows being invisible on GNOME [p=2421074]
+  • Lua demo: fix single selection when Ctrl is not held in Selectables > Multiple selection [p=2416937]
+  • Suspend garbage collection (and rendering) when a modal dialog is shown [p=2416033]
+  • Windows: fix the topmost "thumbstack" button not being displayed
+  • Windows: remove borders around the window when docked
 
-  Docking bugfixes:
-  • Fix keyboard input going to REAPER when docked
-  • Skip rendering when docked and another docker tab is active
-  • Linux & Windows: fix mousewheel events leaking to REAPER
-  • Linux: fix crashes, flickering and incomplete rendering
-  • macOS: update viewport size if it changed while another docker tab was active
-  • Windows: don't lose focus when Tab is pressed
+  API changes:
+  • Add ColorConvertRGBtoHSV
+  • Change ColorConvertHSVtoRGB to also output separate RGB channels values
+  • Remove redundant GetMouseWheelH function
+  • Update to Dear ImGui 1.82 (https://github.com/ocornut/imgui/releases/tag/v1.82)
+    - DrawList_AddPolyline, _PathStroke: replace the `bool closed` argument with `int flags` (ImGui_DrawFlags_*)
+    - DrawList_AddRect, _AddRectFilled and _PathRect: rename the `rounding_corners` argument to `flags`
+    - DrawList_PathArcTo: changed default value of `num_segments` to 0 (adaptively tessellate)
+    - Rename ImGui_InputTextFlags_AlwaysInsertMode to _AlwaysInsertMode
+    - Replace ImGui_DrawCornerFlags_* with new DrawFlags
 @provides
-  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [script main] reaper_imgui/ReaImGui_Demo.lua
-  [script main] reaper_imgui/ReaImGui_Hello World.eel
-  [script main] reaper_imgui/ReaImGui_Hello World (legacy syntax).eel
+  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-i386.dylib
+  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86_64.dylib
+  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-arm64.dylib
+  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-i686.so
+  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86_64.so
+  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-armv7l.so
+  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-aarch64.so
+  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86.dll
+  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x64.dll
+  [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
+  [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
+  [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
@@ -49,3 +58,4 @@
   ## Contributing
 
   Send bug reports on the [issue tracker](https://github.com/cfillion/reaimgui/issues). The source code is provided under LGPLv3 on [GitHub](https://github.com/cfillion/reaimgui). Patches can be submitted as pull requests.
+
