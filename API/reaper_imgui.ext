@@ -24,15 +24,15 @@
     - Rename ImGui_InputTextFlags_AlwaysInsertMode to _AlwaysInsertMode
     - Replace ImGui_DrawCornerFlags_* with new DrawFlags
 @provides
-  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-i386.dylib
-  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86_64.dylib
-  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-arm64.dylib
-  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-i686.so
-  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86_64.so
-  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-armv7l.so
-  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-aarch64.so
-  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x86.dll
-  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/reaper_imgui-x64.dll
+  [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [darwin-arm64] reaper_imgui-arm64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux32] reaper_imgui-i686.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux64] reaper_imgui-x86_64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-armv7l] reaper_imgui-armv7l.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [linux-aarch64] reaper_imgui-aarch64.so https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
   [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
   [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
