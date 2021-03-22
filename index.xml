@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="ca1787c6efafa39c15b112ae56fe7c69ab6f43d3">
+<index version="1" name="ReaTeam Extensions" commit="6b82f4c1c0845ad6b59ffbc4eb81dbe03624449f">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -468,6 +468,41 @@ Docking bugfixes:
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Demo.lua">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Demo.lua</source>
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World.eel">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Hello%20World.eel</source>
         <source main="main" type="script" file="reaper_imgui/ReaImGui_Hello World (legacy syntax).eel">https://github.com/ReaTeam/Extensions/raw/b3030d0b1c0059357313ba53dbca3bff6e78c4f9/API/reaper_imgui/ReaImGui_Hello%20World%20(legacy%20syntax).eel</source>
+      </version>
+      <version name="0.2" author="cfillion" time="2021-03-22T23:31:47Z">
+        <changelog><![CDATA[• Add a C++ header for using ReaImGui in third-party extensions on GitHub/releases
+• Fix a crash when an ImGui assertion occurs during DestroyContext [p=2421480]
+• Fix InputTextMultiline, {Drag,Slider}Double{2..4} incorrectly sanitizing the flags
+• Fix screen bound clamping when calculating the default window position
+• Input*, Color{Edit,Picker}*: avoid copying data to the output buffers at every frame
+• Linux: Fix undocked windows being invisible on GNOME [p=2421074]
+• Lua demo: fix single selection when Ctrl is not held in Selectables > Multiple selection [p=2416937]
+• Suspend garbage collection (and rendering) when a modal dialog is shown [p=2416033]
+• Windows: fix the topmost "thumbstack" button not being displayed
+• Windows: remove borders around the window when docked
+
+API changes:
+• Add ColorConvertRGBtoHSV
+• Change ColorConvertHSVtoRGB to also output separate RGB channels values
+• Remove redundant GetMouseWheelH function
+• Update to Dear ImGui 1.82 (https://github.com/ocornut/imgui/releases/tag/v1.82)
+  - DrawList_AddPolyline, _PathStroke: replace the `bool closed` argument with `int flags` (ImGui_DrawFlags_*)
+  - DrawList_AddRect, _AddRectFilled and _PathRect: rename the `rounding_corners` argument to `flags`
+  - DrawList_PathArcTo: changed default value of `num_segments` to 0 (adaptively tessellate)
+  - Rename ImGui_InputTextFlags_AlwaysInsertMode to _AlwaysInsertMode
+  - Replace ImGui_DrawCornerFlags_* with new DrawFlags]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.2/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.2/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.2/examples/hello_world_legacy.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.2/examples/hello_world.eel</source>
       </version>
     </reapack>
   </category>
