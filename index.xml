@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="6b82f4c1c0845ad6b59ffbc4eb81dbe03624449f">
+<index version="1" name="ReaTeam Extensions" commit="60c2b97d91cd159fda6746c195a086a8cfd58596">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -425,7 +425,8 @@ GitHub
         <link rel="website" href="https://github.com/cfillion/reaimgui/issues">Issue tracker</link>
         <link rel="website" href="https://www.dearimgui.org/">dearimgui.org</link>
         <link rel="website" href="https://www.dearimgui.org/faq">Dear ImGui FAQ</link>
-        <link rel="screenshot">https://i.imgur.com/SQpGdWi.png</link>
+        <link rel="screenshot" href="https://i.imgur.com/lSUh8Yz.png">Simple Layout / Custom Rendering</link>
+        <link rel="screenshot" href="https://i.imgur.com/SQpGdWi.png">Tables</link>
         <link rel="donation" href="https://paypal.me/cfillion">Donate via PayPal</link>
         <link rel="donation" href="https://github.com/sponsors/cfillion">Sponsor on GitHub</link>
         <link rel="donation" href="https://reapack.com/donate">Support ReaPack</link>
@@ -503,6 +504,49 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.2/examples/demo.lua</source>
         <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.2/examples/hello_world_legacy.eel</source>
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.2/examples/hello_world.eel</source>
+      </version>
+      <version name="0.3" author="cfillion" time="2021-05-01T01:11:51Z">
+        <changelog><![CDATA[• Add binding for Python ReaScripts (imgui_python.py)
+• Correct initial context position if offscreen
+• Demo: port most of the apps in the Examples menu from C++ to Lua
+• Don't immediately destroy contexts created within a defer callback [p=2435994]
+• Fix contexts potentially using the wrong font texture
+• Fix crashes when passing nil to AcceptDragDropPayloadRGB/RGBA, Color{Edit,Picker}{3,4} and SliderAngle
+• Fix invalid DrawList and Viewport pointers from EEL in 64-bit builds
+• Fix using GetConfigFlags and SetConfigFlags across different contexts
+• Improve clamping of default position to screen boundary
+• Linux: fix initial window position on GNOME [p=2431010]
+• Linux: implement HiDPI scaling
+• macOS: emit key press/release events for modifier keys
+• macOS: match Windows virtual key codes and obey keyboard layout [t=252727]
+• macOS: output using the monitor's current color space
+• Revert "Suspend garbage collection (and rendering) when a modal dialog is shown"
+• Windows: enable scaling in other HiDPI modes (not only Multimonitor aware v2)
+• Windows: fix broken HiDPI scaling [p=2437850]
+• Windows: support HiDPI scaling on Vista to 10 pre-anniversary
+
+API changes:
+• Add a 'dock' parameter to CreateContext [p=2431708]
+• Add BeginChildFrame/EndChildFrame, ColorConvertNative and ValidatePtr
+• Add Freeze function for pausing context rendering and garbage collection [p=2433580]
+• Add GetDock/SetDock (using DockWindowAdd mid-frame is no longer supported!)
+• Add ImGui's clipboard, capture/logging and viewport APIs
+• Input{Double,Int}*: report an error when receiving nil values
+• Kill the context when any function fails an ImGui assertion
+• Replace ListClipper_GetDisplay{Start,End} with _GetDisplayRange]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.3/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.3/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.3/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.3/imgui_python.py</source>
       </version>
     </reapack>
   </category>
