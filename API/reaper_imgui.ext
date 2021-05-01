@@ -1,28 +1,35 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.2
+@version 0.3
 @changelog
-  • Add a C++ header for using ReaImGui in third-party extensions on GitHub/releases
-  • Fix a crash when an ImGui assertion occurs during DestroyContext [p=2421480]
-  • Fix InputTextMultiline, {Drag,Slider}Double{2..4} incorrectly sanitizing the flags
-  • Fix screen bound clamping when calculating the default window position
-  • Input*, Color{Edit,Picker}*: avoid copying data to the output buffers at every frame
-  • Linux: Fix undocked windows being invisible on GNOME [p=2421074]
-  • Lua demo: fix single selection when Ctrl is not held in Selectables > Multiple selection [p=2416937]
-  • Suspend garbage collection (and rendering) when a modal dialog is shown [p=2416033]
-  • Windows: fix the topmost "thumbstack" button not being displayed
-  • Windows: remove borders around the window when docked
+  • Add binding for Python ReaScripts (imgui_python.py)
+  • Correct initial context position if offscreen
+  • Demo: port most of the apps in the Examples menu from C++ to Lua
+  • Don't immediately destroy contexts created within a defer callback [p=2435994]
+  • Fix contexts potentially using the wrong font texture
+  • Fix crashes when passing nil to AcceptDragDropPayloadRGB/RGBA, Color{Edit,Picker}{3,4} and SliderAngle
+  • Fix invalid DrawList and Viewport pointers from EEL in 64-bit builds
+  • Fix using GetConfigFlags and SetConfigFlags across different contexts
+  • Improve clamping of default position to screen boundary
+  • Linux: fix initial window position on GNOME [p=2431010]
+  • Linux: implement HiDPI scaling
+  • macOS: emit key press/release events for modifier keys
+  • macOS: match Windows virtual key codes and obey keyboard layout [t=252727]
+  • macOS: output using the monitor's current color space
+  • Revert "Suspend garbage collection (and rendering) when a modal dialog is shown"
+  • Windows: enable scaling in other HiDPI modes (not only Multimonitor aware v2)
+  • Windows: fix broken HiDPI scaling [p=2437850]
+  • Windows: support HiDPI scaling on Vista to 10 pre-anniversary
 
   API changes:
-  • Add ColorConvertRGBtoHSV
-  • Change ColorConvertHSVtoRGB to also output separate RGB channels values
-  • Remove redundant GetMouseWheelH function
-  • Update to Dear ImGui 1.82 (https://github.com/ocornut/imgui/releases/tag/v1.82)
-    - DrawList_AddPolyline, _PathStroke: replace the `bool closed` argument with `int flags` (ImGui_DrawFlags_*)
-    - DrawList_AddRect, _AddRectFilled and _PathRect: rename the `rounding_corners` argument to `flags`
-    - DrawList_PathArcTo: changed default value of `num_segments` to 0 (adaptively tessellate)
-    - Rename ImGui_InputTextFlags_AlwaysInsertMode to _AlwaysInsertMode
-    - Replace ImGui_DrawCornerFlags_* with new DrawFlags
+  • Add a 'dock' parameter to CreateContext [p=2431708]
+  • Add BeginChildFrame/EndChildFrame, ColorConvertNative and ValidatePtr
+  • Add Freeze function for pausing context rendering and garbage collection [p=2433580]
+  • Add GetDock/SetDock (using DockWindowAdd mid-frame is no longer supported!)
+  • Add ImGui's clipboard, capture/logging and viewport APIs
+  • Input{Double,Int}*: report an error when receiving nil values
+  • Kill the context when any function fails an ImGui assertion
+  • Replace ListClipper_GetDisplay{Start,End} with _GetDisplayRange
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -34,8 +41,9 @@
   [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
-  [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
-  [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
+  [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
+  [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
+  [script] imgui_python.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
@@ -43,7 +51,9 @@
   Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
   Dear ImGui FAQ https://www.dearimgui.org/faq
-@screenshot https://i.imgur.com/SQpGdWi.png
+@screenshot
+  Simple Layout / Custom Rendering https://i.imgur.com/lSUh8Yz.png
+  Tables https://i.imgur.com/SQpGdWi.png
 @donation
   Donate via PayPal https://paypal.me/cfillion
   Sponsor on GitHub https://github.com/sponsors/cfillion
