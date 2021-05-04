@@ -1,35 +1,12 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.3
+@version 0.3.1
 @changelog
-  • Add binding for Python ReaScripts (imgui_python.py)
-  • Correct initial context position if offscreen
-  • Demo: port most of the apps in the Examples menu from C++ to Lua
-  • Don't immediately destroy contexts created within a defer callback [p=2435994]
-  • Fix contexts potentially using the wrong font texture
-  • Fix crashes when passing nil to AcceptDragDropPayloadRGB/RGBA, Color{Edit,Picker}{3,4} and SliderAngle
-  • Fix invalid DrawList and Viewport pointers from EEL in 64-bit builds
-  • Fix using GetConfigFlags and SetConfigFlags across different contexts
-  • Improve clamping of default position to screen boundary
-  • Linux: fix initial window position on GNOME [p=2431010]
-  • Linux: implement HiDPI scaling
-  • macOS: emit key press/release events for modifier keys
-  • macOS: match Windows virtual key codes and obey keyboard layout [t=252727]
-  • macOS: output using the monitor's current color space
-  • Revert "Suspend garbage collection (and rendering) when a modal dialog is shown"
-  • Windows: enable scaling in other HiDPI modes (not only Multimonitor aware v2)
-  • Windows: fix broken HiDPI scaling [p=2437850]
-  • Windows: support HiDPI scaling on Vista to 10 pre-anniversary
+  • Don't run during project load or while the ReaScript defer loop is blocked
+  • Linux: fix Gdk-CRITICAL warning when creating an undocked context with stored docker ID
 
   API changes:
-  • Add a 'dock' parameter to CreateContext [p=2431708]
-  • Add BeginChildFrame/EndChildFrame, ColorConvertNative and ValidatePtr
-  • Add Freeze function for pausing context rendering and garbage collection [p=2433580]
-  • Add GetDock/SetDock (using DockWindowAdd mid-frame is no longer supported!)
-  • Add ImGui's clipboard, capture/logging and viewport APIs
-  • Input{Double,Int}*: report an error when receiving nil values
-  • Kill the context when any function fails an ImGui assertion
-  • Replace ListClipper_GetDisplay{Start,End} with _GetDisplayRange
+  • Remove the Freeze function that was added in v0.3
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
