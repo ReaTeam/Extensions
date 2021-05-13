@@ -1,12 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.3.1
+@version 0.3.2
 @changelog
-  • Don't run during project load or while the ReaScript defer loop is blocked
-  • Linux: fix Gdk-CRITICAL warning when creating an undocked context with stored docker ID
-
-  API changes:
-  • Remove the Freeze function that was added in v0.3
+  • Fix incorrect vertical position in some versions of macOS [p=2443450]
+  • Only pause during project load in REAPER 6.11 and newer
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
