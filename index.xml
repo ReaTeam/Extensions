@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="332c25326e87c95fd6dbd45446fb81a30e1e6f3d">
+<index version="1" name="ReaTeam Extensions" commit="a102fd0c5f641c6de753d8bea8863ea974899ffc">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -584,6 +584,49 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.3.2/examples/hello_world.eel</source>
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.3.2/examples/hello_world_legacy.eel</source>
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.3.2/imgui_python.py</source>
+      </version>
+      <version name="0.4" author="cfillion" time="2021-05-19T19:30:31Z">
+        <changelog><![CDATA[• Add drag and drop of files from the system (demo in Widgets->Drag and Drop)
+• Add font loading from the system or from a file
+• Automatically save and restore context size, position and dock state
+• Clear pressed keyboard keys when losing focus
+• Demo: add a docking example in Configuration->Configuration
+• Don't include software mouse cursors in the font texture
+• Don't show data following '##' in the context window title
+• Enable window and table settings persistence
+• Ensure contexts are created with a size of at least 10x10
+• Examples: wait until the next defer cycle before creating the context
+• InputText: Don't corrupt text using Unicode planes 1-16 (codepoints beyond 0xffff)
+• Keep ListClipper objects alive for more than one frame (as long as they're used)
+• macOS: detect focus loss when the docker's parent window becomes inactive
+• macOS: notify the Input Method Editor of the active text input field position
+• Rasterize fonts scaled to the window DPI (fixes blurry fonts)
+• Receive keyboard input from shortcut in the global scope (REAPER v6.29+ on Windows, all versions on macOS and Linux)
+• Stop the calling Lua script on error in REAPER 6.29+
+• Throw an error if the context name is empty
+
+API changes:
+• Add a 'config_flags' parameter to CreateContext
+• Add a rudimentary font API (basic latin + latin supplement glyphs only)
+• Add CaptureKeyboardFromApp
+• Add ConfigFlags_NoSavedSettings, WindowFlags_NoSavedSettings and TableFlags_NoSavedSettings
+• Add DrawList_AddTextEx
+• Add NumericLimits_Float for exact FLT_MIN/FLT_MAX values on all platforms
+• Let EEL scripts create centered contexts using 0x80000000 as x/y
+• macOS: y=0 is now the top of the window in CreateContext]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.4/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.4/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.4/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.4/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.4/imgui_python.py</source>
       </version>
     </reapack>
   </category>
