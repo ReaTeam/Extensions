@@ -1,9 +1,35 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.3.2
+@version 0.4
 @changelog
-  • Fix incorrect vertical position in some versions of macOS [p=2443450]
-  • Only pause during project load in REAPER 6.11 and newer
+  • Add drag and drop of files from the system (demo in Widgets->Drag and Drop)
+  • Add font loading from the system or from a file
+  • Automatically save and restore context size, position and dock state
+  • Clear pressed keyboard keys when losing focus
+  • Demo: add a docking example in Configuration->Configuration
+  • Don't include software mouse cursors in the font texture
+  • Don't show data following '##' in the context window title
+  • Enable window and table settings persistence
+  • Ensure contexts are created with a size of at least 10x10
+  • Examples: wait until the next defer cycle before creating the context
+  • InputText: Don't corrupt text using Unicode planes 1-16 (codepoints beyond 0xffff)
+  • Keep ListClipper objects alive for more than one frame (as long as they're used)
+  • macOS: detect focus loss when the docker's parent window becomes inactive
+  • macOS: notify the Input Method Editor of the active text input field position
+  • Rasterize fonts scaled to the window DPI (fixes blurry fonts)
+  • Receive keyboard input from shortcut in the global scope (REAPER v6.29+ on Windows, all versions on macOS and Linux)
+  • Stop the calling Lua script on error in REAPER 6.29+
+  • Throw an error if the context name is empty
+
+  API changes:
+  • Add a 'config_flags' parameter to CreateContext
+  • Add a rudimentary font API (basic latin + latin supplement glyphs only)
+  • Add CaptureKeyboardFromApp
+  • Add ConfigFlags_NoSavedSettings, WindowFlags_NoSavedSettings and TableFlags_NoSavedSettings
+  • Add DrawList_AddTextEx
+  • Add NumericLimits_Float for exact FLT_MIN/FLT_MAX values on all platforms
+  • Let EEL scripts create centered contexts using 0x80000000 as x/y
+  • macOS: y=0 is now the top of the window in CreateContext
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
