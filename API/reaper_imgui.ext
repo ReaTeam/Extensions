@@ -1,19 +1,31 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.4.1
+@version 0.5beta
 @changelog
-  • Add a C++ extension example [p=2447754]
-  • C++ binding: add missing ImGui_Font declaration
-  • Demo: fix 'Scroll Offset' and 'Scroll To Pos' buttons in Layout & Scrolling->Scrolling
-  • Document CreateFont's supported generic font families
-  • macOS: improve keycode compatibility across various keyboard layouts [p=2450237]
-  • Update Dear ImGui to v1.83 (release notes at https://github.com/ocornut/imgui/releases/tag/v1.83)
-  • Workaround a possible race condition when detecting the splash screen [p=2450259]
-  • Windows: fix a crash when dragging files from some sources [p=2445786]
+  • Create a dedicated platform window for each ImGui virtual window
+  • Demo: move docking example to 'Window options'
+  • Fix removing focus using SetWindowFocusEx
+  • macOS: count vertical coordinates from the top of the primary monitor
+  • Switch to Dear ImGui v1.83's 'docking' branch
+  • Re-implement docking into REAPER using ImGui's docking branch's beta API
+  • Update the Lua, EEL2, Python and C++ examples
+  • Windows: detect HiDPI scaling changes when docked in REAPER (Per-Monitor v2 mode)
+  • Windows: fix positioning of the system's Input Method Editor (IME) on HiDPI monitors
 
   API changes:
-  • Add ConfigFlags_NoRestoreSize [p=2450209]
-  • Add TableSetColumnEnabled
+  • Add Col_DockingPreview, Col_DockingEmptyBg
+  • Add ConfigFlags_DockingEnable, WindowFlags_NoDocking
+  • Add IsWindowDocked, GetWindowDockID, SetNextWindowDockID
+  • Add SetWindow* functions without a window name argument (renamed existing functions to SetWindow*Ex)
+  • C++ binding: allow omitting optional arguments
+  • CollapsingHeader: treat p_visible=false the same as p_visible=nil (= disable the close button)
+  • Make Begin/End consistent with the rest of the API (call End only if Begin returned true)
+  • Mark 'p_*' arguments as output values in the documentation
+  • Remove BeginPopupContextVoid, BeginMainMenuBar and EndMainMenuBar
+  • Remove ConfigFlags_NoRestoreSize, GetDisplaySize
+  • Remove GetNativeHwnd, IsCloseRequested, GetDock, SetDock
+  • Remove size/position/dock arguments of CreateContext
+  • Treat 'p_open=false' as input the same as 'p_open=nil' for compatibility with EEL2
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
