@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="a22429460d7346c04a6b5639f64c01f44122c6a7">
+<index version="1" name="ReaTeam Extensions" commit="5d71d00f4176e945d7900fd9301fde59e199cc57">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -654,6 +654,46 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.4.1/examples/hello_world.eel</source>
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.4.1/examples/hello_world_legacy.eel</source>
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.4.1/imgui_python.py</source>
+      </version>
+      <version name="0.5-beta" author="cfillion" time="2021-06-18T09:04:14Z">
+        <changelog><![CDATA[• Create a dedicated platform window for each ImGui virtual window
+• Demo: fix the size preset buttons in Examples->Constrained-resizing window
+• Demo: move docking example to 'Window options'
+• Fix removing focus using SetWindowFocusEx
+• macOS: count vertical coordinates from the top of the primary monitor
+• Switch to Dear ImGui v1.83's 'docking' branch
+• Re-implement docking into REAPER using ImGui's docking branch's beta API
+• Update the Lua, EEL2, Python and C++ examples
+• Windows: detect HiDPI scaling changes when docked in REAPER (Per-Monitor v2 mode)
+• Windows: fix positioning of the system's Input Method Editor (IME) on HiDPI monitors
+
+API changes:
+• Add Col_DockingPreview, Col_DockingEmptyBg
+• Add ConfigFlags_DockingEnable, WindowFlags_NoDocking
+• Add IsWindowDocked, GetWindowDockID, SetNextWindowDockID
+• Add SetWindow* functions without a window name argument (renamed existing functions to SetWindow*Ex)
+• C++ binding: allow omitting optional arguments
+• CollapsingHeader: treat p_visible=false the same as p_visible=nil (= disable the close button)
+• Make Begin/End consistent with the rest of the API (call End only if Begin returned true)
+• Mark 'p_*' arguments as output values in the documentation
+• Remove BeginPopupContextVoid, BeginMainMenuBar and EndMainMenuBar
+• Remove ConfigFlags_NoRestoreSize, GetDisplaySize
+• Remove GetNativeHwnd, IsCloseRequested, GetDock, SetDock
+• Remove size/position/dock arguments of CreateContext
+• Treat 'p_open=false' as input the same as 'p_open=nil' for compatibility with EEL2]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.5-beta/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.5-beta/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.5-beta/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.5-beta/imgui_python.py</source>
       </version>
     </reapack>
   </category>
