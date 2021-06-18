@@ -1,6 +1,6 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5beta
+@version 0.5-beta
 @changelog
   • Create a dedicated platform window for each ImGui virtual window
   • Demo: move docking example to 'Window options'
