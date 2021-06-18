@@ -3,6 +3,7 @@
 @version 0.5-beta
 @changelog
   • Create a dedicated platform window for each ImGui virtual window
+  • Demo: fix the size preset buttons in Examples->Constrained-resizing window
   • Demo: move docking example to 'Window options'
   • Fix removing focus using SetWindowFocusEx
   • macOS: count vertical coordinates from the top of the primary monitor
