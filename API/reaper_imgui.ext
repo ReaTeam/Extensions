@@ -3,7 +3,7 @@
 @version 0.5.1
 @changelog
   • Add a HTML documentation page (accessible from the demo: Tools->Documentation)
-  • Cleanup documentation of many functions (proofread, add hyperlinks...)
+  • Cleanup the documentation of many functions (proofread, add hyperlinks...)
   • Demo: fix even/odd detection in Tabs->Advanced & Close Button
 
   API changes:
