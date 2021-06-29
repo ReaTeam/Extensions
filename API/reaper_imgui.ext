@@ -24,6 +24,7 @@
   [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
   [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
   [script] imgui_python.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
