@@ -1,15 +1,11 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.1
+@version 0.5.2
 @changelog
-  • Add a HTML documentation page (accessible from the demo: Tools->Documentation)
-  • Cleanup the documentation of many functions (proofread, add hyperlinks...)
-  • Demo: fix even/odd detection in Tabs->Advanced & Close Button
-
-  API changes:
-  • Add PointConvertNative [p=2456542]
-  • Remove redundant return values in the Python binding
-  • Rename wrongly named function PathFillConvex to DrawList_PathFillConvex
+  • Documentation: group all functions and constants by category
+  • Documentation: hide write-only arguments from the Lua and Python signatures
+  • Documentation: omit printing "double" type for arguments in EEL signatures
+  • macOS: fix REAPER's defer timer stopping on Big Sur [p=2458897]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
