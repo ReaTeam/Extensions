@@ -9,7 +9,7 @@
   • Documentation: use Consolas font to improve readability on Windows
   • Font: enable loading color data from fonts
   • Font: report font loading errors in the first function call of the frame
-  • macOS: give focus to the platform window under mouse on right/middle click
+  • macOS: give focus to the platform window under mouse on right/middle click [p=2460594]
   • Save settings of active contexts when unloading the extension [p=2461673]
 
   API changes:
