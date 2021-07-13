@@ -1,11 +1,19 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.2
+@version 0.5.3
 @changelog
-  • Documentation: group all functions and constants by category
-  • Documentation: hide write-only arguments from the Lua and Python signatures
-  • Documentation: omit printing "double" type for arguments in EEL signatures
-  • macOS: fix REAPER's defer timer stopping on Big Sur [p=2458897]
+  • Demo: improve ImGui docker handling in the docking example
+  • Docking: don't recreate the platform window when switching active ImGui window in the same dock
+  • Docking: keep docker open if there are other windows sharing it when undocking a window by dragging
+  • Documentation: mark p_* arguments as both read and write [p=2459747]
+  • Documentation: use Consolas font to improve readability on Windows
+  • Font: enable loading color data from fonts
+  • Font: Report font loading errors in the first function call of the frame
+  • macOS: give focus to the platform window under mouse on right/middle click
+  • Save settings of active contexts when unloading the extension [p=2461673]
+
+  API changes:
+  • Remove WindowFlags_NoBringToFrontOnFocus (no-op since v0.5) [p=2462354]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
