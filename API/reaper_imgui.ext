@@ -8,7 +8,7 @@
   • Documentation: mark p_* arguments as both read and write [p=2459747]
   • Documentation: use Consolas font to improve readability on Windows
   • Font: enable loading color data from fonts
-  • Font: Report font loading errors in the first function call of the frame
+  • Font: report font loading errors in the first function call of the frame
   • macOS: give focus to the platform window under mouse on right/middle click
   • Save settings of active contexts when unloading the extension [p=2461673]
 
