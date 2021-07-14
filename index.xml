@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="7c370af46b6a88fa3fbc4778c915b9069deb3629">
+<index version="1" name="ReaTeam Extensions" commit="97a17007b6e196be1668aa78bff130ab23680a56">
   <category name="API">
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
@@ -738,6 +738,34 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.5.2/examples/hello_world_legacy.eel</source>
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.5.2/imgui_python.py</source>
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.5.2/reaper_imgui_doc.html</source>
+      </version>
+      <version name="0.5.3" author="cfillion" time="2021-07-14T01:24:23Z">
+        <changelog><![CDATA[• Demo: improve ImGui docker handling in the docking example
+• Docking: don't recreate the platform window when switching active ImGui window in the same dock
+• Docking: keep docker open if there are other windows sharing it when undocking a window by dragging
+• Documentation: mark p_* arguments as both read and write [p=2459747]
+• Documentation: use Consolas font to improve readability on Windows
+• Font: enable loading color data from fonts
+• Font: report font loading errors in the first function call of the frame
+• macOS: give focus to the platform window under mouse on right/middle click [p=2460594]
+• Save settings of active contexts when unloading the extension [p=2461792]
+
+API changes:
+• Remove WindowFlags_NoBringToFrontOnFocus (no-op since v0.5) [p=2462354]]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.5.3/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.5.3/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.5.3/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.5.3/reaper_imgui_doc.html</source>
       </version>
     </reapack>
   </category>
