@@ -10,7 +10,7 @@
   • Font: enable loading color data from fonts
   • Font: report font loading errors in the first function call of the frame
   • macOS: give focus to the platform window under mouse on right/middle click [p=2460594]
-  • Save settings of active contexts when unloading the extension [p=2461673]
+  • Save settings of active contexts when unloading the extension [p=2461792]
 
   API changes:
   • Remove WindowFlags_NoBringToFrontOnFocus (no-op since v0.5) [p=2462354]
