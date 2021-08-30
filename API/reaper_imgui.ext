@@ -1,14 +1,17 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.4
+@version 0.5.5
 @changelog
-  • Docking: wait until after the left mouse button is released before closing the REAPER docker
-  • Documentation: fix parsing of links at the very end of the help text
-  • Python binding: Fix a syntax error in imgui_python.py [#4]
-  • Windows: fix a possible crash during (un)docking of a window
+  • Demo: disable docking combo box when docking is unavailable
+  • macOS: fix topmost state being reset when REAPER regains focus
+  • Update Dear ImGui to v1.84.1 (release notes at https://github.com/ocornut/imgui/releases/tag/v1.84)
 
   API changes:
-  • Add ShowAboutWindow
+  • Add BeginDisabled/EndDisabled and StyleVar_DisabledAlpha
+  • Add DetachFont
+  • Add TableColumnFlags_Disabled and TableColumnFlags_NoHeaderLabel
+  • Add WindowFlags_TopMost [p=2468716][p=2471188][p=2476740]
+  • Remove ColorEditFlags__OptionsDefault
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
