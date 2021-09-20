@@ -12,3 +12,4 @@
 @changelog
  * New: Functions for editing action shortcuts.
  * Changed: SetParent accepts null parent on WindowsOS.
+ * Fixed: Re-built for Linux x64.
