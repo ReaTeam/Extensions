@@ -3,7 +3,7 @@
 @version 0.5.8
 @changelog
   • Font: downgrade FreeType to 2.10.4 as workaround for a crash in 2.11.0 on Windows [p=2486019][p=2486079]
-  • Linux: Fix window visibility when dragging them over REAPER's main window [p=2486034]
+  • Linux: fix window visibility when dragging them over REAPER's main window [p=2486034]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
