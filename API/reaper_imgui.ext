@@ -1,16 +1,10 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.6
+@version 0.5.7
 @changelog
-  • Demo: rename the 'Top most' checkbox to 'Always on top'
-  • Documentation: add ImGui_Font* to the list of ValidatePtr's supported types
-  • Documentation: fix the main content area not filling the browser window's full width
-  • Documentation: revert marking p_open arguments as non-optional
-  • Windows: disable topmost when the REAPER app is inactive
-  • Windows: fix topmost being reset when REAPER is unminimized [p=2476936]
-
-  API changes:
-  • Add the text filter API [p=2476922]
+  • Demo: fix crash in the Querying Status section [p=2480715]
+  • Fix visibility of popups and menus opened directly over REAPER's main window
+  • Support WindowFlags_TopMost in BeginPopup and BeginPopupModal
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
