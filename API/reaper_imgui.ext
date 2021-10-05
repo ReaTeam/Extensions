@@ -1,10 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.7
+@version 0.5.8
 @changelog
-  • Demo: fix crash in the Querying Status section [p=2480715]
-  • Fix visibility of popups and menus opened directly over REAPER's main window
-  • Support WindowFlags_TopMost in BeginPopup and BeginPopupModal
+  • Font: downgrade FreeType to 2.10.4 as workaround for a crash in 2.11.0 on Windows [p=2486019][p=2486079]
+  • Linux: Fix window visibility when dragging them over REAPER's main window [p=2486034]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
