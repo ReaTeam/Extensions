@@ -7,7 +7,7 @@
   • Update to Dear ImGui v1.85
 
   API changes:
-  • Add DockHierarchy NoPopupHierarchy in both FocusedFlags and HoveredFlags
+  • Add DockHierarchy and NoPopupHierarchy in both FocusedFlags and HoveredFlags
   • Add ShowStackToolWindow (also Demo->Tools->Stack Tool)
   • Remove GetWindowContentRegionWidth
 @provides
