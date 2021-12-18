@@ -3,6 +3,7 @@
 @version 0.5.9
 @changelog
   • Docker: fix docked windows not being drawn on macOS if opened within the first 3 frames of the context's life
+  • Fix the main viewport having a zero position and size [p=2498028]
   • Update to Dear ImGui v1.85
 
   API changes:
