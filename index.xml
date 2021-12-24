@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="9264dfaaea98904fd73c98da965f5c01ce4e28f4">
+<index version="1" name="ReaTeam Extensions" commit="db87191dab8788629d8dc7f0c3a801b46c3e4de8">
   <category name="API">
+    <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 REAPER Plug-In Extension providing ReaScript bindings for Ableton Link session, and Ableton Link Test Plan compliant implementations (Master/Puppet modes) for REAPER.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/ak5k/reablink/wiki/Quick-start-user-guide"}}{\fldrslt{\ul
+Quick start user guide
+}}}
+\line {\field{\*\fldinst{HYPERLINK "https://forum.cockos.com/showthread.php?t=254027"}}{\fldrslt{\ul
+More information
+}}}
+\par}
+}
+]]></description>
+        <link rel="screenshot">https://i.imgur.com/Q8PZUIk.gif</link>
+      </metadata>
+      <version name="0.4.3" author="ak5k" time="2021-12-24T00:53:54Z">
+        <source platform="win64" file="reaper_reablink-x64.dll">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-x64.dll</source>
+        <source main="main" type="script" file="ReaBlink_Monitor.lua">https://github.com/ak5k/reablink/releases/download/v0.4.3/ReaBlink_Monitor.lua</source>
+        <source platform="win32" file="reaper_reablink-x86.dll">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-x86.dll</source>
+        <source platform="darwin64" file="reaper_reablink-arm64-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-arm64-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_reablink-arm64-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-arm64-x86_64.dylib</source>
+        <source platform="linux32" file="reaper_reablink-i686.so">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-i686.so</source>
+        <source platform="linux64" file="reaper_reablink-x86_64.so">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_reablink-armv7l.so">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_reablink-aarch64.so">https://github.com/ak5k/reablink/releases/download/v0.4.3/reaper_reablink-aarch64.so</source>
+      </version>
+    </reapack>
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
       <metadata>
         <link rel="donation">https://www.paypal.me/juliansader</link>
