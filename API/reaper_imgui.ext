@@ -6,7 +6,7 @@
   • Docker: obey WindowFlags_NoFocusOnAppearing if set on any hosted windows
   • Fix the main viewport having a zero position and size [p=2498028]
   • Fix WindowFlags_NoFocusOnAppearing not having an effect within the first 3 frames
-  • Update to Dear ImGui v1.85
+  • Update to Dear ImGui v1.85 <https://github.com/ocornut/imgui/releases/tag/v1.85>
   
   API changes:
   • Add DockHierarchy and NoPopupHierarchy in both FocusedFlags and HoveredFlags
