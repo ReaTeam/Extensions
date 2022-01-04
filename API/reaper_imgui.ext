@@ -2,10 +2,12 @@
 @author cfillion
 @version 0.5.9
 @changelog
-  • Docker: fix windows not being drawn on macOS within the first 3 frames or if WindowFlags_NoFocusOnAppearing is set
+  • Docker: fix no rendering on macOS if opened within the first 3 frames of the context
+  • Docker: obey WindowFlags_NoFocusOnAppearing if set on any hosted windows
   • Fix the main viewport having a zero position and size [p=2498028]
+  • Fix WindowFlags_NoFocusOnAppearing not having an effect within the first 3 frames
   • Update to Dear ImGui v1.85
-
+  
   API changes:
   • Add DockHierarchy and NoPopupHierarchy in both FocusedFlags and HoveredFlags
   • Add ShowStackToolWindow (also Demo->Tools->Stack Tool)
