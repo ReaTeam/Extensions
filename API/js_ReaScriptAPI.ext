@@ -1,15 +1,15 @@
 @description js_ReaScriptAPI: API functions for ReaScripts
-@version 1.220
+@version 1.301
 @author juliansader
 @donation https://www.paypal.me/juliansader
 @provides
   [darwin-arm64] reaper_js_ReaScriptAPI64ARM.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
-  [darwin32] reaper_js_ReaScriptAPI32.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [darwin64] reaper_js_ReaScriptAPI64.dylib https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [win32]    reaper_js_ReaScriptAPI32.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [win64]    reaper_js_ReaScriptAPI64.dll   https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
   [linux64]  reaper_js_ReaScriptAPI64.so    https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v$version/$path
 @changelog
- * New: Functions for editing action shortcuts.
- * Changed: SetParent accepts null parent on WindowsOS.
- * Fixed: Re-built for Linux x64.
+ * New: Zip/Unzip functions.
+ * New: JS_LICE_SetFontFXColor, so that SHADOW can be properly black.
+ * New: LoadPNG/JPGFromMemory functions.
+ * Fixed: JS_ListView_SetItemState documentation.
