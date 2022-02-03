@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="d4dbe7ed15022913bf6d1d10a96a010df1f09994">
+<index version="1" name="ReaTeam Extensions" commit="86944e4bf1dcc55050fb3b83e77f1f9827139522">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -437,6 +437,17 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.220/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.220/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.220/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="1.301" author="juliansader" time="2022-02-03T21:05:11Z">
+        <changelog><![CDATA[* New: Zip/Unzip functions.
+* New: JS_LICE_SetFontFXColor, so that SHADOW can be properly black.
+* New: LoadPNG/JPGFromMemory functions.
+* Fixed: JS_ListView_SetItemState documentation.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_js_ReaScriptAPI64ARM.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64ARM.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
     <reapack name="reaper_imgui.ext" type="extension" desc="ReaImGui: ReaScript binding for Dear ImGui">
