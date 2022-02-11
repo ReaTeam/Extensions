@@ -1,17 +1,12 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.9
+@version 0.5.10
 @changelog
-  • Docker: fix no rendering on macOS if opened within the first 3 frames of the context
-  • Docker: obey WindowFlags_NoFocusOnAppearing if set on any hosted windows
-  • Fix the main viewport having a zero position and size [p=2498028]
-  • Fix WindowFlags_NoFocusOnAppearing not having an effect within the first 3 frames
-  • Update to Dear ImGui v1.85 <https://github.com/ocornut/imgui/releases/tag/v1.85>
-  
+  • Update to Dear ImGui v1.86 <https://github.com/ocornut/imgui/releases/tag/v1.86>
+
   API changes:
-  • Add DockHierarchy and NoPopupHierarchy in both FocusedFlags and HoveredFlags
-  • Add ShowStackToolWindow (also Demo->Tools->Stack Tool)
-  • Remove GetWindowContentRegionWidth
+  • Add GetMouseClickedCount
+  • Add ListClipper_ForceDisplayRangeByIndices
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
