@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="07b28990c8d9f801d653c27b1f70055223ddc825">
+<index version="1" name="ReaTeam Extensions" commit="2b40642e725f03b4c0fbd88e756302a5e5308fe0">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1005,18 +1005,48 @@ API changes:
       </version>
     </reapack>
   </category>
-  <metadata>
-    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+  <category name="FX">
+    <reapack name="ak5k_ReaFab Fabulous REAPER plug-in controller extension.ext" type="extension" desc="ReaFab: Fabulous REAPER plug-in controller extension">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaTeam Extension Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A REAPER extension to emulate digital console type of workflow for setting channelstrip plugin parameters in the context of currently selected track/channel. Registers 32 custom actions which function as kind of API based virtual control surface, or 'dynamic' macro controls similar to Quick Controls in Cubase. 8 endless rotary encoders in MIDI Relative mode and 24 buttons are supported, and in practice required for any reasonable use. 8 buttons are reserved for navigating the 'virtual channelstrip'. Built-in support for some FabFilters, the ReEQ and some stock REAPER plugins. {\field{\*\fldinst{HYPERLINK "https://github.com/ak5k/reafab"}}{\fldrslt{\ul
+More information on GitHub
+}}}
+\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=245445">Forum thread</link>
+        <link rel="website" href="https://github.com/ak5k/reafab">GitHub</link>
+        <link rel="screenshot">https://i.imgur.com/bAVdj05.gif</link>
+      </metadata>
+      <version name="0.3.10" author="ak5k" time="2022-03-16T17:50:45Z">
+        <source platform="win64" file="reaper_reafab-x64.dll">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-x64.dll</source>
+        <source platform="win32" file="reaper_reafab-x86.dll">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-x86.dll</source>
+        <source platform="linux-aarch64" file="reaper_reafab-aarch64.so">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reafab-arm64.dylib">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-arm64.dylib</source>
+        <source platform="darwin32" file="reaper_reafab-i386.dylib">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-i386.dylib</source>
+        <source platform="darwin64" file="reaper_reafab-x86_64.dylib">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-x86_64.dylib</source>
+        <source platform="linux-armv7l" file="reaper_reafab-armv7l.so">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-armv7l.so</source>
+        <source platform="linux32" file="reaper_reafab-i686.so">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-i686.so</source>
+        <source platform="linux64" file="reaper_reafab-x86_64.so">https://github.com/ak5k/reafab/releases/download/v0.3.10/reaper_reafab-x86_64.so</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaTeam Extension Repository\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/ReaTeam/Extensions/workflows/check/badge.svg]\cf0}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Community-maintained collection of extension plugins for REAPER.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/ReaTeam/Extensions/raw/master/index.xml\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use {\field{\*\fldinst{HYPERLINK "https://reapack.com/upload/extension"}}{\fldrslt{\ul
 https://reapack.com/upload/extension
 }}}
