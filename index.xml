@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="2b40642e725f03b4c0fbd88e756302a5e5308fe0">
+<index version="1" name="ReaTeam Extensions" commit="0396b868fbaf378bf6e6d7c927461829257a9ae2">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -980,6 +980,52 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.5.10/examples/hello_world_legacy.eel</source>
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.5.10/imgui_python.py</source>
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.5.10/reaper_imgui_doc.html</source>
+      </version>
+      <version name="0.6.0" author="cfillion" time="2022-03-18T20:30:14Z">
+        <changelog><![CDATA[• Add support for mouse buttons 4 and 5 (3 and 4 in the API)
+• Distinguish between Left/Right modifier keys and Enter/KeypadEnter keys
+• Fix a crash when failing to initialize the OpenGL renderer for docked windows
+• Migrate mouse and keyboard input to v1.87's new event-based API
+• Reduce the minimum required version of OpenGL to 3.1
+• Suspend keyboard and mouse input when the defer timer is blocked (eg. modal dialog)
+• Update to Dear ImGui v1.87 (https://github.com/ocornut/imgui/releases/tag/v1.87)
+• Linux: connect Dear ImGui's clipboard to the system clipboard
+• Linux: fix crashes when recovering from OpenGL initialization errors
+• Linux: fix inverted NWSE/NESW cursors
+• Linux: implement IME and proper Unicode character input support
+• Linux: workaround black/flashing windows when docked with Intel or AMD GPUs [#6]
+• macOS: change Hand cursor to a pointing hand (instead of open hand)
+• macOS: hide the IME when focusing out of text fields
+• Windows: enable the IME only when a text field is active
+• Windows: set position of the IME's candidate window to the active text input field
+
+Demo script:
+• Add Help->Programmer Guide section
+• Add text filtering in the Log app example
+• Add the CaptureKeyboardFromApp() example
+• Fix the last item not being reorderable in the 'simple drag' example
+• Move the 'Documentation' button out of the Tools menu
+• Partial port of the Style Editor window (Tools->Style Editor)
+
+API changes:
+• Add v1.87's new named key constants (virtual key codes are now deprecated)
+• Fix DrawList_AddTextEx not using the default bitmap font when font == nil
+• Remove GetStyleColorName (enumerate the reaper table instead)
+• Remove the unused num_points argument of DrawList_AddConvexPolyFilled]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.6.0/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.6.0/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.6.0/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.6.0/reaper_imgui_doc.html</source>
       </version>
     </reapack>
   </category>
