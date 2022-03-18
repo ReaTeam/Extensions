@@ -1,12 +1,37 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.5.10
+@version 0.6.0
 @changelog
-  • Update to Dear ImGui v1.86 <https://github.com/ocornut/imgui/releases/tag/v1.86>
+  • Add support for mouse buttons 4 and 5 (3 and 4 in the API)
+  • Distinguish between Left/Right modifier keys and Enter/KeypadEnter keys
+  • Fix a crash when failing to initialize the OpenGL renderer for docked windows
+  • Migrate mouse and keyboard input to v1.87's new event-based API
+  • Reduce the minimum required version of OpenGL to 3.1
+  • Suspend keyboard and mouse input when the defer timer is blocked (eg. modal dialog)
+  • Update to Dear ImGui v1.87 (https://github.com/ocornut/imgui/releases/tag/v1.87)
+  • Linux: connect Dear ImGui's clipboard to the system clipboard
+  • Linux: fix crashes when recovering from OpenGL initialization errors
+  • Linux: fix inverted NWSE/NESW cursors
+  • Linux: implement IME and proper Unicode character input support
+  • Linux: workaround black/flashing windows when docked with Intel or AMD GPUs [#6]
+  • macOS: change Hand cursor to a pointing hand (instead of open hand)
+  • macOS: hide the IME when focusing out of text fields
+  • Windows: enable the IME only when a text field is active
+  • Windows: set position of the IME's candidate window to the active text input field
+
+  Demo script:
+  • Add Help->Programmer Guide section
+  • Add text filtering in the Log app example
+  • Add the CaptureKeyboardFromApp() example
+  • Fix the last item not being reorderable in the 'simple drag' example
+  • Move the 'Documentation' button out of the Tools menu
+  • Partial port of the Style Editor window (Tools->Style Editor)
 
   API changes:
-  • Add GetMouseClickedCount
-  • Add ListClipper_ForceDisplayRangeByIndices
+  • Add v1.87's new named key constants (virtual key codes are now deprecated)
+  • Fix DrawList_AddTextEx not using the default bitmap font when font == nil
+  • Remove GetStyleColorName (enumerate the reaper table instead)
+  • Remove the unused num_points argument of DrawList_AddConvexPolyFilled
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
