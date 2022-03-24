@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="0396b868fbaf378bf6e6d7c927461829257a9ae2">
+<index version="1" name="ReaTeam Extensions" commit="5483ace27ac2ac900923268a48212df53396e015">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1048,6 +1048,89 @@ API changes:
         <source platform="win64" file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
         <source file="ReaKontrolConfig/reakontrol.ini">https://stash.reaper.fm/39830/reakontrol.ini</source>
         <source platform="darwin64" file="reaper_kontrol.dylib">https://stash.reaper.fm/38633/reaper_kontrol.dylib</source>
+      </version>
+    </reapack>
+    <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Tascam US-2400 Control Surface Native Mode\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab SWS Extensions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows x64\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Python\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Please {\field{\*\fldinst{HYPERLINK "https://github.com/Ruxton/reaper-csurf-us2400/blob/master/readme.md"}}{\fldrslt{\ul
+view the README on github
+}}}
+ for how to use the scripts tightly tied to this plugin.\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=132165">Forum thread</link>
+        <link rel="website" href="https://github.com/Ruxton/reaper-csurf-us2400">Github</link>
+        <link rel="screenshot" href="https://camo.githubusercontent.com/eec0385f0387f210d3f79e1daeac2f2a8dab384b022e19c3c4c938b32375de43/68747470733a2f2f7075752e73682f444e4d4f412f376364646435626437382e706e67">Configuration window</link>
+        <link rel="screenshot" href="https://github.com/Ruxton/reaper-csurf-us2400/raw/master/Tascam%20US-2400%20Reaper%20Keymap.gif">Keymap</link>
+        <link rel="screenshot" href="https://github.com/Ruxton/reaper-csurf-us2400/raw/master/Tascam-US-2400-Reaper-OnScreenHelpChan.png">On-screen help</link>
+      </metadata>
+      <version name="1.2.1" author="Greg Tangey (Ruxton)" time="2022-03-24T20:02:17Z">
+        <changelog><![CDATA[Fixes overlay crash]]></changelog>
+        <source platform="win64" file="reaper_csurf_us2400.dll">https://github.com/Ruxton/reaper-csurf-us2400/releases/download/1.2.1/reaper_csurf_us2400.dll</source>
+        <source main="main" platform="win64" type="script" file="Automation/Remove envelopes from selected tracks (US-2400 - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Remove%20envelopes%20from%20selected%20tracks%20(US-2400%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Automation/Show or hide envelopes (US-2400 - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Show%20or%20hide%20envelopes%20(US-2400%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="General/Redo (US-2400 - FKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Redo%20(US-2400%20-%20FKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="General/Render (US-2400 - FKey - Rec).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Render%20(US-2400%20-%20FKey%20-%20Rec).py</source>
+        <source main="main" platform="win64" type="script" file="General/Save (US-2400 - FKey - Play).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Save%20(US-2400%20-%20FKey%20-%20Play).py</source>
+        <source main="main" platform="win64" type="script" file="General/Undo (US-2400 - FKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Undo%20(US-2400%20-%20FKey%20-%20Rew).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(Auto Vol - Add Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(Auto Vol - Send)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(Auto Vol - Split Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(LH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LH-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(LMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMH-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(LMMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMMH-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(LR-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LR-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(MS-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(MS-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Add parallel processor to first selected track (US-2400 - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Add%20parallel%20processor%20to%20first%20selected%20track%20(US-2400%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LFHF (US-2400 - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LFHF%20(US-2400%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMH (US-2400 - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMH%20(US-2400%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMMH (US-2400 - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMMH%20(US-2400%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LR (US-2400 - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LR%20(US-2400%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track MS (US-2400 - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20MS%20(US-2400%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Unsplit first selected split (US-2400 - MKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Unsplit%20first%20selected%20split%20(US-2400%20-%20MKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Next POI (US-2400 - NoKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Next%20POI%20(US-2400%20-%20NoKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Previous POI (US-2400 - NoKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Previous%20POI%20(US-2400%20-%20NoKey%20-%20Rew).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Show playpos (US-2400 - FKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Show%20playpos%20(US-2400%20-%20FKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Toggle scroll playpos (US-2400 - FKey - Stop).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Toggle%20scroll%20playpos%20(US-2400%20-%20FKey%20-%20Stop).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom time selection (US-2400 - NoKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20time%20selection%20(US-2400%20-%20NoKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom track selection (US-2400 - Shift - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20track%20selection%20(US-2400%20-%20Shift%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Delete selected tracks (US-2400 - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Delete%20selected%20tracks%20(US-2400%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Duplicate selected tracks (US-2400 - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Duplicate%20selected%20tracks%20(US-2400%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Fold or unfold selected folders (US-2400 - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Fold%20or%20unfold%20selected%20folders%20(US-2400%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Group selected tracks (US-2400 - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Group%20selected%20tracks%20(US-2400%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Insert track before first selected (US-2400 - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Insert%20track%20before%20first%20selected%20(US-2400%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks left (US-2400 - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20left%20(US-2400%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks right (US-2400 - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20right%20(US-2400%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Rename selected tracks (US-2400 - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Rename%20selected%20tracks%20(US-2400%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Ungroup selected tracks (US-2400 - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Ungroup%20selected%20tracks%20(US-2400%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Wrap or unwrap selected tracks (US-2400 - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Wrap%20or%20unwrap%20selected%20tracks%20(US-2400%20-%20Shift%20-%201).py</source>
       </version>
     </reapack>
   </category>
