@@ -5,7 +5,7 @@
   • Export main demo functions to scripts including the demo file
   • Fix broken anti-aliasing after attaching a font
   • Fix the first frame of every window being rendered blank
-  • Linux: fix crash when quitting REAPER while docked ReaImGui windows are open
+  • Linux: fix a crash when quitting REAPER while docked ReaImGui windows are open
   • Linux: repair file drag and drop
   • Windows: prevent incorrect focus when closing windows out of order
 @provides
