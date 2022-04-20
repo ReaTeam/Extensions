@@ -1,16 +1,17 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.3.0
+@version 0.3.1
+@changelog Fixed 'ReaLlm: REAPER Low latency monitoring' actions list toggle
 @provides
-  [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-aarch64.so
-  [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-arm64.dylib
-  [linux-armv7l] reaper_reallm-armv7l.so https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-armv7l.so
-  [darwin32] reaper_reallm-i386.dylib https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-i386.dylib
-  [linux32] reaper_reallm-i686.so https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-i686.so
-  [win64] reaper_reallm-x64.dll https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-x64.dll
-  [win32] reaper_reallm-x86.dll https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-x86.dll
-  [darwin64] reaper_reallm-x86_64.dylib https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-x86_64.dylib
-  [linux64] reaper_reallm-x86_64.so https://github.com/ak5k/reallm/releases/download/v$version/reaper_reallm-x86_64.so
+  [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [linux-armv7l] reaper_reallm-armv7l.so https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [darwin32] reaper_reallm-i386.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [linux32] reaper_reallm-i686.so https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [win64] reaper_reallm-x64.dll https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [win32] reaper_reallm-x86.dll https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [darwin64] reaper_reallm-x86_64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [linux64] reaper_reallm-x86_64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
 @link https://github.com/ak5k/reallm/
 @screenshot https://i.imgur.com/iKHyQXb.gif
 @about
