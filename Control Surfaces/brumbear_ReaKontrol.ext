@@ -1,14 +1,13 @@
 @description ReaKontrol
 @author brumbear
-@version 1.00
+@version 1.10
 @changelog
-  - added CUSTOM ACTIONS functionality
-  - user editable configuration file
+  - Support both VST2 and VST3
+  - Configuration file reakontrol.ini is auto generated on first startup
 @provides
+  ReaKontrolConfig/reakontrol_EXAMPLE.ini https://stash.reaper.fm/v/44421/reakontrol_EXAMPLE.ini
   [win64] reaper_kontrol.dll https://stash.reaper.fm/39829/reaper_kontrol.dll
-  ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/39830/reakontrol.ini
-  [darwin64] reaper_kontrol.dylib https://stash.reaper.fm/38633/reaper_kontrol.dylib
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
-@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v100_Manual.pdf
+@about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v110_Manual.pdf
 
