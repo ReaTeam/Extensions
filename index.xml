@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="34aedb7e826cdd1216a17e8358edad26d478ddc6">
+<index version="1" name="ReaTeam Extensions" commit="80d03b41f4d9ea0df05c65cb85911e1070f5b146">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -448,6 +448,16 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
         <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI32.dll</source>
         <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64.dll</source>
         <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.301/reaper_js_ReaScriptAPI64.so</source>
+      </version>
+      <version name="1.310" author="juliansader" time="2022-05-01T22:10:43Z">
+        <changelog><![CDATA[* New: ListView_GetHeader, Header_GetItemCount.
+* Fixed: On macOS, ListView_HitTest and ListView_GetItemRect uses client coordinates.
+* New: dll (on Windows) and dylib (on macOS) have embedded version info.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_js_ReaScriptAPI64ARM.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.310/reaper_js_ReaScriptAPI64ARM.dylib</source>
+        <source platform="darwin64" file="reaper_js_ReaScriptAPI64.dylib">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.310/reaper_js_ReaScriptAPI64.dylib</source>
+        <source platform="win32" file="reaper_js_ReaScriptAPI32.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.310/reaper_js_ReaScriptAPI32.dll</source>
+        <source platform="win64" file="reaper_js_ReaScriptAPI64.dll">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.310/reaper_js_ReaScriptAPI64.dll</source>
+        <source platform="linux64" file="reaper_js_ReaScriptAPI64.so">https://github.com/juliansader/ReaExtensions/raw/master/js_ReaScriptAPI/v1.310/reaper_js_ReaScriptAPI64.so</source>
       </version>
     </reapack>
     <reapack name="reaper_imgui.ext" type="extension" desc="ReaImGui: ReaScript binding for Dear ImGui">
