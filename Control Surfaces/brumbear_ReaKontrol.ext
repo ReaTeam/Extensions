@@ -5,8 +5,8 @@
   - added CUSTOM ACTIONS functionality
   - user editable configuration file
 @provides
-  [win64] reaper_kontrol.dll https://stash.reaper.fm/39829/reaper_kontrol.dll
-  ReaKontrolConfig/reakontrol.ini https://stash.reaper.fm/39830/reakontrol.ini
+  [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v1.00/reaper_kontrol.dll
+  ReaKontrolConfig/reakontrol.ini https://github.com/brummbrum/reaKontrol/releases/download/v1.00/reakontrol.ini
   [darwin64] reaper_kontrol.dylib https://stash.reaper.fm/38633/reaper_kontrol.dylib
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
