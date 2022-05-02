@@ -5,9 +5,8 @@
   - Support both VST2 and VST3
   - Configuration file reakontrol.ini is auto generated on first startup
 @provides
-  ReaKontrolConfig/reakontrol_EXAMPLE.ini https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reakontrol_EXAMPLE.ini
-  [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reaper_kontrol.dll
+  ReaKontrolConfig/reakontrol_EXAMPLE.ini https://github.com/brummbrum/reaKontrol/releases/download/v$version/reakontrol_EXAMPLE.ini
+  [win64] reaper_kontrol.dll https://github.com/brummbrum/reaKontrol/releases/download/v$version/reaper_kontrol.dll
 @link https://github.com/brummbrum/reaKontrol/releases
 @screenshot https://raw.githubusercontent.com/brummbrum/reaKontrol/Releases/ReaKontrol_v100.png
 @about https://github.com/brummbrum/reaKontrol/blob/Releases/ReaKontrol_v110_Manual.pdf
-
