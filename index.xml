@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="80d03b41f4d9ea0df05c65cb85911e1070f5b146">
+<index version="1" name="ReaTeam Extensions" commit="e18f6c52e0a55871e798e65a99ef33df4eaca580">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1064,7 +1064,7 @@ API changes:
   <category name="Control Surfaces">
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -1077,15 +1077,15 @@ API changes:
       <version name="1.00" author="brumbear" time="2020-07-02T01:57:54Z">
         <changelog><![CDATA[- added CUSTOM ACTIONS functionality
 - user editable configuration file]]></changelog>
-        <source platform="win64" file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
-        <source file="ReaKontrolConfig/reakontrol.ini">https://stash.reaper.fm/39830/reakontrol.ini</source>
+        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v1.00/reaper_kontrol.dll</source>
+        <source file="ReaKontrolConfig/reakontrol.ini">https://github.com/brummbrum/reaKontrol/releases/download/v1.00/reakontrol_EXAMPLE.ini</source>
         <source platform="darwin64" file="reaper_kontrol.dylib">https://stash.reaper.fm/38633/reaper_kontrol.dylib</source>
       </version>
       <version name="1.10" author="brumbear" time="2022-05-01T20:53:17Z">
         <changelog><![CDATA[- Support both VST2 and VST3
 - Configuration file reakontrol.ini is auto generated on first startup]]></changelog>
-        <source file="ReaKontrolConfig/reakontrol_EXAMPLE.ini">https://stash.reaper.fm/v/44421/reakontrol_EXAMPLE.ini</source>
-        <source platform="win64" file="reaper_kontrol.dll">https://stash.reaper.fm/39829/reaper_kontrol.dll</source>
+        <source file="ReaKontrolConfig/reakontrol_EXAMPLE.ini">https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reakontrol_EXAMPLE.ini</source>
+        <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reaper_kontrol.dll</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
@@ -1240,17 +1240,17 @@ More information on GitHub
     </reapack>
   </category>
   <metadata>
-    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaTeam Extension Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaTeam Extension Repository\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/ReaTeam/Extensions/workflows/check/badge.svg]\cf0}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Community-maintained collection of extension plugins for REAPER.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/ReaTeam/Extensions/raw/master/index.xml\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use {\field{\*\fldinst{HYPERLINK "https://reapack.com/upload/extension"}}{\fldrslt{\ul
 https://reapack.com/upload/extension
 }}}
