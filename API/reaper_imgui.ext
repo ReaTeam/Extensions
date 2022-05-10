@@ -1,13 +1,17 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.6.1
+@version 0.6.2
 @changelog
-  • Export main demo functions to scripts including the demo file
-  • Fix broken anti-aliasing after attaching a font
-  • Fix the first frame of every window being rendered blank
-  • Linux: fix a crash when quitting REAPER while docked ReaImGui windows are open
-  • Linux: repair file drag and drop
-  • Windows: prevent incorrect focus when closing windows out of order
+  • Fix a crash when destroying list clippers while a different context is active
+  • Fix empty points array crashing DrawList_Add{Polyline,ConvexPolyFilled}
+  • Linux: restore broken key up/down events when an IME is active
+  • macOS: allow OpenGL software renderering for wider compatibility
+  • macOS: fix keyboard input when holding down a mouse button and the "Allow keyboard commands when mouse-editing" setting is disabled [p=2552296]
+  • Windows: receive Alt key events when "Prevent ALT key from focusing main menu" is enabled
+
+  API changes:
+  • DrawList_PathArcTo: fix incorrect default value for 'num_segments' when omitted
+  • Revert "Fix DrawList_AddTextEx not using the default bitmap font when font == nil" from v0.6
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
