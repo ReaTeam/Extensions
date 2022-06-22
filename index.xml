@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="edf6f22cf476419d26711ef6e50da3176b5a4404">
+<index version="1" name="ReaTeam Extensions" commit="a97336e09c44a18024db010f187eee4a3f005064">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1084,6 +1084,48 @@ API changes:
         <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.6.2/examples/hello_world_legacy.eel</source>
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.6.2/imgui_python.py</source>
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.6.2/reaper_imgui_doc.html</source>
+      </version>
+      <version name="0.7" author="cfillion" time="2022-06-22T02:14:23Z">
+        <changelog><![CDATA[• Add backward-compatibility script imgui.lua
+• Fix broken mouse inputs after destroying a window while a mouse button is down
+• Implement window transparency (requires REAPER v6.55+ on Linux)
+• Increase maximum object allocation limit to 1000
+• Linux: harden v0.6's improved mouse and keyboard input (now requires REAPER v6.57+)
+• Optimize object pointer validation (about 2x faster)
+• Patch dear imgui to enable background alpha and corner rounding for top-level windows
+• Update dear imgui to v1.88 <https://github.com/ocornut/imgui/releases/tag/v1.88>
+
+API changes:
+• Add ColorConvert{Double4ToU32,U32ToDouble4}
+• Add DebugTextEncoding
+• Add GetWindowViewport
+• Add HoveredFlags_NoNavOverride
+• Add ShowDebugLogWindow
+• Combo and ListBox: use null bytes for delimiting items as in vanilla dear imgui (now requires REAPER 6.44+ in Lua and EEL, t=261079)
+• Distinguish between empty and nil optional strings in Lua on REAPER 6.58+ [t=266405]
+• Expose additional context settings via {Get,Set}ConfigVar
+• Nerf ColorConvert{RGBtoHSV,HSVtoRGB}'s packed integer return value and optional alpha argument [t=266396]
+• Python: unexpose output-only values from the argument list
+• Python: unexpose unsafe buffer size arguments
+• Rename CaptureKeyboardFromApp to SetNextFrameWantCaptureKeyboard
+• Rename KeyModFlags_* constants to ModFlags_*
+• Reorder GetVersion's return values and add IMGUI_VERSION_NUM
+• Replace {Get,Set}ConfigFlags with {Get,Set}ConfigVar(ConfigVar_Flags)]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.7/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.7/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.7/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.7/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.7/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.7/imgui.lua</source>
       </version>
     </reapack>
   </category>
