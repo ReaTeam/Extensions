@@ -1,0 +1,43 @@
+@description ReaWwise
+@author Audiokinetic
+@version 1.0.1
+@provides
+  [win64] reaper_reawwise.dll https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dll
+  [darwin] reaper_reawwise.dylib https://github.com/audiokinetic/ReaWwise/releases/download/$version/reaper_reawwise.dylib
+@screenshot User Interface https://github.com/audiokinetic/ReaWwise/blob/main/user-interface.png
+@about
+  # ReaWwise
+
+  ReaWwise is a REAPER extension that sound designers can use to transfer audio files from REAPER into Wwise projects. The transfer process creates Wwise objects in manually defined hierarchies, so that Wwise users can start working with the imported sounds immediately.
+
+  ### Supported Platforms
+  - Windows
+  - Mac
+
+  ## Basic Usage
+  1. Open your REAPER and Wwise projects.
+  2. Configure your REAPER render settings appropriately. The render settings determine which files will be transferred to Wwise.
+  3. Open ReaWwise and configure settings such as the Originals Subfolder (optional), Import Destination, Wwise Structures, and so on.
+  4. Preview the audio files and Wwise objects to be transferred in the Preview Panel.
+  4. Click **Transfer To Wwise** to transfer the audio files and create the corresponding Wwise objects.
+
+  ## UserPlugins Directory
+  - Windows:  %appdata%\REAPER\UserPlugins
+  - Mac: ~/Library/Application Support/REAPER/UserPlugins
+
+  ## Other Resources
+  Refer to the [ReaWwise User Guide](https://audiokinetic.com/library/reawwise) for more information regarding usage, installation and troubleshooting of the extension.
+
+  For general questions about usage, refer to Audiokinetic's [Community Q&A](https://www.audiokinetic.com/qa/ask).
+
+  ## Contributing
+  The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to [open an issue](https://github.com/audiokinetic/ReaWwise/issues).
+
+  Feature requests can also be submitted to the [feature request section](https://www.audiokinetic.com/qa/feature-requests/) of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.
+
+  ## Legal
+  Copyright © 2022 [Audiokinetic Inc.](https://audiokinetic.com) All rights reserved.
+
+  ## Acknowledgements
+  Inspired by the work of [Karl Davis](https://github.com/karltechno)
+
