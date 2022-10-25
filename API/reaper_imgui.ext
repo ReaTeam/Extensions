@@ -5,6 +5,7 @@
   • Add a translation layer for running gfx scripts on ReaImGui (gfx2imgui.lua)
   • Enable SetNextWindowBgAlpha for all windows
   • Fix corrupted font texture in contexts having windows using different DPI scaling
+  • Fix assertion failure after attaching fonts when more than one DPI scale is used
   • Fix potential crash on exit in REAPER < 6.67 due to plugin registration keys being invalidated [reapack#56]
   • macOS: fix pressed keyboard keys getting stuck when opening modal dialogs
   • macOS: fix rescaling when moving windows to a monitor using a different DPI setting
