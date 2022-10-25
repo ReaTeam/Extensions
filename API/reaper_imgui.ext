@@ -1,6 +1,6 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.7
+@version 0.7.1
 @changelog
   • Add a translation layer for running gfx scripts on ReaImGui (gfx2imgui.lua)
   • Enable SetNextWindowBgAlpha for all windows
