@@ -1,32 +1,19 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.7
+@version 0.7.1
 @changelog
-  • Add backward-compatibility script imgui.lua
-  • Fix broken mouse inputs after destroying a window while a mouse button is down
-  • Implement window transparency (requires REAPER v6.55+ on Linux)
-  • Increase maximum object allocation limit to 1000
-  • Linux: harden v0.6's improved mouse and keyboard input (now requires REAPER v6.57+)
-  • Optimize object pointer validation (about 2x faster)
-  • Patch dear imgui to enable background alpha and corner rounding for top-level windows
-  • Update dear imgui to v1.88 <https://github.com/ocornut/imgui/releases/tag/v1.88>
+  • Add a translation layer for running gfx scripts on ReaImGui (gfx2imgui.lua)
+  • Enable SetNextWindowBgAlpha for all windows
+  • Fix corrupted font texture in contexts having windows using different DPI scaling
+  • Fix assertion failure after attaching fonts when more than one DPI scale is used
+  • Fix potential crash on exit in REAPER < 6.67 due to plugin registration keys being invalidated [reapack#56]
+  • macOS: fix pressed keyboard keys getting stuck when opening modal dialogs
+  • macOS: fix rescaling when moving windows to a monitor using a different DPI setting
+  • macOS: fix windows not moving above the menu bar on macOS 12 [p=2579183]
+  • macOS: gain keyboard focus when switching from another docker tab
 
   API changes:
-  • Add ColorConvert{Double4ToU32,U32ToDouble4}
-  • Add DebugTextEncoding
-  • Add GetWindowViewport
-  • Add HoveredFlags_NoNavOverride
-  • Add ShowDebugLogWindow
-  • Combo and ListBox: use null bytes for delimiting items as in vanilla dear imgui (now requires REAPER 6.44+ in Lua and EEL, t=261079)
-  • Distinguish between empty and nil optional strings in Lua on REAPER 6.58+ [t=266405]
-  • Expose additional context settings via {Get,Set}ConfigVar
-  • Nerf ColorConvert{RGBtoHSV,HSVtoRGB}'s packed integer return value and optional alpha argument [t=266396]
-  • Python: unexpose output-only values from the argument list
-  • Python: unexpose unsafe buffer size arguments
-  • Rename CaptureKeyboardFromApp to SetNextFrameWantCaptureKeyboard
-  • Rename KeyModFlags_* constants to ModFlags_*
-  • Reorder GetVersion's return values and add IMGUI_VERSION_NUM
-  • Replace {Get,Set}ConfigFlags with {Get,Set}ConfigVar(ConfigVar_Flags)
+  • Add the DrawListSplitter API
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -43,6 +30,7 @@
   [script] imgui_python.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script] imgui.lua https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [script] gfx2imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/$path
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
