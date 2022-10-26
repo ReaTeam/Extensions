@@ -1,7 +1,9 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.3.1
-@changelog Fixed 'ReaLlm: REAPER Low latency monitoring' actions list toggle
+@version 0.3.2
+@changelog
+  Apple ARM64 related memory bug fix, maybe other systems too.
+  Dropped highly experimental and optional PDC mode check feature for now.
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
