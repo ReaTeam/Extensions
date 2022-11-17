@@ -3,7 +3,7 @@
 @version 0.7.2
 @changelog
   • Fix window under the window under mouse getting hovered for 1 frame on mouse release
-  • macOS: fix crash when the context is destroyed while a window is docked
+  • macOS: fix a crash when the context is destroyed while a window is docked
   • macOS: fix framebuffer size not updating when switching from another docker tab
   • macOS: fix non-initial windows not gaining focus on open
   • Windows: fix multiple DPI scaling issues
