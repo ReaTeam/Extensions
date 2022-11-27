@@ -23,7 +23,7 @@
   • Syntax highlighting of code samples (if client-side Javascript is enabled)
 
   API changes:
-  • Add {Attach,Detach} for linking the liftime of any object with a context
+  • Add {Attach,Detach} for linking the lifetime of any object with a context
   • Add ConfigFlags_NavNoCaptureKeyboard
   • Add ConfigVar_HoverDelay{Normal,Short} and ConfigVar_InputTextEnterKeepActive
   • Add GetFramerate
