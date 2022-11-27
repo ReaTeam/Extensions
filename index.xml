@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="2c17b79054f7a997c6ad3e8fb5d0d7862ed7e821">
+<index version="1" name="ReaTeam Extensions" commit="7df9a520b331d359584a52d053185c1fe7351309">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1188,6 +1188,56 @@ gfx2imgui:
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.7.2/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.7.2/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.7.2/examples/gfx2imgui.lua</source>
+      </version>
+      <version name="0.8" author="cfillion" time="2022-11-27T17:46:57Z">
+        <changelog><![CDATA[• Add a user settings page in Preferences > Plug-ins > ReaImGui:
+  - Option to disable restoration of saved settings ("safe mode")
+  - Option to select which graphics renderer to use
+• Display indirect errors in a custom, more user-friendly dialog
+• Implement bitmap image loading (PNG and JPEG from a file or memory) and image sets (per-DPI variants)
+• macOS: add a Metal renderer (new default, requires El Capitan or newer)
+• Share GPU textures with all windows in the same context (except on Linux due to a GDK 3 limitation)
+• Update dear imgui to v1.89.1 <https://github.com/ocornut/imgui/releases/tag/v1.89> and <https://github.com/ocornut/imgui/releases/tag/v1.89.1>
+• Windows: add a Direct3D 10 renderer (new default)
+• Windows: disable minimizing and use the tool window style when decorations are enabled
+• Windows: support mouse input everywhere in windows straddling multiple monitors with mixed DPI scales
+
+Documentation:
+• DRI-ify default argument values (code + doc using a single source of truth)
+• Hide the "ImGui_" prefix
+• More accurate line number ranges in links to source code
+• Reorganize all functions in hierarchical, individually documented sections
+• Rich-text formatting (Markdown <3)
+• Syntax highlighting of code samples (if client-side Javascript is enabled)
+
+API changes:
+• Add {Attach,Detach} for linking the lifetime of any object with a context
+• Add ConfigFlags_NavNoCaptureKeyboard
+• Add ConfigVar_HoverDelay{Normal,Short} and ConfigVar_InputTextEnterKeepActive
+• Add GetFramerate
+• Add HoveredFlags_{Delay{Normal,Short},NoSharedDelay}
+• Add Image{,Button} and DrawList_AddImage{,Quad,Rounded}
+• Add InputTextFlags_EscapeClearsAll
+• Add Key_Mouse*
+• Add Mod_Shortcut (alias for _Ctrl on Linux & Windows and _Super, the Cmd key, on macOS)
+• Remove {Attach,Detach}Font (replaced by generic {Attach,Detach} functions)
+• Rename ModFlags_* to Mod_*]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.8/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.8/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.8/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.8/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8/examples/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
