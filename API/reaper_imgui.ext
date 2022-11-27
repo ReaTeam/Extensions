@@ -1,21 +1,39 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.7.2
+@version 0.8
 @changelog
-  • Fix window under the window under mouse getting hovered for 1 frame on mouse release
-  • macOS: fix a crash when the context is destroyed while a window is docked
-  • macOS: fix framebuffer size not updating when switching from another docker tab
-  • macOS: fix non-initial windows not gaining focus on open
-  • Windows: fix multiple DPI scaling issues
+  • Add a user settings page in Preferences > Plug-ins > ReaImGui:
+    - Option to disable restoration of saved settings ("safe mode")
+    - Option to select which graphics renderer to use
+  • Display indirect errors in a custom, more user-friendly dialog
+  • Implement bitmap image loading (PNG and JPEG from a file or memory) and image sets (per-DPI variants)
+  • macOS: add a Metal renderer (new default, requires El Capitan or newer)
+  • Share GPU textures with all windows in the same context (except on Linux due to a GDK 3 limitation)
+  • Update dear imgui to v1.89.1 <https://github.com/ocornut/imgui/releases/tag/v1.89> and <https://github.com/ocornut/imgui/releases/tag/v1.89.1>
+  • Windows: add a Direct3D 10 renderer (new default)
+  • Windows: disable minimizing and use the tool window style when decorations are enabled
+  • Windows: support mouse input everywhere in windows straddling multiple monitors with mixed DPI scales
+
+  Documentation:
+  • DRI-ify default argument values (code + doc using a single source of truth)
+  • Hide the "ImGui_" prefix
+  • More accurate line number ranges in links to source code
+  • Reorganize all functions in hierarchical, individually documented sections
+  • Rich-text formatting (Markdown <3)
+  • Syntax highlighting of code samples (if client-side Javascript is enabled)
 
   API changes:
-  • Add GetWindowDpiScale
-
-  gfx2imgui:
-  • Add GFX2IMGUI_NO_BLIT_PREMULTIPLY option [p=2609372]
-  • Fix nearest font selection when sizes smaller than requested are loaded [p=2609372]
-  • Keep alive fonts while they're actively being drawn from a blitted buffer [p=2609372]
-  • Warn when substituting font for the default one
+  • Add {Attach,Detach} for linking the lifetime of any object with a context
+  • Add ConfigFlags_NavNoCaptureKeyboard
+  • Add ConfigVar_HoverDelay{Normal,Short} and ConfigVar_InputTextEnterKeepActive
+  • Add GetFramerate
+  • Add HoveredFlags_{Delay{Normal,Short},NoSharedDelay}
+  • Add Image{,Button} and DrawList_AddImage{,Quad,Rounded}
+  • Add InputTextFlags_EscapeClearsAll
+  • Add Key_Mouse*
+  • Add Mod_Shortcut (alias for _Ctrl on Linux & Windows and _Super, the Cmd key, on macOS)
+  • Remove {Attach,Detach}Font (replaced by generic {Attach,Detach} functions)
+  • Rename ModFlags_* to Mod_*
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
