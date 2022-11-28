@@ -1,7 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
 @version 0.8.1
-@changelog • macOS: fix the Metal renderer crashing (observed on macOS 12 ARM)
+@changelog
+  • imgui.lua: add shims for dear imgui 1.89's obsoleted window boundary extension via SetCursorPos/SetCursorScreenPos
+  • macOS: fix the Metal renderer crashing (observed on macOS 12 ARM)
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
