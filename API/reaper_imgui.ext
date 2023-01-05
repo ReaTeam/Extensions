@@ -1,9 +1,29 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.1
+@version 0.8.2
 @changelog
-  • imgui.lua: add shims for dear imgui 1.89's obsoleted window boundary extension via SetCursorPos/SetCursorScreenPos
-  • macOS: fix the Metal renderer crashing (observed on macOS 12 ARM)
+  • Add user settings for docking with Shift only, docking splitting and docking window transparency
+  • Automatically open tabs for dropping windows when hovering REAPER dockers or main window sides
+  • Disable mouse input when captured by a window belonging to a different context
+  • Fix a crash when moving dockers with a single window on the left or top side of a split
+  • Fix parameters with two characters names missing from the documentation
+  • Make the settings page's help text behave more similarly to native pages
+  • Re-enable drawing the background of empty dockers
+  • Reuse the existing native window when dropping a window back into the same docker
+  • Use the system theme text color in the error dialog
+  • macOS: fix crash/corruption in the Metal renderer due to GPU buffers being incorrectly resized
+  • Linux: compile libjpeg-turbo into the binary for compatibility with Fedora [p=2627734]
+  • Linux: fix windows not gaining focus on first click since v0.8
+  • Linux: replace window z-order heuristic with proper hit-testing
+  • Windows: filter out \b\e\r\n\t from the character input queue
+  • Windows: fix assertion failure in some HiDPI monitor configurations [p=2616056][p=2620880][p=2622681]
+  • Windows: follow the "Use large (non-tool) window frames for windows" setting
+  • Windows: temporarily disable usage under non-multimonitor aware HiDPI modes [p=2629558]
+  • Windows: treat non-client window area as passthrough when hit-testing
+
+  imgui.lua:
+  • Exceptionally add shims to restore pre-0.8 values for GetKeyMods
+  • Extend 0.8's shims for window boundary extension to cover table cells
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
