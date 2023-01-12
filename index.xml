@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="cc2fe1a03765416ff518fc753233d50ff7261b68">
+<index version="1" name="ReaTeam Extensions" commit="76a043a7e6abfe46eb946b057eb4ded4a61f739c">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1298,6 +1298,38 @@ imgui.lua:
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.2/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.2/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.2/examples/gfx2imgui.lua</source>
+      </version>
+      <version name="0.8.3" author="cfillion" time="2023-01-12T10:01:37Z">
+        <changelog><![CDATA[• Add actions to toggle boolean settings
+• Adjust the top docker's hit box for the tabbar, transport and toolbar above
+• Fix a crash when undocking by dragging the top-left corner triangle
+• Reduce memory usage when docking is enabled
+• Update dear imgui to v1.89.2 <https://github.com/ocornut/imgui/releases/tag/v1.89.2>
+
+imgui.lua:
+• Extend 0.8 shims for window boundary extension to cover End{Popup,Table,Tooltip}
+• Fix 0.7 shim of CaptureKeyboardFromApp [p=2633349]
+• Fix 0.8 shims eating the return values of TableNext{Column,Row} and TableSetColumnIndex [p=2632656]
+• Fix 0.8 shims making EndGroup move the cursor to the wrong Y position [p=2632446]
+
+API changes:
+• Remove IsWindowCollapsed (broken since v0.5)]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.8.3/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.8.3/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.8.3/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.3/examples/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
