@@ -1329,7 +1329,7 @@ API changes:
         <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/imgui_python.py</source>
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/imgui.lua</source>
-        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.3/examples/gfx2imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/a97712e6f2e6a2f675beeb640074b1c970d24c9b/examples/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
