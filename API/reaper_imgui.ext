@@ -8,11 +8,11 @@
   • Fix two cases of stuck mouse buttons and keyboard keys after closing windows
   • Ignore warnings when loading PNG images
   • Lua demo: replace `r.ImGui_` prefix with `ImGui.`
+  • Re-raise the minimum OpenGL version to 3.2
+  • Update dear imgui to v1.89.3 <https://github.com/ocornut/imgui/releases/tag/v1.89.3>
   • macOS: fix a crash when destroying a window immediately after receiving focus
   • macOS: fix stuck buttons and keys after a native menu is opened
   • macOS: update window position when resizing via native decorations
-  • Re-raise the minimum OpenGL version to 3.2
-  • Update dear imgui to v1.89.3 <https://github.com/ocornut/imgui/releases/tag/v1.89.3>
   • Windows: fix a memory leak in the Direct3D 10 renderer [p=2639587]
   • Windows: fix incorrect monitor work area calculation in some cases [p=2639793]
 
