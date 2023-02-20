@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="76a043a7e6abfe46eb946b057eb4ded4a61f739c">
+<index version="1" name="ReaTeam Extensions" commit="568da0292f4ac68297806f76520f180d164dc984">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1330,6 +1330,49 @@ API changes:
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.3/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/a97712e6f2e6a2f675beeb640074b1c970d24c9b/examples/gfx2imgui.lua</source>
+      </version>
+      <version name="0.8.4" author="cfillion" time="2023-02-20T07:36:14Z">
+        <changelog><![CDATA[• Fill the HWND text of docked windows with the tab name [p=2649553]
+• Fix "Too many vertices in ImDrawList" assertion when adding many draw calls during the first 2 frames of a context
+• Fix a crash when opening a window more than 1 minute after the last one in the same context [p=2639537]
+• Fix two cases of stuck mouse buttons and keyboard keys after closing windows
+• Ignore warnings when loading PNG images
+• Lua demo: replace `r.ImGui_` prefix with `ImGui.`
+• Re-raise the minimum OpenGL version to 3.2
+• Update dear imgui to v1.89.3 <https://github.com/ocornut/imgui/releases/tag/v1.89.3>
+• macOS: fix a crash when destroying a window immediately after receiving focus
+• macOS: fix stuck buttons and keys after a native menu is opened
+• macOS: update window position when resizing via native decorations
+• Windows: fix a memory leak in the Direct3D 10 renderer [p=2639587]
+• Windows: fix incorrect monitor work area calculation in some cases [p=2639793]
+
+gfx2imgui:
+• Fix multiple text aligment and clipping bugs [p=2646948]
+• Fix preloading fonts after gaps in slot indices
+• Fix stuck mouse buttons after focus loss [p=2647387]
+• Improve rendering of lines with fractional scaling [p=2646948]
+• Various compatibility improvements and performance optimizations
+
+API changes:
+• Add MouseCursor_None
+• Add NumericLimits_{Double,Int}
+• Add SeparatorText and StyleVar_SeparatorText{BorderSize,Align,Padding}]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.8.4/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.8.4/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.8.4/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.4/examples/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
