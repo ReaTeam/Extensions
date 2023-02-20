@@ -1,6 +1,6 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.3
+@version 0.8.4
 @changelog
   • Fill the HWND text of docked windows with the tab name [p=2649553]
   • Fix "Too many vertices in ImDrawList" assertion when adding many draw calls during the first 2 frames of a context
