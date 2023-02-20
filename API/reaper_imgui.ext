@@ -2,20 +2,31 @@
 @author cfillion
 @version 0.8.3
 @changelog
-  • Add actions to toggle boolean settings
-  • Adjust the top docker's hit box for the tabbar, transport and toolbar above
-  • Fix a crash when undocking by dragging the top-left corner triangle
-  • Reduce memory usage when docking is enabled
-  • Update dear imgui to v1.89.2 <https://github.com/ocornut/imgui/releases/tag/v1.89.2>
+  • Fill the HWND text of docked windows with the tab name [p=2649553]
+  • Fix "Too many vertices in ImDrawList" assertion when adding many draw calls during the first 2 frames of a context
+  • Fix a crash when opening a window more than 1 minute after the last one in the same context [p=2639537]
+  • Fix two cases of stuck mouse buttons and keyboard keys after closing windows
+  • Ignore warnings when loading PNG images
+  • Lua demo: replace `r.ImGui_` prefix with `ImGui.`
+  • macOS: fix a crash when destroying a window immediately after receiving focus
+  • macOS: fix stuck buttons and keys after a native menu is opened
+  • macOS: update window position when resizing via native decorations
+  • Re-raise the minimum OpenGL version to 3.2
+  • Update dear imgui to v1.89.3 <https://github.com/ocornut/imgui/releases/tag/v1.89.3>
+  • Windows: fix a memory leak in the Direct3D 10 renderer [p=2639587]
+  • Windows: fix incorrect monitor work area calculation in some cases [p=2639793]
 
-  imgui.lua:
-  • Extend 0.8 shims for window boundary extension to cover End{Popup,Table,Tooltip}
-  • Fix 0.7 shim of CaptureKeyboardFromApp [p=2633349]
-  • Fix 0.8 shims eating the return values of TableNext{Column,Row} and TableSetColumnIndex [p=2632656]
-  • Fix 0.8 shims making EndGroup move the cursor to the wrong Y position [p=2632446]
+  gfx2imgui:
+  • Fix multiple text aligment and clipping bugs [p=2646948]
+  • Fix preloading fonts after gaps in slot indices
+  • Fix stuck mouse buttons after focus loss [p=2647387]
+  • Improve rendering of lines with fractional scaling [p=2646948]
+  • Various compatibility improvements and performance optimizations
 
   API changes:
-  • Remove IsWindowCollapsed (broken since v0.5)
+  • Add MouseCursor_None
+  • Add NumericLimits_{Double,Int}
+  • Add SeparatorText and StyleVar_SeparatorText{BorderSize,Align,Padding}
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -32,7 +43,7 @@
   [script] imgui_python.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script] imgui.lua https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [script] gfx2imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/$path
+  [script] gfx2imgui.lua https://github.com/cfillion/reaimgui/raw/a97712e6f2e6a2f675beeb640074b1c970d24c9b/examples/$path
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
