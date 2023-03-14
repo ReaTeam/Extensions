@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="568da0292f4ac68297806f76520f180d164dc984">
+<index version="1" name="ReaTeam Extensions" commit="56b7da185e369e4ce39980d96ef04f8e1df03d74">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1564,6 +1564,20 @@ Dropped highly experimental and optional PDC mode check feature for now.]]></cha
         <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/v0.3.2/reaper_reallm-x86.dll</source>
         <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/v0.3.2/reaper_reallm-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/v0.3.2/reaper_reallm-x86_64.so</source>
+      </version>
+      <version name="0.4.0" author="ak5k" time="2023-03-14T12:18:30Z">
+        <changelog><![CDATA[REAPER v6.72 or later required.
+Disables PDC for monitored signalchain to achieve lower latencies or to allow more processing while monitoring.
+"P_PDCLIMIT" can be set as floating point number, e.g. "0.5" to set target latency of 0.5 times current buffer/block size.]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reallm-aarch64.so">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reallm-arm64.dylib">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-arm64.dylib</source>
+        <source platform="linux-armv7l" file="reaper_reallm-armv7l.so">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-armv7l.so</source>
+        <source platform="darwin32" file="reaper_reallm-i386.dylib">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-i386.dylib</source>
+        <source platform="linux32" file="reaper_reallm-i686.so">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-i686.so</source>
+        <source platform="win64" file="reaper_reallm-x64.dll">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-x64.dll</source>
+        <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-x86.dll</source>
+        <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/v0.4.0/reaper_reallm-x86_64.so</source>
       </version>
     </reapack>
   </category>
