@@ -1,16 +1,17 @@
 @description ReaFab: Fabulous REAPER plug-in controller extension
 @author ak5k
-@version 0.3.10
+@version 0.3.11
+@changelog Updated some outdated parameter mappings.
 @provides
-  [win64] reaper_reafab-x64.dll https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-x64.dll
-  [win32] reaper_reafab-x86.dll https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-x86.dll
-  [linux-aarch64] reaper_reafab-aarch64.so https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-aarch64.so
-  [darwin-arm64] reaper_reafab-arm64.dylib https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-arm64.dylib
-  [darwin32] reaper_reafab-i386.dylib https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-i386.dylib
-  [darwin64] reaper_reafab-x86_64.dylib https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-x86_64.dylib
-  [linux-armv7l] reaper_reafab-armv7l.so https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-armv7l.so
-  [linux32] reaper_reafab-i686.so https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-i686.so
-  [linux64] reaper_reafab-x86_64.so https://github.com/ak5k/reafab/releases/download/v$version/reaper_reafab-x86_64.so
+  [win64] reaper_reafab-x64.dll https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [win32] reaper_reafab-x86.dll https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [linux-aarch64] reaper_reafab-aarch64.so https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [darwin-arm64] reaper_reafab-arm64.dylib https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [darwin32] reaper_reafab-i386.dylib https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [darwin64] reaper_reafab-x86_64.dylib https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [linux-armv7l] reaper_reafab-armv7l.so https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [linux32] reaper_reafab-i686.so https://github.com/ak5k/reafab/releases/download/v$version/$path
+  [linux64] reaper_reafab-x86_64.so https://github.com/ak5k/reafab/releases/download/v$version/$path
 @link
   Forum thread https://forum.cockos.com/showthread.php?t=245445
   GitHub https://github.com/ak5k/reafab
