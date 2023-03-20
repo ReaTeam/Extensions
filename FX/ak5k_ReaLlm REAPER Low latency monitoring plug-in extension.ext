@@ -1,10 +1,11 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.4.0
+@version 0.4.1
 @changelog
-  REAPER v6.72 or later required.
-  Disables PDC for monitored signalchain to achieve lower latencies or to allow more processing while monitoring.
-  "P_PDCLIMIT" can be set as floating point number, e.g. "0.5" to set target latency of 0.5 times current buffer/block size.
+  Fixed possible crash when deleting monitored tracks while ReaLlm is enabled.
+  Minor API changes, see ReaScript API documentation.
+  Option to include Monitoring FX via API.
+  Option to set parameter change (instead of FX enable/disable) via API.
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
