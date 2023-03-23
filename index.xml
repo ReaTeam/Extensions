@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="6980ef87ccdee48aab4bb29dce9a7ebbd9fdf222">
+<index version="1" name="ReaTeam Extensions" commit="b5aecb3d2c0063e521a91ecc0ed0a4f73f9ded07">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -467,10 +467,10 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaImGui: ReaScript binding for Dear ImGui\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 ReaImGui is a ReaScript binding for the {\field{\*\fldinst{HYPERLINK "https://www.dearimgui.org/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaImGui is a ReaScript binding and REAPER backend for the {\field{\*\fldinst{HYPERLINK "https://www.dearimgui.org/"}}{\fldrslt{\ul
 Dear ImGui
 }}}
- toolkit. It adds over 300 ReaScript API functions (over 600 including constants!) for creating GPU-rendered GUI interfaces.\par}
+ toolkit. It adds over 380 ReaScript API functions (more than 800 including constants!) for creating GPU-rendered GUI interfaces.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 See Dear ImGui's {\field{\*\fldinst{HYPERLINK "https://www.dearimgui.org/faq/"}}{\fldrslt{\ul
 FAQ
 }}}
@@ -1373,6 +1373,50 @@ API changes:
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.4/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.4/examples/gfx2imgui.lua</source>
+      </version>
+      <version name="0.8.5" author="cfillion" time="2023-03-23T02:51:16Z">
+        <changelog><![CDATA[• Add a new API for running EEL programs
+• Collect all errors in a single report window
+• Disable ConfigVar_InputTrickleEventQueue by default
+• Fix duplicate error reports when failing to end a frame
+• Remove global object count limit (limit context attachments instead)
+• Update to dear imgui v1.89.4 <https://github.com/ocornut/imgui/releases/tag/v1.89.4>
+• macOS: fix stuck keys when undocking while a key is down
+• macOS: follow the "Control+left-click emulates right-click" setting [t=277197]
+• Windows: fix a regression in the OpenGL renderer causing crashes [p=2656531]
+
+Documentation:
+• Add a table of contents of the entire category tree
+• Insert links for references with trailing wildcards (eg. StyleVar_*)
+
+gfx2imgui:
+• Add REAPER v6.75's gfx.getchar second return value
+• Implement (partial) blit rotation
+• More compatibility improvements and performance optimizations
+
+API changes:
+• Add 'callback' parameter to InputText* and SetNextWindowSizeConstraints
+• Add a boolean return value to BeginTooltip
+• Add ConfigVar_DebugBeginReturnValue{Once,Loop}
+• Add CreateFunctionFromEEL and Function_*
+• Add InputTextFlags_Callback{Always,CharFilter,Completion,Edit,History}
+• Renamed {Push,Pop}AllowKeyboardFocus to {Push,Pop}TabStop]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.8.5/examples/demo.lua</source>
+        <source main="main" type="script" file="ReaImGui_Hello World.eel">https://github.com/cfillion/reaimgui/raw/v0.8.5/examples/hello_world.eel</source>
+        <source main="main" type="script" file="ReaImGui_Hello World (legacy syntax).eel">https://github.com/cfillion/reaimgui/raw/v0.8.5/examples/hello_world_legacy.eel</source>
+        <source type="script" file="imgui_python.py">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/imgui_python.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.8.5/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.8.5/examples/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
