@@ -1,32 +1,33 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.4
+@version 0.8.5
 @changelog
-  • Fill the HWND text of docked windows with the tab name [p=2649553]
-  • Fix "Too many vertices in ImDrawList" assertion when adding many draw calls during the first 2 frames of a context
-  • Fix a crash when opening a window more than 1 minute after the last one in the same context [p=2639537]
-  • Fix two cases of stuck mouse buttons and keyboard keys after closing windows
-  • Ignore warnings when loading PNG images
-  • Lua demo: replace `r.ImGui_` prefix with `ImGui.`
-  • Re-raise the minimum OpenGL version to 3.2
-  • Update dear imgui to v1.89.3 <https://github.com/ocornut/imgui/releases/tag/v1.89.3>
-  • macOS: fix a crash when destroying a window immediately after receiving focus
-  • macOS: fix stuck buttons and keys after a native menu is opened
-  • macOS: update window position when resizing via native decorations
-  • Windows: fix a memory leak in the Direct3D 10 renderer [p=2639587]
-  • Windows: fix incorrect monitor work area calculation in some cases [p=2639793]
+  • Add a new API for running EEL programs
+  • Collect all errors in a single report window
+  • Disable ConfigVar_InputTrickleEventQueue by default
+  • Fix duplicate error reports when failing to end a frame
+  • Remove global object count limit (limit context attachments instead)
+  • Update to dear imgui v1.89.4 <https://github.com/ocornut/imgui/releases/tag/v1.89.4>
+  • macOS: fix stuck keys when undocking while a key is down
+  • macOS: follow the "Control+left-click emulates right-click" setting [t=277197]
+  • Windows: fix a regression in the OpenGL renderer causing crashes [p=2656531]
+
+  Documentation:
+  • Add a table of contents of the entire category tree
+  • Insert links for references with trailing wildcards (eg. StyleVar_*)
 
   gfx2imgui:
-  • Fix multiple text aligment and clipping bugs [p=2646948]
-  • Fix preloading fonts after gaps in slot indices
-  • Fix stuck mouse buttons after focus loss [p=2647387]
-  • Improve rendering of lines with fractional scaling [p=2646948]
-  • Various compatibility improvements and performance optimizations
+  • Add REAPER v6.75's gfx.getchar second return value
+  • Implement (partial) blit rotation
+  • More compatibility improvements and performance optimizations
 
   API changes:
-  • Add MouseCursor_None
-  • Add NumericLimits_{Double,Int}
-  • Add SeparatorText and StyleVar_SeparatorText{BorderSize,Align,Padding}
+  • Add 'callback' parameter to InputText* and SetNextWindowSizeConstraints
+  • Add a boolean return value to BeginTooltip
+  • Add ConfigVar_DebugBeginReturnValue{Once,Loop}
+  • Add CreateFunctionFromEEL and Function_*
+  • Add InputTextFlags_Callback{Always,CharFilter,Completion,Edit,History}
+  • Renamed {Push,Pop}AllowKeyboardFocus to {Push,Pop}TabStop
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -61,7 +62,7 @@
 @about
   # ReaImGui: ReaScript binding for Dear ImGui
 
-  ReaImGui is a ReaScript binding for the [Dear ImGui](https://www.dearimgui.org/) toolkit. It adds over 300 ReaScript API functions (over 600 including constants!) for creating GPU-rendered GUI interfaces.
+  ReaImGui is a ReaScript binding and REAPER backend for the [Dear ImGui](https://www.dearimgui.org/) toolkit. It adds over 380 ReaScript API functions (more than 800 including constants!) for creating GPU-rendered GUI interfaces.
 
   See Dear ImGui's [FAQ](https://www.dearimgui.org/faq/).
 
