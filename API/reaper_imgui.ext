@@ -1,19 +1,7 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.6
-@changelog
-  • Add a button to restore default settings in the preferences page
-  • Don't give focus to the first setting when opening the preferences page [t=277729]
-  • Enable docking by default (ConfigFlags_DockingEnable) and expose a user setting
-  • Fix 1-frame flicker after uploading a new texture
-  • Fix a use-after-free when calling an EEL function after an assertion failure
-  • Fix crashes when removing/uploading textures every frame [p=2663379]
-  • Fix name conflict between the ImGui_Image type and function in the C++ header
-  • Revert "disable ConfigVar_InputTrickleEventQueue by default" [p=2664743]
-  • Update to dear imgui v1.89.5 <https://github.com/ocornut/imgui/releases/tag/v1.89.5>
-
-  API changes:
-  • Move the C++ API functions to a ImGui namespace
+@version 0.8.6.1
+@changelog • macOS: restore accidentally disabled clipboard I/O
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
