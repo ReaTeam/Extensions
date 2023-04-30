@@ -1,0 +1,11 @@
+@description ReaSolotus: REAPER Solo bus extension
+@author ak5k
+@version 0.1.6
+@provides
+  [linux-aarch64] reaper_reasolotus-aarch64.so https://github.com/ak5k/reasolotus/releases/download/v$version/reaper_reasolotus-aarch64.so
+  [darwin-arm64] reaper_reasolotus-arm64.dylib https://github.com/ak5k/reasolotus/releases/download/v$version/reaper_reasolotus-arm64.dylib
+  [win64] reaper_reasolotus-x64.dll https://github.com/ak5k/reasolotus/releases/download/v$version/reaper_reasolotus-x64.dll
+  [darwin64] reaper_reasolotus-x86_64.dylib https://github.com/ak5k/reasolotus/releases/download/v$version/reaper_reasolotus-x86_64.dylib
+  [linux64] reaper_reasolotus-x86_64.so https://github.com/ak5k/reasolotus/releases/download/v$version/reaper_reasolotus-x86_64.so
+@about Solo bus extension to improve live mixing experience with REAPER.
+
