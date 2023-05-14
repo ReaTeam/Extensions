@@ -1,10 +1,9 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.4.3
+@version 0.5.0
 @changelog
-  Fixed latency calculation for split routes
-  New options for Llm_Set
-  Reverted PARAMCHANGE delimiter back to ;
+  Requires REAPER 6.79.
+  Prefixes bypassed FX names with `llm: `. This allows ReaLlm to keep track of duplicates.
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
