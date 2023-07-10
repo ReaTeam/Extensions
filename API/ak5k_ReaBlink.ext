@@ -1,9 +1,9 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.4.4
+@version 0.4.5
 @changelog
-  Puppet mode related performance tweaks.
-  ReaBlink Monitor script file now has commented out placeholder line for enabling Master mode.
+  Update to Ableton Link 3.0.6
+  Transport stopping related crash fix in Puppet mode
 @provides
   [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/v$version/$path
   [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/v$version/$path
