@@ -1,0 +1,11 @@
+@description ReaMCULive: Programmable ReaScript API control surface extension
+@author ak5k
+@version 0.1.6
+@provides
+  [win64] reaper_reamculive-x64.dll https://github.com/ak5k/reamculive/releases/download/v$version/reaper_reamculive-x64.dll
+  [linux-aarch64] reaper_reamculive-aarch64.so https://github.com/ak5k/reamculive/releases/download/v$version/reaper_reamculive-aarch64.so
+  [darwin-arm64] reaper_reamculive-arm64.dylib https://github.com/ak5k/reamculive/releases/download/v$version/reaper_reamculive-arm64.dylib
+  [darwin64] reaper_reamculive-x86_64.dylib https://github.com/ak5k/reamculive/releases/download/v$version/reaper_reamculive-x86_64.dylib
+  [linux64] reaper_reamculive-x86_64.so https://github.com/ak5k/reamculive/releases/download/v$version/reaper_reamculive-x86_64.so
+@about See [website](https://github.com/ak5k/reamculive).
+
