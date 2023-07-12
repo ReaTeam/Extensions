@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="ef3c234d39e4be93af40f42c58511ede7b3efa90">
+<index version="1" name="ReaTeam Extensions" commit="c61d7c48132ae184ff7e40b39a710d9ea1929eb0">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -57,6 +57,27 @@ Transport stopping related crash fix in Puppet mode]]></changelog>
         <source platform="darwin-arm64" file="reaper_reablink-arm64.dylib">https://github.com/ak5k/reablink/releases/download/v0.4.5/reaper_reablink-arm64.dylib</source>
         <source platform="darwin64" file="reaper_reablink-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/v0.4.5/reaper_reablink-x86_64.dylib</source>
         <source platform="darwin32" file="reaper_reablink-i386.dylib">https://github.com/ak5k/reablink/releases/download/v0.4.5/reaper_reablink-i386.dylib</source>
+      </version>
+    </reapack>
+    <reapack name="ak5k_ReaMCULive Programmable ReaScript API control surface extension.ext" type="extension" desc="ReaMCULive: Programmable ReaScript API control surface extension">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 See {\field{\*\fldinst{HYPERLINK "https://github.com/ak5k/reamculive"}}{\fldrslt{\ul
+website
+}}}
+.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.6" author="ak5k" time="2023-07-12T10:53:16Z">
+        <source platform="win64" file="reaper_reamculive-x64.dll">https://github.com/ak5k/reamculive/releases/download/v0.1.6/reaper_reamculive-x64.dll</source>
+        <source platform="linux-aarch64" file="reaper_reamculive-aarch64.so">https://github.com/ak5k/reamculive/releases/download/v0.1.6/reaper_reamculive-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reamculive-arm64.dylib">https://github.com/ak5k/reamculive/releases/download/v0.1.6/reaper_reamculive-arm64.dylib</source>
+        <source platform="darwin64" file="reaper_reamculive-x86_64.dylib">https://github.com/ak5k/reamculive/releases/download/v0.1.6/reaper_reamculive-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reamculive-x86_64.so">https://github.com/ak5k/reamculive/releases/download/v0.1.6/reaper_reamculive-x86_64.so</source>
       </version>
     </reapack>
     <reapack name="js_ReaScriptAPI.ext" type="extension" desc="js_ReaScriptAPI: API functions for ReaScripts">
