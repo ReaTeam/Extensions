@@ -1,7 +1,7 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
 @version 0.8.7.1
-@changelog • Fix imgui.lua always applying all available shims
+@changelog • Fix 0.8.7's imgui.lua always applying all available shims
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
