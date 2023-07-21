@@ -1,21 +1,7 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.7
-@changelog
-  • Add a context menu with "move to docker"/undock/close actions to docker tabs
-  • Allow docked windows to be resized down to 10x10px [p=2691001]
-  • Fix docked windows not opening with focus [p=2690820]
-  • Fix usage of the Attach function in Python ReaScripts [#11]
-  • Update to dear imgui v1.89.6 <https://github.com/ocornut/imgui/releases/tag/v1.89.6>
-  • Linux: fix window position desync when the WM denies or alter the move request [p=2670425]
-  • Linux: implement mouse events passthrough via WindowFlags_NoInputs [p=2684289]
-  • macOS: restore compatibility with macOS 10.9–10.12 (accidentally lost in v0.8)
-  • Windows: add a title bar context menu when native decorations are enabled
-  • Windows: disable DirectX feature toggling fullscreen when pressing Alt+Enter
-  • Windows: don't bring REAPER back to front when focusing another app while a topmost window is shown [p=2684110]
-
-  API changes:
-  • Rename ListClipper_ForceDisplayRangeByIndices to ListClipper_IncludeRangeByIndices
+@version 0.8.7.1
+@changelog • Fix 0.8.7's imgui.lua always applying all available shims
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
