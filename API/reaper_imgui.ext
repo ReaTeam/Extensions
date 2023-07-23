@@ -1,7 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.7.1
-@changelog • Fix 0.8.7's imgui.lua always applying all available shims
+@version 0.8.7.2
+@changelog
+  • Fix a crash when windows are closed out of ownership order while a mouse button is down
+  • macOS: fix the x86_64 release binary not containing FreeType2 since 0.8.7 [p=2694907]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
