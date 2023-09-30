@@ -1,14 +1,7 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.7.3
-@changelog
-  • Report stored size when opening a docked window [p=2700189]
-  • macOS and Windows: fix a memory leak and potential crash when the renderer fails to initialize
-  • macOS: fix a crash when pressing mouse buttons higher than 5
-  • macOS: fix a memory leak and a potential crash in the Metal renderer when images are incorrectly re-created every frame while a window is occluded [p=2698614]
-  • macOS: fix mouse events not reaching REAPER after opening a native menu while a mouse button is down then pressing another button
-  • macOS: release mouse capture on window focus changes [p=2695756]
-  • macOS: send a single right-click event when handling the "Control+left-click emulates right-click" setting
+@version 0.8.7.4
+@changelog • Fix a crash when undocking via the context menu since 0.8.7.3
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
