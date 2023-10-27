@@ -1,0 +1,22 @@
+@description Ogler
+@author Francesco Bertolaccini (frabert)
+@version 0.10.0
+@changelog
+  - New GUI
+  - Bugfixes
+@provides [win64] ogler.clap https://github.com/frabert/ogler/releases/download/v$version/ogler-win64.clap
+@link
+  Forum thread https://forums.cockos.com/showthread.php?p=2726866
+  GitHub Repository https://github.com/frabert/ogler
+@screenshot https://github.com/frabert/ogler/assets/1268384/edeaca10-6f24-47ad-a920-bed3c370a9ba
+@about
+  # Ogler
+
+  Ogler is a CLAP plugin for REAPER that allows writing video effects using GLSL, similar to what happens in ShaderToy.
+
+  ## How do I write shaders?
+
+  If you have previous experience with writing ShaderToys or shaders in general, see the [Reference Manual](https://github.com/frabert/ogler/blob/main/docs/Reference.md).
+
+  If you need an introduction to shaders, see the [Tutorial](https://github.com/frabert/ogler/blob/main/docs/Tutorial.md).
+
