@@ -1,10 +1,10 @@
-@description Ogler
+@description Ogler: FX video plugin for using GLSL shaders in REAPER
 @author Francesco Bertolaccini (frabert)
 @version 0.10.0
 @changelog
   - New GUI
   - Bugfixes
-@provides [win64] ogler.clap https://github.com/frabert/ogler/releases/download/v$version/ogler-win64.clap
+@provides [win64] FX/ogler.clap https://github.com/frabert/ogler/releases/download/v$version/ogler-win64.clap
 @link
   Forum thread https://forums.cockos.com/showthread.php?p=2726866
   GitHub Repository https://github.com/frabert/ogler
