@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="3d4802d1796e52cf411425f93feea9a74ce062e7">
+<index version="1" name="ReaTeam Extensions" commit="f238c1785f5a2cc906b6dff6dbd615b41876fca5">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1906,6 +1906,35 @@ Prefixes bypassed FX names with `llm: `. This allows ReaLlm to keep track of dup
         <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/v0.5.0/reaper_reallm-x86.dll</source>
         <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/v0.5.0/reaper_reallm-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/v0.5.0/reaper_reallm-x86_64.so</source>
+      </version>
+    </reapack>
+    <reapack name="frabert_ogler.ext" type="extension" desc="Ogler: FX video plugin for using GLSL shaders in REAPER">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Ogler\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Ogler is a CLAP plugin for REAPER that allows writing video effects using GLSL, similar to what happens in ShaderToy.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 How do I write shaders?\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you have previous experience with writing ShaderToys or shaders in general, see the {\field{\*\fldinst{HYPERLINK "https://github.com/frabert/ogler/blob/main/docs/Reference.md"}}{\fldrslt{\ul
+Reference Manual
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you need an introduction to shaders, see the {\field{\*\fldinst{HYPERLINK "https://github.com/frabert/ogler/blob/main/docs/Tutorial.md"}}{\fldrslt{\ul
+Tutorial
+}}}
+.\par}
+}
+]]></description>
+        <link rel="website" href="https://forums.cockos.com/showthread.php?p=2726866">Forum thread</link>
+        <link rel="website" href="https://github.com/frabert/ogler">GitHub Repository</link>
+        <link rel="screenshot">https://github.com/frabert/ogler/assets/1268384/edeaca10-6f24-47ad-a920-bed3c370a9ba</link>
+      </metadata>
+      <version name="0.10.0" author="Francesco Bertolaccini (frabert)" time="2023-10-30T08:24:28Z">
+        <changelog><![CDATA[- New GUI
+- Bugfixes]]></changelog>
+        <source platform="win64" file="FX/ogler.clap">https://github.com/frabert/ogler/releases/download/v0.10.0/ogler-win64.clap</source>
       </version>
     </reapack>
   </category>
