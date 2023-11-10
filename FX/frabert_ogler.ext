@@ -1,9 +1,12 @@
 @description Ogler: FX video plugin for using GLSL shaders in REAPER
 @author Francesco Bertolaccini (frabert)
-@version 0.10.0
+@version 0.11.0
 @changelog
-  - New GUI
-  - Bugfixes
+  - Update to glslang 12.2.0
+  - Update to Scintilla 5.37
+  - Update to Sciter 5.0.2.26
+  - Fix crash when no project video output size is set
+  - Added a preference panel to customize settings of the text editor
 @provides [win64] FX/ogler.clap https://github.com/frabert/ogler/releases/download/v$version/ogler-win64.clap
 @link
   Forum thread https://forums.cockos.com/showthread.php?p=2726866
