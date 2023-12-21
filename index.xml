@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="69ca080894ff7a0a16b490c16ce96d80b051bab6">
+<index version="1" name="ReaTeam Extensions" commit="5cb9132ca4e58c909a483108556369c26b8c7157">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -1675,6 +1675,14 @@ gfx2imgui:
         <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/v0.1.6/reaper_reasolotus-x64.dll</source>
         <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/v0.1.6/reaper_reasolotus-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/v0.1.6/reaper_reasolotus-x86_64.so</source>
+      </version>
+      <version name="0.1.7" author="ak5k" time="2023-12-21T08:12:55Z">
+        <changelog><![CDATA[Mix and Solo busses no longer reset their positions between sessions.]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reasolotus-aarch64.so">https://github.com/ak5k/reasolotus/releases/download/v0.1.7/reaper_reasolotus-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reasolotus-arm64.dylib">https://github.com/ak5k/reasolotus/releases/download/v0.1.7/reaper_reasolotus-arm64.dylib</source>
+        <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/v0.1.7/reaper_reasolotus-x64.dll</source>
+        <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/v0.1.7/reaper_reasolotus-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/v0.1.7/reaper_reasolotus-x86_64.so</source>
       </version>
     </reapack>
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
