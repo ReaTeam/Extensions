@@ -1,7 +1,15 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.4.6
-@changelog Restored release build compatibility with older Windows versions.
+@version 0.5.0
+@changelog
+  Near-complete rewrite of Master/Puppet engine
+  New quantized launch method
+  Thread-safe; no conflicts with other extensions
+  Now works also in tandem with external MIDI sync
+  Updated ReaBlink Monitor
+  WASAPI audio might be usable in exclusive mode
+  Smoother sync correction
+  Some new API functions
 @provides
   [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/v$version/$path
   [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/v$version/$path
