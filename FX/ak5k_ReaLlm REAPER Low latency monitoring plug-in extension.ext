@@ -7,14 +7,14 @@
   * lots of code refactoring
   * fix the flickering bug
 @provides
-  [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [linux-armv7l] reaper_reallm-armv7l.so https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [linux32] reaper_reallm-i686.so https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [win64] reaper_reallm-x64.dll https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [win32] reaper_reallm-x86.dll https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [darwin64] reaper_reallm-x86_64.dylib https://github.com/ak5k/reallm/releases/download/v$version/$path
-  [linux64] reaper_reallm-x86_64.so https://github.com/ak5k/reallm/releases/download/v$version/$path
+  [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/$version/$path
+  [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
+  [linux-armv7l] reaper_reallm-armv7l.so https://github.com/ak5k/reallm/releases/download/$version/$path
+  [linux32] reaper_reallm-i686.so https://github.com/ak5k/reallm/releases/download/$version/$path
+  [win64] reaper_reallm-x64.dll https://github.com/ak5k/reallm/releases/download/$version/$path
+  [win32] reaper_reallm-x86.dll https://github.com/ak5k/reallm/releases/download/$version/$path
+  [darwin64] reaper_reallm-x86_64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
+  [linux64] reaper_reallm-x86_64.so https://github.com/ak5k/reallm/releases/download/$version/$path
 @link https://github.com/ak5k/reallm/
 @screenshot https://i.imgur.com/iKHyQXb.gif
 @about
