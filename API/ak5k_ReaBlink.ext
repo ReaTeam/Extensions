@@ -1,26 +1,20 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.5.0
+@version 0.5.1
 @changelog
-  Near-complete rewrite of Master/Puppet engine
-  New quantized launch method
-  Thread-safe; no conflicts with other extensions
-  Now works also in tandem with external MIDI sync
-  Updated ReaBlink Monitor
-  WASAPI audio might be usable in exclusive mode
-  Smoother sync correction
-  Some new API functions
+  removed SetMakeReaperGoBrrr
+  replaced with custom timer
 @provides
-  [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [win32] reaper_reablink-x86.dll https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [linux32] reaper_reablink-i686.so https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [linux64] reaper_reablink-x86_64.so https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [linux-armv7l] reaper_reablink-armv7l.so https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [linux-aarch64] reaper_reablink-aarch64.so https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [darwin-arm64] reaper_reablink-arm64.dylib https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [darwin64] reaper_reablink-x86_64.dylib https://github.com/ak5k/reablink/releases/download/v$version/$path
-  [darwin32] reaper_reablink-i386.dylib https://github.com/ak5k/reablink/releases/download/v$version/$path
+  [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/$version/$path
+  [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/$version/$path
+  [win32] reaper_reablink-x86.dll https://github.com/ak5k/reablink/releases/download/$version/$path
+  [linux32] reaper_reablink-i686.so https://github.com/ak5k/reablink/releases/download/$version/$path
+  [linux64] reaper_reablink-x86_64.so https://github.com/ak5k/reablink/releases/download/$version/$path
+  [linux-armv7l] reaper_reablink-armv7l.so https://github.com/ak5k/reablink/releases/download/$version/$path
+  [linux-aarch64] reaper_reablink-aarch64.so https://github.com/ak5k/reablink/releases/download/$version/$path
+  [darwin-arm64] reaper_reablink-arm64.dylib https://github.com/ak5k/reablink/releases/download/$version/$path
+  [darwin64] reaper_reablink-x86_64.dylib https://github.com/ak5k/reablink/releases/download/$version/$path
+  [darwin32] reaper_reablink-i386.dylib https://github.com/ak5k/reablink/releases/download/$version/$path
 @screenshot https://i.imgur.com/Q8PZUIk.gif
 @about
   REAPER Plug-In Extension providing ReaScript bindings for Ableton Link session, and Ableton Link Test Plan compliant implementations (Master/Puppet modes) for REAPER. 
