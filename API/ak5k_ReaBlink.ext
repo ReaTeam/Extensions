@@ -1,9 +1,7 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.5.1
-@changelog
-  removed SetMakeReaperGoBrrr
-  replaced with custom timer
+@version 0.5.2
+@changelog Local Ableton Link session is now created/joined only after first call to Blink_SetEnabled(). E.g when starting ReaBlink_Monitor.lua script.
 @provides
   [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/$version/$path
   [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/$version/$path
