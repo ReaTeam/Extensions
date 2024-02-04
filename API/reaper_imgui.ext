@@ -1,15 +1,15 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.7.5
+@version 0.8.7.6
 @changelog
-  • Fix compatibility of file drag and drop with dear imgui v1.89.4
-  • Focus new docked windows when they are the only tab in the docker [p=2724239]
-  • Windows: fix detection of the "multimonitor aware" HiDPI mode on Windows 8.1 [p=2724812]
-  • Windows: fix windows not staying in place after moving under certain monitor scales [p=2724640]
-
-  gfx2imgui:
-  • Fix replacing images after (re)initializing gfx
-  • Harden gradrect to gracefully handle bogus Infinity/NaN delta arguments
+  • Fix a brief display of uninitialized pixels when opening docked windows
+  • Fix a crash when REAPER quits while a frame is still open
+  • Fix TableGetColumnSortSpecs accepting invalid negative indices
+  • Handle font size truncation when computing rendering scale
+  • macOS: fix fallback for missing font families in recent OS versions
+  • macOS: fix window position desync when changing monitor resolution in recent OS versions [p=2732554]
+  • Linux: fix windows not staying in place under certain monitor scales [#13]
+  • Linux: repair HiDPI scaling (regression from v0.8) [p=2752987]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
