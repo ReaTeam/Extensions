@@ -1,9 +1,7 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.6.2
-@changelog
-  improved compatibility with older REAPER version 
-  improved pdc calculation with different chain pdc modes
+@version 0.6.3
+@changelog Llm_SetSafed() now matches original FX name in addition to renamed_name
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
