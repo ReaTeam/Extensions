@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="187e8eb41105f72b8254cbd2adbaffb5581cac3b">
+<index version="1" name="ReaTeam Extensions" commit="ea41d7087c0324214e21c74bf3f6ec7209f1f4ce">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2041,7 +2041,7 @@ view the README on github
 
 Contextual toolbars:
 - Fix empty menus being displayed over inapplicable rows in the list on Linux
-- Fix selection in the toolbar list on Windows [[p=2757815](https://forum.cockos.com/showthread.php?p=2757815)]
+- Fix selection in the toolbar list on Windows [p=2757815]
 
 Miscellaneous:
 - Move the Extensions menu items into a SWS/S&M submenu (previous behavior may be restored via [General]/ExtensionsSubmenu=0 in S&M.ini)
@@ -2050,7 +2050,7 @@ REAPER v7 track spacers:
 - Add support in "SWS/wol: Adjust envelope or track height under mouse cursor" and "SWS/wol: Adjust selected envelope or last touched track height"
 - Factor in track height and fixed lanes count when computing the size of track spacers in the TCP
 - Fix prediction of track spacer sizes in the vertical zoom actions
-- Take into account track spacers on hidden tracks activating on the next visible one [[p=2757773](https://forum.cockos.com/showthread.php?p=2757773)]
+- Take into account track spacers on hidden tracks activating on the next visible one [p=2757773]
 
 ReaScript API:
 - Add CF_SendActionShortcut
