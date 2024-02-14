@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="ea41d7087c0324214e21c74bf3f6ec7209f1f4ce">
+<index version="1" name="ReaTeam Extensions" commit="cec142ea54257bf28328f1a5632a55b5faca7f2b">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2033,28 +2033,28 @@ view the README on github
       </version>
       <version name="2.14.0.1-beta" author="reaper-oss" time="2024-02-14T10:56:28Z">
         <changelog><![CDATA[Actions:
-- Add support for REAPER v6.76+ high-precision mousewheel, fixing on affected systems:
-  - SWS/wol: Adjust envelope or track height under mouse cursor
-  - SWS/wol: Adjust selected envelope height
-  - SWS/wol: Adjust selected envelope or last touched track height
-- Repair "SWS: Vertical zoom to selected tracks, minimize others" in REAPER v6.76+ and fix a crash if all selected tracks are height locked
+• Add support for REAPER v6.76+ high-precision mousewheel, fixing on affected systems:
+  - SWS/wol: Adjust envelope or track height under mouse cursor
+  - SWS/wol: Adjust selected envelope height
+  - SWS/wol: Adjust selected envelope or last touched track height
+• Repair "SWS: Vertical zoom to selected tracks, minimize others" in REAPER v6.76+ and fix a crash if all selected tracks are height locked
 
 Contextual toolbars:
-- Fix empty menus being displayed over inapplicable rows in the list on Linux
-- Fix selection in the toolbar list on Windows [p=2757815]
+• Fix empty menus being displayed over inapplicable rows in the list on Linux
+• Fix selection in the toolbar list on Windows [p=2757815]
 
 Miscellaneous:
-- Move the Extensions menu items into a SWS/S&M submenu (previous behavior may be restored via [General]/ExtensionsSubmenu=0 in S&M.ini)
+• Move the Extensions menu items into a SWS/S&M submenu (previous behavior may be restored via [General]/ExtensionsSubmenu=0 in S&M.ini)
 
 REAPER v7 track spacers:
-- Add support in "SWS/wol: Adjust envelope or track height under mouse cursor" and "SWS/wol: Adjust selected envelope or last touched track height"
-- Factor in track height and fixed lanes count when computing the size of track spacers in the TCP
-- Fix prediction of track spacer sizes in the vertical zoom actions
-- Take into account track spacers on hidden tracks activating on the next visible one [p=2757773]
+• Add support in "SWS/wol: Adjust envelope or track height under mouse cursor" and "SWS/wol: Adjust selected envelope or last touched track height"
+• Factor in track height and fixed lanes count when computing the size of track spacers in the TCP
+• Fix prediction of track spacer sizes in the vertical zoom actions
+• Take into account track spacers on hidden tracks activating on the next visible one [p=2757773]
 
 ReaScript API:
-- Add CF_SendActionShortcut
-- Remove bogus range check in SNM_SetDoubleConfigVar{,Ex} when writing to 32-bit variables]]></changelog>
+• Add CF_SendActionShortcut
+• Remove bogus range check in SNM_SetDoubleConfigVar{,Ex} when writing to 32-bit variables]]></changelog>
         <source platform="darwin-arm64" file="reaper_sws-arm64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.1/reaper_sws-arm64.dylib</source>
         <source platform="darwin32" file="reaper_sws-i386.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.1/reaper_sws-i386.dylib</source>
         <source platform="darwin64" file="reaper_sws-x86_64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.1/reaper_sws-x86_64.dylib</source>
