@@ -1,7 +1,7 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.5.4
-@changelog fix dummy pre-roll regions clean-up
+@version 0.5.5
+@changelog improve Linux compatibility
 @provides
   [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/$version/$path
   [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/$version/$path
