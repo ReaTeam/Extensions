@@ -1,7 +1,7 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.6.4
-@changelog improve Linux compatibility
+@version 0.6.5
+@changelog fix offline render crash
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
