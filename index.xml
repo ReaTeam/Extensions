@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="0ffe4add67c3eb0599ad151663617f8c75632848">
+<index version="1" name="ReaTeam Extensions" commit="7d87f66f03fec9887d2481844afae43cf74293cb">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2394,6 +2394,18 @@ improved pdc calculation with different chain pdc modes]]></changelog>
         <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/0.6.5/reaper_reallm-x86.dll</source>
         <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/0.6.5/reaper_reallm-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/0.6.5/reaper_reallm-x86_64.so</source>
+      </version>
+      <version name="0.6.6" author="ak5k" time="2024-02-29T01:57:43Z">
+        <changelog><![CDATA[fix macos crash]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reallm-aarch64.so">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reallm-arm64.dylib">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-arm64.dylib</source>
+        <source platform="linux-armv7l" file="reaper_reallm-armv7l.so">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-armv7l.so</source>
+        <source platform="darwin32" file="reaper_reallm-i386.dylib">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-i386.dylib</source>
+        <source platform="linux32" file="reaper_reallm-i686.so">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-i686.so</source>
+        <source platform="win64" file="reaper_reallm-x64.dll">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-x64.dll</source>
+        <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-x86.dll</source>
+        <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/0.6.6/reaper_reallm-x86_64.so</source>
       </version>
     </reapack>
     <reapack name="frabert_ogler.ext" type="extension" desc="Ogler: FX video plugin for using GLSL shaders in REAPER">
