@@ -1,7 +1,7 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.6.9
-@changelog fix false FX chain pdc mode detection in REAPER versions 6.72 - 7.05
+@version 0.6.10
+@changelog fix checking if send to parent folder is not active
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
