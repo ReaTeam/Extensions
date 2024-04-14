@@ -1,15 +1,99 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.8.7.6
+@version 0.9
 @changelog
-  • Fix a brief display of uninitialized pixels when opening docked windows
-  • Fix a crash when REAPER quits while a frame is still open
-  • Fix TableGetColumnSortSpecs accepting invalid negative indices
-  • Handle font size truncation when computing rendering scale
-  • macOS: fix fallback for missing font families in recent OS versions
-  • macOS: fix window position desync when changing monitor resolution in recent OS versions [p=2732554]
-  • Linux: fix windows not staying in place under certain monitor scales [#13]
-  • Linux: repair HiDPI scaling (regression from v0.8) [p=2752987]
+  • Add an action to open the HTML documentation
+  • Add a setting to disable hardware acceleration (Direct3D on Windows and OpenGL on macOS only) [p=2763726]
+  • Add saving and restoring UI state in REAPER screensets
+  • Document the minimum compatible version of each API function
+  • Fix list clippers not always using the specified context
+  • Fix v0.8.7's incorrect shim of ListClipper_ForceDisplayRangeByIndices
+  • Implement error detection in the OpenGL renderer
+  • Improve accuracy when scaling up fonts for HiDPI
+  • Limit image width/height to 8192 pixels
+  • Reduce the maximum count of per-context attachments to 1024
+  • Report an error when using an EEL callback function outside of a callback
+  • Support toggling WindowFlags_NoInputs after window creation
+  • Throw an error when resources are wastefully re-created every frame
+  • Update Dear ImGui to v1.90.5
+  • Linux: fix input of multiple ponctuation keys (+ PrintScreen on every platform)
+  • Linux: fix more cases of window positions going out of sync with the WM [#16]
+  • Linux: workaround windows taking a long time to open on KDE + Wayland + Intel GPUs [p=2769385]
+  • Linux: macOS: fix detection of the mouse hovering another application
+  • macOS: disable the Metal renderer and default to OpenGL on macOS earlier than 10.11
+  • macOS: don't stretch contents when resizing OpenGL windows using system decorations
+  • macOS: fix off-by-one mouse cursor position at the bottom of the screen
+  • macOS: fix stuck left mouse button if it's pressed before Ctrl and right click emulation is enabled
+  • macOS: fix the OpenGL renderer failing on macOS 10.9 [p=2766024]
+  • macOS: re-initialize OpenGL after moving a window to another monitor
+  • Windows: fix missing preview when dragging files from the Media Explorer
+  • Windows: fix possible file drop false positive when the cursor is near another window
+
+  C++ bindings (reaper_imgui_functions.h):
+  • Add binary backward compatibility and minimum version check
+  • Add error reporting by locally throwing ImGui_Error
+  • Add ImGui::load() to initialize the API instead of lazy-loading on call
+  • Now requires C++17 or newer
+  • Pass optional scalars directly by value
+
+  Lua bindings (imgui.lua):
+  • Complete redesign of the backward-compatibility shim system
+  • Return a table containing the functions from the requested API version
+    - Allow multiple modules within the same action to use different API versions
+    - Numeric constants are exposed as values rather than functions
+  • Simplify the recommended example snippets using GetBuiltinPath + require
+
+  Python bindings:
+  • Remove ImGui_ prefix from function names and rename to imgui.py
+
+  Demo script:
+  • Examples > Custom rendering > Draw Channels
+  • Layout & Scrolling > Child windows > Auto-resize with constraints
+  • Layout & Scrolling > Child windows > Manual-resize
+  • Layout & Scrolling > Overlap Mode
+  • Tables > Angled headers
+  • Tables > Row height
+  • Tools > Item Picker
+  • Widgets > Drag and Drop > Tooltip at target location
+  • Widgets > Text Input > Miscellaneous
+  • Widgets > Tooltips
+
+  gfx2imgui.lua:
+  • Add REAPER v7.03's getchar(65536)&8 and getchar(65537), fix &4
+  • Support setfont with more than one font flag
+  • Trigger gfx.triangle's line heuristic with more than 2 unique points
+  • Various performance optimizations
+
+  API changes:
+  • Add 'alpha_mul' optional parameter to GetColorEx
+  • Add BeginItemTooltip and SetItemTooltip
+  • Add ChildFlags_{AlwaysAutoResize,AlwaysUseWindowPadding,{,Auto}Resize{X,Y},Border,FrameStyle,None}
+  • Add ComboFlags_WidthFitPreview
+  • Add ConfigVar_HoverStationaryDelay and _HoverFlagsForTooltip{Mouse,Nav}
+  • Add DebugFlashStyleColor and DebugStartItemPicker
+  • Add DrawList_AddConcavePolyFilled and DrawList_PathFillConcave
+  • Add DrawList_{AddEllipse{,Filled}} and DrawList_PathEllipticalArcTo
+  • Add GetBuiltinPath (shortcut for "$resource_path/Scripts/ReaTeam Extensions/API")
+  • Add HoveredFlags_AllowWhenOverlappedBy{Item,Window} and _ForTooltip
+  • Add IsKeyChordPressed
+  • Add Key_F{13..24} and Key_App{Back,Forward}
+  • Add ListClipper_IncludeItemByIndex and rename _IncludeRangeByIndices to _IncludeItemsByIndex
+  • Add PopupFlags_NoReopen
+  • Add StyleVar_{Tab,TabBar}BorderSize and TabItemFlags_NoAssumedClosure
+  • Add TableAngledHeadersRow, TableColumnFlags_AngledHeader and StyleVar_TableAngledHeadersAngle
+  • Add TableFlags_HighlightHoveredColumn
+  • Add TreeNodeFlags_SpanAllColumns
+  • Remove BeginChildFrame and EndChildFrame (use BeginChild+ChildFlags_FrameStyle instead)
+  • Remove DestroyContext (was not useful since 0.5)
+  • Remove support of Windows virtual key codes (was deprecated in 0.6)
+  • Remove TableGetColumnSortSpecs's redundant sort_order return value
+  • Remove WindowFlags_AlwaysUseWindowPadding
+  • Rename ShowStackToolWindow to ShowIDStackToolWindow
+  • Rename {Selectable,TreeNode}Flags_AllowItemOverlap to _AllowOverlap
+  • Replace BeginChild's (bool)border parameter with (int)child_flags
+  • Replace SetItemAllowOverlap (after the item) with SetNextItemAllowOverlap (before the item)
+  • Set TableNeedSort's has_specs to false when not sorting in tristate mode
+  • Swap the column_{index,user_id} return values of TableGetColumnSortSpecs
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -23,19 +107,20 @@
   [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
   [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
   [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
-  [script] imgui_python.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
+  [script] imgui.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [script] imgui.lua https://github.com/cfillion/reaimgui/releases/download/v$version/$path
-  [script] gfx2imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/$path
+  [script] imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/shims/$path
+  [script] gfx2imgui.lua https://github.com/cfillion/reaimgui/releases/download/v$version/$path
 @link
   cfillion.ca https://cfillion.ca
   Forum thread https://forum.cockos.com/showthread.php?t=250419
   GitHub repository https://github.com/cfillion/reaimgui
   Issue tracker https://github.com/cfillion/reaimgui/issues
   dearimgui.org https://www.dearimgui.org/
+  Dear ImGui README https://github.com/ocornut/imgui#readme
   Dear ImGui FAQ https://www.dearimgui.org/faq
 @screenshot
-  Simple Layout / Custom Rendering https://i.imgur.com/lSUh8Yz.png
+  Demo screenshot https://i.imgur.com/dolYdkB.png
   Tables https://i.imgur.com/SQpGdWi.png
 @donation
   Donate via PayPal https://paypal.me/cfillion
