@@ -92,7 +92,7 @@
   • Rename {Selectable,TreeNode}Flags_AllowItemOverlap to _AllowOverlap
   • Replace BeginChild's (bool)border parameter with (int)child_flags
   • Replace SetItemAllowOverlap (after the item) with SetNextItemAllowOverlap (before the item)
-  • Set TableNeedSort's has_specs to false when not sorting in tristate mode
+  • Set TableNeedSort's has_specs output value to false when not sorting in tristate mode
   • Swap the column_{index,user_id} return values of TableGetColumnSortSpecs
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
