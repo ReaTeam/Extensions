@@ -72,7 +72,7 @@
   • Add ConfigVar_HoverStationaryDelay and _HoverFlagsForTooltip{Mouse,Nav}
   • Add DebugFlashStyleColor and DebugStartItemPicker
   • Add DrawList_AddConcavePolyFilled and DrawList_PathFillConcave
-  • Add DrawList_{AddEllipse{,Filled}} and DrawList_PathEllipticalArcTo
+  • Add DrawList_AddEllipse{,Filled} and DrawList_PathEllipticalArcTo
   • Add GetBuiltinPath (shortcut for "$resource_path/Scripts/ReaTeam Extensions/API")
   • Add HoveredFlags_AllowWhenOverlappedBy{Item,Window} and _ForTooltip
   • Add IsKeyChordPressed
