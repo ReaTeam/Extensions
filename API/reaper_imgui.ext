@@ -3,7 +3,7 @@
 @version 0.9
 @changelog
   • Add an action to open the HTML documentation
-  • Add a setting to disable hardware acceleration (Direct3D on Windows and OpenGL on macOS only) [p=2763726]
+  • Add a setting to disable hardware acceleration [p=2763726]
   • Add saving and restoring UI state in REAPER screensets
   • Document the minimum compatible version of each API function
   • Fix list clippers not always using the specified context
