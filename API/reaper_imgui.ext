@@ -1,7 +1,7 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
 @version 0.9.0.1
-@changelog • Hotfix: repair docking crashing on Windows
+@changelog • Hotfix: repair v0.9 crashing when docking on Windows
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
