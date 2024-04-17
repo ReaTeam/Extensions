@@ -1,7 +1,11 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.0.1
-@changelog • Hotfix: repair v0.9 crashing when docking on Windows
+@version 0.9.0.2
+@changelog
+  • Fix 0.9 not switching the active font texture to the current DPI in dockers
+  • Fix 0.9 shims letting through unknown virtual key codes and asserting
+  • macOS: fix incorrect clipping in the Metal renderer if the clip rect's origin is smaller than the window's position
+  • Windows: repair drag-docking over floating dockers
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
