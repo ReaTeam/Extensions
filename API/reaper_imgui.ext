@@ -8,10 +8,16 @@
   • Document CollapsingHeader's and Selectable's p_* parameters as optional
   • Fix assertion failure when setting an empty drag/drop payload
   • Fix incorrect values of ModFlags_{Alt,Shift,Super} in 0.8 shims
-  • gfx2imgui: clamp excessively large requested font sizes [p=2781729]
   • Prevent stuck keys when keyboard capture is released from an action's global shortcut key [p=2765259]
   • Update to dear imgui v1.90.6 <https://github.com/ocornut/imgui/releases/tag/v1.90.6>
-
+  
+  C++ bindings:
+  • Annotate Begin* and Create* functions as [[nodiscard]]
+  • Fix all pointer parameters being effectively optional
+  
+  gfx2imgui:
+  • Clamp excessively large requested font sizes [p=2781729]
+  
   API changes:
   • Add StyleVar_TableAngledHeadersTextAlign
   • Add TreeNodeFlags_SpanTextWidth
