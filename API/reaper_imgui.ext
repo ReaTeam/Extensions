@@ -9,6 +9,7 @@
   • Fix assertion failure when setting an empty drag/drop payload
   • Fix incorrect values of ModFlags_{Alt,Shift,Super} in 0.8 shims
   • Prevent stuck keys when keyboard capture is released from an action's global shortcut key [p=2765259]
+  • Remove ReaImGui_Hello World.eel from the ReaPack package
   • Update to dear imgui v1.90.6 <https://github.com/ocornut/imgui/releases/tag/v1.90.6>
 
   C++ bindings:
@@ -33,8 +34,6 @@
   [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
-  [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
-  [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
   [script] imgui.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script] imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/shims/$path
