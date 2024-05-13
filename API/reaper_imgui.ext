@@ -1,11 +1,28 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.0.2
+@version 0.9.1
 @changelog
-  • Fix 0.9 not switching the active font texture to the current DPI in dockers
-  • Fix 0.9 shims letting through unknown virtual key codes and asserting
-  • macOS: fix incorrect clipping in the Metal renderer if the clip rect's origin is smaller than the window's position
-  • Windows: repair drag-docking over floating dockers
+  • Add a LuaCATS definition file for IDE language servers (in the Releases page on GitHub)
+  • Clarify error messages occurring during font loading are font-related [p=2776476]
+  • Differentiate between integer/number in the documented Lua signatures
+  • Document CollapsingHeader's and Selectable's p_* parameters as optional
+  • Fix assertion failure when setting an empty drag/drop payload
+  • Fix incorrect values of ModFlags_{Alt,Shift,Super} in 0.8 shims
+  • Prevent stuck keys when keyboard capture is released from an action's global shortcut key [p=2765259]
+  • Remove ReaImGui_Hello World.eel from the ReaPack package
+  • Update to dear imgui v1.90.6 <https://github.com/ocornut/imgui/releases/tag/v1.90.6>
+
+  C++ bindings:
+  • Annotate Begin* and Create* functions as [[nodiscard]]
+  • Fix all pointer parameters being effectively optional
+
+  gfx2imgui:
+  • Clamp excessively large requested font sizes [p=2781729]
+
+  API changes:
+  • Add StyleVar_TableAngledHeadersTextAlign
+  • Add TreeNodeFlags_SpanTextWidth
+  • ProgressBar accepts negative 'fraction' values for indeterminate mode
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
@@ -17,8 +34,6 @@
   [win32] reaper_imgui-x86.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [win64] reaper_imgui-x64.dll https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script main] ReaImGui_Demo.lua https://github.com/cfillion/reaimgui/raw/v$version/examples/demo.lua
-  [script main] ReaImGui_Hello World.eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world.eel
-  [script main] ReaImGui_Hello World (legacy syntax).eel https://github.com/cfillion/reaimgui/raw/v$version/examples/hello_world_legacy.eel
   [script] imgui.py https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [data] reaper_imgui_doc.html https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [script] imgui.lua https://github.com/cfillion/reaimgui/raw/v$version/shims/$path
