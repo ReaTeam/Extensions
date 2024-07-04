@@ -1,28 +1,25 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.1
+@version 0.9.2
 @changelog
-  • Add a LuaCATS definition file for IDE language servers (in the Releases page on GitHub)
-  • Clarify error messages occurring during font loading are font-related [p=2776476]
-  • Differentiate between integer/number in the documented Lua signatures
-  • Document CollapsingHeader's and Selectable's p_* parameters as optional
-  • Fix assertion failure when setting an empty drag/drop payload
-  • Fix incorrect values of ModFlags_{Alt,Shift,Super} in 0.8 shims
-  • Prevent stuck keys when keyboard capture is released from an action's global shortcut key [p=2765259]
-  • Remove ReaImGui_Hello World.eel from the ReaPack package
-  • Update to dear imgui v1.90.6 <https://github.com/ocornut/imgui/releases/tag/v1.90.6>
-
-  C++ bindings:
-  • Annotate Begin* and Create* functions as [[nodiscard]]
-  • Fix all pointer parameters being effectively optional
-
-  gfx2imgui:
-  • Clamp excessively large requested font sizes [p=2781729]
+  • Add experimental Zig bindings
+  • Fix the 0.7 shim of CaptureKeyboardFromApp [p=2790175]
+  • Fix the Viewport API not starting a frame [p=2783450]
+  • Update to dear imgui 1.90.9
 
   API changes:
-  • Add StyleVar_TableAngledHeadersTextAlign
-  • Add TreeNodeFlags_SpanTextWidth
-  • ProgressBar accepts negative 'fraction' values for indeterminate mode
+  • Add ChildFlags_NavFlattened
+  • Add Col_Tab{SelectedOverline,DimmedSelectedOverline} and TabBarFlags_DrawSelectedOverline
+  • Add ConfigFlags_NoKeyboard
+  • Add CreateImageFromLICE (support bitmaps created using JS_LICE_CreateBitmap only)
+  • Add InputTextFlags_{Display,Parse}EmptyRefVal
+  • Add optional 'flags' parameter to CreateImageFromMem
+  • Add Shortcut, SetNextItemShortcut and InputFlags_*.
+  • Add SliderFlags_WrapAround
+  • Add TableGetHoveredColumn
+  • Rename Col_TabActive to _TabSelected, _TabUnfocused to _TabDimmed and TabUnfocusedActive to _TabDimmedSelected
+  • Rename DragDropFlags_SourceAutoExpirePayload to _PayloadAutoExpire
+  • Swap Mod_Ctrl<>Mod_Super on macOS and remove Mod_Shortcut
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
