@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="acde8363d5a360bb0a472a48cad9ce76f215f79f">
+<index version="1" name="ReaTeam Extensions" commit="bc056a26b06cce71f8db958e7affe2fd806e63b5">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2047,6 +2047,14 @@ API changes:
         <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/0.1.8/reaper_reasolotus-x64.dll</source>
         <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.1.8/reaper_reasolotus-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/0.1.8/reaper_reasolotus-x86_64.so</source>
+      </version>
+      <version name="0.2.0" author="ak5k" time="2024-08-27T18:19:54Z">
+        <changelog><![CDATA[New separate action called "ReaSolotus Init" to initialized project. Projects will have to be manually initialized. Displays error message, if ReaSolotus is enabled, but project is not initialized.]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reasolotus-aarch64.so">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reasolotus-arm64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-arm64.dylib</source>
+        <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x64.dll</source>
+        <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x86_64.so</source>
       </version>
     </reapack>
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
