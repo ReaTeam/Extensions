@@ -2,7 +2,7 @@
 @author cfillion
 @version 0.9.3
 @changelog
-  • Fix sub-30ms fast double-clicks landing on the window under [p=2795708]
+  • Fix sub-30ms double-clicks landing on the window under [p=2795708]
   • Repair the LuaCATS definition file
   • macOS: fix compatibility with macOS 15 "Sequoia" [p=2809649]
   • macOS: fix a crash when a texture is is bigger than Metal limits
