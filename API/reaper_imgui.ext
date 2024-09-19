@@ -1,25 +1,17 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.2
+@version 0.9.3
 @changelog
-  • Add experimental Zig bindings
-  • Fix the 0.7 shim of CaptureKeyboardFromApp [p=2790175]
-  • Fix the Viewport API not starting a frame [p=2783450]
-  • Update to dear imgui 1.90.9
+  • Fix sub-30ms fast double-clicks landing on the window under [p=2795708]
+  • Repair the LuaCATS definition file
+  • macOS: fix compatibility with macOS 15 "Sequoia" [p=2809649]
+  • macOS: fix a crash when a texture is is bigger than Metal limits
+  • macOS: fix restoration of Ctrl when regaining focus and right-click emulation is enabled
+  • macOS: fix stuck right-click emulation when unfocusing while Ctrl is down
+  • macOS: forward mousewheel events when WindowFlags_NoInputs is set [p=2799779]
 
   API changes:
-  • Add ChildFlags_NavFlattened
-  • Add Col_Tab{SelectedOverline,DimmedSelectedOverline} and TabBarFlags_DrawSelectedOverline
-  • Add ConfigFlags_NoKeyboard
-  • Add CreateImageFromLICE (support bitmaps created using JS_LICE_CreateBitmap only)
-  • Add InputTextFlags_{Display,Parse}EmptyRefVal
-  • Add optional 'flags' parameter to CreateImageFromMem
-  • Add Shortcut, SetNextItemShortcut and InputFlags_*.
-  • Add SliderFlags_WrapAround
-  • Add TableGetHoveredColumn
-  • Rename Col_TabActive to _TabSelected, _TabUnfocused to _TabDimmed and TabUnfocusedActive to _TabDimmedSelected
-  • Rename DragDropFlags_SourceAutoExpirePayload to _PayloadAutoExpire
-  • Swap Mod_Ctrl<>Mod_Super on macOS and remove Mod_Shortcut
+  • Add CreateFontFromMem
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
