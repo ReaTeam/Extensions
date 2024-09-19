@@ -5,7 +5,7 @@
   • Fix sub-30ms double-clicks landing on the window under [p=2795708]
   • Repair the LuaCATS definition file
   • macOS: fix compatibility with macOS 15 "Sequoia" [p=2809649]
-  • macOS: fix a crash when a texture is is bigger than Metal limits
+  • macOS: fix a crash when uploading a texture bigger than Metal limits
   • macOS: fix restoration of Ctrl when regaining focus and right-click emulation is enabled
   • macOS: fix stuck right-click emulation when unfocusing while Ctrl is down
   • macOS: forward mousewheel events when WindowFlags_NoInputs is set [p=2799779]
