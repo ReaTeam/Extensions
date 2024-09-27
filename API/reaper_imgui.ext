@@ -1,17 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.3
+@version 0.9.3.1
 @changelog
-  • Fix sub-30ms double-clicks landing on the window under [p=2795708]
-  • Repair the LuaCATS definition file
-  • macOS: fix compatibility with macOS 15 "Sequoia" [p=2809649]
-  • macOS: fix a crash when uploading a texture bigger than Metal limits
-  • macOS: fix restoration of Ctrl when regaining focus and right-click emulation is enabled
-  • macOS: fix stuck right-click emulation when unfocusing while Ctrl is down
-  • macOS: forward mousewheel events when WindowFlags_NoInputs is set [p=2799779]
-
-  API changes:
-  • Add CreateFontFromMem
+  • Fix a potential crash when removing textures
+  • Windows: repair drag-docking functionality [#23]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
