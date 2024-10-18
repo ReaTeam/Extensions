@@ -1,9 +1,10 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.3.1
+@version 0.9.3.2
 @changelog
-  • Fix a potential crash when removing textures
-  • Windows: repair drag-docking functionality [#23]
+  • Fix a crash when saving screensets after more than one context shared an ID
+  • Select better font fallbacks in the HTML documentation
+  • Linux: fix a crash when opening a window on the same frame images got garbage-collected
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
