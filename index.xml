@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="07384a827e28d55bd838bc5411d99234405bdbb6">
+<index version="1" name="ReaTeam Extensions" commit="2e90846a68d8461c95fcf62dfde3bc459c234060">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2751,11 +2751,11 @@ More information on GitHub
     </reapack>
     <reapack name="ak5k_ReaLlm REAPER Low latency monitoring plug-in extension.ext" type="extension" desc="ReaLlm: REAPER Low latency monitoring plug-in extension">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaLlm: REAPER Low latency monitoring plug-in extension\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaLlm: REAPER Low latency monitoring plug-in extension\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Cubase/Logic style low latency monitoring mode for REAPER. While enabled, restricts PDC latency ('plugin delay') to one block/buffer size by bypassing plugins from input monitored signalchains. Re-enables plugins once signalchain is no longer input monitored, or ReaLlm is disabled. While ReaLlm is enabled, disabled plugins can be re-enabled manually, and ReaLlm will consider them 'safed' and leave them untouched, unless they're again manually re-disabled. Remembers 'safed' plugins per REAPER project. Leaves already disabled plugins untouched.\par}
 }
 ]]></description>
@@ -2980,6 +2980,20 @@ improved bug fix on FX getting 'safed' without user interaction]]></changelog>
         <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/0.6.10/reaper_reallm-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/0.6.10/reaper_reallm-x86_64.so</source>
       </version>
+      <version name="0.7.0" author="ak5k" time="2024-12-13T07:58:27Z">
+        <changelog><![CDATA[Tracks with names including 'Llm' are treated as monitored inputs.
+Added Windows ARM build]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reallm-aarch64.so">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reallm-arm64.dylib">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-arm64.dylib</source>
+        <source platform="linux-armv7l" file="reaper_reallm-armv7l.so">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-armv7l.so</source>
+        <source platform="darwin32" file="reaper_reallm-i386.dylib">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-i386.dylib</source>
+        <source platform="linux32" file="reaper_reallm-i686.so">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-i686.so</source>
+        <source platform="win64" file="reaper_reallm-x64.dll">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-x64.dll</source>
+        <source platform="win32" file="reaper_reallm-x86.dll">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-x86.dll</source>
+        <source platform="darwin64" file="reaper_reallm-x86_64.dylib">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reallm-x86_64.so">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-x86_64.so</source>
+        <source platform="windows-arm64ec" file="reaper_reallm-arm64ec.dll">https://github.com/ak5k/reallm/releases/download/0.7.0/reaper_reallm-arm64ec.dll</source>
+      </version>
     </reapack>
     <reapack name="frabert_ogler.ext" type="extension" desc="Ogler: FX video plugin for using GLSL shaders in REAPER">
       <metadata>
@@ -3012,17 +3026,17 @@ Tutorial
     </reapack>
   </category>
   <metadata>
-    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaTeam Extension Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaTeam Extension Repository\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/ReaTeam/Extensions/workflows/check/badge.svg]\cf0}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Community-maintained collection of extension plugins for REAPER.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/ReaTeam/Extensions/raw/master/index.xml\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use {\field{\*\fldinst{HYPERLINK "https://reapack.com/upload/extension"}}{\fldrslt{\ul
 https://reapack.com/upload/extension
 }}}
