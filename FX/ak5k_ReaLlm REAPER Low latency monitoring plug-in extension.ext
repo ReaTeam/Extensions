@@ -1,7 +1,9 @@
 @description ReaLlm: REAPER Low latency monitoring plug-in extension
 @author ak5k
-@version 0.6.10
-@changelog fix checking if send to parent folder is not active
+@version 0.7.0
+@changelog
+  Tracks with names including 'Llm' are treated as monitored inputs.
+  Added Windows ARM build
 @provides
   [linux-aarch64] reaper_reallm-aarch64.so https://github.com/ak5k/reallm/releases/download/$version/$path
   [darwin-arm64] reaper_reallm-arm64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
@@ -12,6 +14,7 @@
   [win32] reaper_reallm-x86.dll https://github.com/ak5k/reallm/releases/download/$version/$path
   [darwin64] reaper_reallm-x86_64.dylib https://github.com/ak5k/reallm/releases/download/$version/$path
   [linux64] reaper_reallm-x86_64.so https://github.com/ak5k/reallm/releases/download/$version/$path
+  [windows-arm64ec] reaper_reallm-arm64ec.dll https://github.com/ak5k/reallm/releases/download/$version/$path
 @link https://github.com/ak5k/reallm/
 @screenshot https://i.imgur.com/iKHyQXb.gif
 @about
