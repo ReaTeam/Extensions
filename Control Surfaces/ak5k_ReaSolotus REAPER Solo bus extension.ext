@@ -1,7 +1,7 @@
 @description ReaSolotus: REAPER Solo bus extension
 @author ak5k
-@version 0.2.0
-@changelog New separate action called "ReaSolotus Init" to initialized project. Projects will have to be manually initialized. Displays error message, if ReaSolotus is enabled, but project is not initialized.
+@version 0.2.1
+@changelog Add multi-channel support (by kronihias)
 @provides
   [linux-aarch64] reaper_reasolotus-aarch64.so https://github.com/ak5k/reasolotus/releases/download/$version/$path
   [darwin-arm64] reaper_reasolotus-arm64.dylib https://github.com/ak5k/reasolotus/releases/download/$version/$path
