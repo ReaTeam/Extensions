@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="2e90846a68d8461c95fcf62dfde3bc459c234060">
+<index version="1" name="ReaTeam Extensions" commit="d4a2542de2194973801dd953dc350f677cd7e32c">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2080,7 +2080,7 @@ API changes:
   <category name="Control Surfaces">
     <reapack name="ak5k_ReaSolotus REAPER Solo bus extension.ext" type="extension" desc="ReaSolotus: REAPER Solo bus extension">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -2118,6 +2118,14 @@ API changes:
         <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x64.dll</source>
         <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x86_64.dylib</source>
         <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/0.2.0/reaper_reasolotus-x86_64.so</source>
+      </version>
+      <version name="0.2.1" author="ak5k" time="2025-01-19T15:07:27Z">
+        <changelog><![CDATA[Add multi-channel support (by kronihias)]]></changelog>
+        <source platform="linux-aarch64" file="reaper_reasolotus-aarch64.so">https://github.com/ak5k/reasolotus/releases/download/0.2.1/reaper_reasolotus-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reasolotus-arm64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.2.1/reaper_reasolotus-arm64.dylib</source>
+        <source platform="win64" file="reaper_reasolotus-x64.dll">https://github.com/ak5k/reasolotus/releases/download/0.2.1/reaper_reasolotus-x64.dll</source>
+        <source platform="darwin64" file="reaper_reasolotus-x86_64.dylib">https://github.com/ak5k/reasolotus/releases/download/0.2.1/reaper_reasolotus-x86_64.dylib</source>
+        <source platform="linux64" file="reaper_reasolotus-x86_64.so">https://github.com/ak5k/reasolotus/releases/download/0.2.1/reaper_reasolotus-x86_64.so</source>
       </version>
     </reapack>
     <reapack name="brumbear_ReaKontrol.ext" type="extension" desc="ReaKontrol">
