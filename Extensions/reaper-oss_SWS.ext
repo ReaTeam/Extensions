@@ -1,9 +1,34 @@
 @description SWS/S&M extension
-@version 2.14.0.3
+@version 2.14.0.4-beta
 @changelog
-  • Always re-apply master track auto-icon rules when loading projects [p=2802388]
-  • Fix arrange view vertical scrolling in Loudness and some wol actions [#1888]
-  • ReaScript API: Increase BR_Win32_GetWindowText's requested buffer size [#1896]
+  Actions:
+  • Fix multi-selection in "Xenakios/SWS: Choose files for random insert" on Linux and macOS [p=2839888]
+  • Fix the red ruler getting stuck when disabling while recording
+  • Set the red ruler to yellow when recording is paused
+
+  Auto color:
+  • Repair setting the gradient end color on Windows [t=295534]
+
+  Cycle actions:
+  • Fix running cycle actions from the editor's "Main (alt recording)" section [p=2809773]
+  • Deprecate the "Main (alt recording)" section in the Cycle Action editor
+
+  MIDI editor:
+  • Account for HiDPI scaling [#1916]
+  • Clamp MIDI note velocity to 1 in Finger actions, API and when applying grooves [t=298312]
+
+  Miscellaneous:
+  • Protect against recursive symbolic links when scanning directories [p=2813993]
+
+  Notes:
+  • Don't scroll to the top when refreshing and the text is identical [#1700]
+  • Tolerate UTF-8 Byte Order Mark when importing SRT files (issue 695, issue 1928)
+
+  ReaScript API:
+  • Repair BR_GetMouseCursorContext over envelopes lanes set to "Project default behavior outside of automation items" [#1908]
+
+  Region playlist:
+  • Fix scrolling to the next region instead of the current one after activating [#1919]
 @author reaper-oss
 @links
   Website https://www.sws-extension.org/
