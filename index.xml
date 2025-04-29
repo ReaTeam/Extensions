@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="45ab20568d7abd285faf9cfc80a059772d7521ee">
+<index version="1" name="ReaTeam Extensions" commit="e9afb84167fcd21ced334c4ba929207464e2cb7b">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -617,11 +617,11 @@ Fixed bug in JS_Window_GetRelated.]]></changelog>
     </reapack>
     <reapack name="reaper_imgui.ext" type="extension" desc="ReaImGui: ReaScript binding for Dear ImGui">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaImGui: ReaScript binding for Dear ImGui\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaImGui: ReaScript binding for Dear ImGui\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 ReaImGui is a ReaScript binding and REAPER backend for the {\field{\*\fldinst{HYPERLINK "https://www.dearimgui.org/"}}{\fldrslt{\ul
 Dear ImGui
 }}}
@@ -630,7 +630,7 @@ Dear ImGui
 FAQ
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Send bug reports on the {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reaimgui/issues"}}{\fldrslt{\ul
 issue tracker
 }}}
@@ -2074,6 +2074,39 @@ API changes:
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.2/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.9.3.2/shims/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.2/gfx2imgui.lua</source>
+      </version>
+      <version name="0.9.3.3" author="cfillion" time="2025-04-29T17:29:32Z">
+        <changelog><![CDATA[• Accurately detect when script execution is suspended (REAPER v7.28+ only)
+• Fix default flags in Demo > Widgets > Text Input > Multi-line
+• Fix empty lines in imgui_defs.lua due to empty section help text
+• Fix gaining logical focus when the OS window gets it from a window outside the context
+• Fix omitting ColorPick4's ref_col parameter
+• Fix splash screen detection being off by one frame
+• Limit user window sizes to 8192px per axis to avoid crashes
+• macOS: report hit-testing transparency to SWELL's WindowFromPoint
+• Windows: fix Alt key input while holding down a mouse button when "Allow keyboard commands when mouse-editing" is disabled
+
+gfx2imgui:
+• Accept passing a nil and other non-string names to gfx.init
+• Fix gfx.getchar returning a nil second value when closing
+• Fix unattached font fallback nearest lookup
+• Implement inverted text effect approximation
+• Repair rectangle rotation
+• Support uppercase font flag bytes]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.9.3.3/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.9.3.3/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
