@@ -1,0 +1,34 @@
+@description ReaSonus Native
+@author Navelpluisje
+@version 0.1.1
+@changelog Initial ReaPack version
+@provides
+  [darwin-arm64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib
+  [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x64.dll
+  [win32] reaper_ReasonusNative-x86.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x86.dll
+  [darwin64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib
+@link
+  Documentation https://navelpluisje.github.io/reasonus/
+  Report Issue https://github.com/navelpluisje/Reasonus-Native/issues
+  Repository https://github.com/navelpluisje/Reasonus-Native
+@donation
+  Tipee https://en.tipeee.com/navelpluisje
+  Buy me a coffee https://buymeacoffee.com/navelpluisje
+@about
+  # ReaSonus Native
+
+  The REAPER extension fully catered for the Presonus FaderPort.
+
+  ##  Built for REAPER
+
+  Rather than forcing you to revise your mixing method, the FaderPort augments the way you currently mix. You still use your faithful keyboard and mouse for things they do well, and the FaderPort handles the features you want to get your fingers on, allowing you to customize your workflow.
+
+  ##  Studio One and more
+
+  ReaSonus Native has beside ±95% of the Studio One features also:
+
+  - ‘Unlimited’ custom editable filters
+  - MIDI learn style plugin mapping
+  - Swap Shift buttons
+  - Controll last touched plugin param
+
