@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="e9afb84167fcd21ced334c4ba929207464e2cb7b">
+<index version="1" name="ReaTeam Extensions" commit="dac25069c76460c0752e2e84ed529827feb6d9f7">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2185,6 +2185,38 @@ gfx2imgui:
 - Configuration file reakontrol.ini is auto generated on first startup]]></changelog>
         <source file="ReaKontrolConfig/reakontrol_EXAMPLE.ini">https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reakontrol_EXAMPLE.ini</source>
         <source platform="win64" file="reaper_kontrol.dll">https://github.com/brummbrum/reaKontrol/releases/download/v1.10/reaper_kontrol.dll</source>
+      </version>
+    </reapack>
+    <reapack name="navelpluisje_ReaSonus Native.ext" type="extension" desc="ReaSonus Native">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaSonus Native\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The REAPER extension fully catered for the Presonus FaderPort.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Built for REAPER\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Rather than forcing you to revise your mixing method, the FaderPort augments the way you currently mix. You still use your faithful keyboard and mouse for things they do well, and the FaderPort handles the features you want to get your fingers on, allowing you to customize your workflow.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Studio One and more\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaSonus Native has beside \u177 ?95% of the Studio One features also:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u8216'Unlimited\u8217' custom editable filters\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MIDI learn style plugin mapping\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Swap Shift buttons\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Controll last touched plugin param\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://navelpluisje.github.io/reasonus/">Documentation</link>
+        <link rel="website" href="https://github.com/navelpluisje/Reasonus-Native/issues">Report Issue</link>
+        <link rel="website" href="https://github.com/navelpluisje/Reasonus-Native">Repository</link>
+        <link rel="donation" href="https://en.tipeee.com/navelpluisje">Tipee</link>
+        <link rel="donation" href="https://buymeacoffee.com/navelpluisje">Buy me a coffee</link>
+      </metadata>
+      <version name="0.1.1" author="Navelpluisje" time="2025-05-28T22:17:36Z">
+        <changelog><![CDATA[Initial ReaPack version]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
