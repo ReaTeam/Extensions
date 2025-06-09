@@ -1,12 +1,36 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.1.1
-@changelog Initial ReaPack version
+@version 0.1.3
+@changelog
+  # What's Changed
+
+  ## All devices
+
+  * Fixed issue with resetted function ids on Reaper startup
+  * Quite some pan fixed for all devices and both master and track channels
+
+  ## FaderPort 8/16
+
+  * Display fix for the FaderPort 16
+  * Fixed issue where Reaper could crash when editting a non-existing filter
+  * Improved the behaviour of Parent Select for the filters
+  * Fixed filter key issue when adding filters too quick
+  * Added version number to the menu
+  * Unselect all tracks before solo-select
+  * Fixed issue with time code when ruler was selected.
+  * Now displays time code when nb of trachs is minimal
+
+  ## FaderPort V2
+
+  * Set next visible item as selected when selected track is not visible
+  * Some V2 session improvements
+
+  Thanx to anyone reporting issues and help me debug them.
 @provides
-  [darwin-arm64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib
-  [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x64.dll
-  [win32] reaper_ReasonusNative-x86.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x86.dll
-  [darwin64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib
+  [darwin-arm64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
+  [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x64.dll
+  [win32] reaper_ReasonusNative-x86.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x86.dll
+  [darwin64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
 @link
   Documentation https://navelpluisje.github.io/reasonus/
   Report Issue https://github.com/navelpluisje/Reasonus-Native/issues
