@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="dac25069c76460c0752e2e84ed529827feb6d9f7">
+<index version="1" name="ReaTeam Extensions" commit="47670c9f1607cc63a16368b4d53a77f75247d721">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2217,6 +2217,36 @@ gfx2imgui:
         <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x64.dll</source>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/v0.1.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+      </version>
+      <version name="0.1.3" author="Navelpluisje" time="2025-06-09T11:19:36Z">
+        <changelog><![CDATA[# What's Changed
+
+## All devices
+
+* Fixed issue with resetted function ids on Reaper startup
+* Quite some pan fixed for all devices and both master and track channels
+
+## FaderPort 8/16
+
+* Display fix for the FaderPort 16
+* Fixed issue where Reaper could crash when editting a non-existing filter
+* Improved the behaviour of Parent Select for the filters
+* Fixed filter key issue when adding filters too quick
+* Added version number to the menu
+* Unselect all tracks before solo-select
+* Fixed issue with time code when ruler was selected.
+* Now displays time code when nb of trachs is minimal
+
+## FaderPort V2
+
+* Set next visible item as selected when selected track is not visible
+* Some V2 session improvements
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.3/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.3/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.3/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.3/reaper_ReasonusNative-arm64-x86_64.dylib</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
