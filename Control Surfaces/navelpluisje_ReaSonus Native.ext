@@ -17,6 +17,8 @@
   * Reset the faders and buttons on load and close of a project and reaper
   * When closing Reaper a good bye message is displayed
   * Right Shift Select now selected a range
+  * Added setting to untouch the l;ast touched param after learn in menu mapping
+  * Added descriptions to the on-device menu
 
   ## FaderPort V2
 
