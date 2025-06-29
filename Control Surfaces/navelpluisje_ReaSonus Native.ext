@@ -1,29 +1,29 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.1.3
+@version 0.1.4
 @changelog
   # What's Changed
 
   ## All devices
 
-  * Fixed issue with resetted function ids on Reaper startup
-  * Quite some pan fixed for all devices and both master and track channels
+  * Fixed functions and filters dialog states (After closing the dialog, you had to click the button twice)
+  * Added the version number to the settings dialog
+  * Show the correct functions window when calling it from the actions list
 
   ## FaderPort 8/16
 
-  * Display fix for the FaderPort 16
-  * Fixed issue where Reaper could crash when editting a non-existing filter
-  * Improved the behaviour of Parent Select for the filters
-  * Fixed filter key issue when adding filters too quick
-  * Added version number to the menu
-  * Unselect all tracks before solo-select
-  * Fixed issue with time code when ruler was selected.
-  * Now displays time code when nb of trachs is minimal
+  * Fixed issue where pressing the link button with no tracks crashed Reaper
+  * When loading larger project, some buttons were not lit
+  * Reset the faders and buttons on load and close of a project and reaper
+  * When closing Reaper a good bye message is displayed
+  * Right Shift Select now selected a range
+  * Added setting to untouch the l;ast touched param after learn in menu mapping
+  * Added descriptions to the on-device menu
 
   ## FaderPort V2
 
-  * Set next visible item as selected when selected track is not visible
-  * Some V2 session improvements
+  * Set track color on the Channel button
+  * Updated the documentation link in the settings dialog
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
