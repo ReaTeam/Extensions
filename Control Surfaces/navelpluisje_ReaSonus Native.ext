@@ -10,8 +10,9 @@
 
   ## FaderPort 8/16
 
-  * Added Master Fader Mode
-  8 Fixed issue with wrong assigned solo buttons on FP16
+  * Added Master Fader Mode with plugin control
+  * Added Master Fader Automation
+  * Fixed issue with wrong assigned solo buttons on FP16
 
   ## FaderPort V2
 
