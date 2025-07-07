@@ -19,6 +19,7 @@
   * Added separate action for functions dialog
   * Disable fader and controls when no track selected
   * Make all the track buttons work on master track as well
+  * Added option to select and control hidden selected tracks
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
