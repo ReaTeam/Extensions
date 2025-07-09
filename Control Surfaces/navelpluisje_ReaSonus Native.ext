@@ -1,29 +1,25 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.1.4
+@version 0.2.0
 @changelog
   # What's Changed
 
   ## All devices
 
-  * Fixed functions and filters dialog states (After closing the dialog, you had to click the button twice)
-  * Added the version number to the settings dialog
-  * Show the correct functions window when calling it from the actions list
+  * Better dialog handling via actions. Show meassage when dialog not supported for installed device
 
   ## FaderPort 8/16
 
-  * Fixed issue where pressing the link button with no tracks crashed Reaper
-  * When loading larger project, some buttons were not lit
-  * Reset the faders and buttons on load and close of a project and reaper
-  * When closing Reaper a good bye message is displayed
-  * Right Shift Select now selected a range
-  * Added setting to untouch the l;ast touched param after learn in menu mapping
-  * Added descriptions to the on-device menu
+  * Added Master Fader Mode with plugin control
+  * Added Master Fader Automation
+  * Fixed issue with wrong assigned solo buttons on FP16
 
   ## FaderPort V2
 
-  * Set track color on the Channel button
-  * Updated the documentation link in the settings dialog
+  * Added separate action for functions dialog
+  * Disable fader and controls when no track selected
+  * Make all the track buttons work on master track as well
+  * Added option to select and control hidden selected tracks
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
