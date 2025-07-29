@@ -1,7 +1,7 @@
 @description ReaBlink: Ableton Link REAPER plug-in extension
 @author ak5k
-@version 0.5.6
-@changelog improve launch behavior
+@version 0.5.7
+@changelog SetPuppet option to not push local tempo changes to Link session.
 @provides
   [win64] reaper_reablink-x64.dll https://github.com/ak5k/reablink/releases/download/$version/$path
   [script main] ReaBlink_Monitor.lua https://github.com/ak5k/reablink/releases/download/$version/$path
