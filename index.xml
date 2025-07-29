@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="9b8c187b01cf715cd06d71df6dc31eacc7f79271">
+<index version="1" name="ReaTeam Extensions" commit="e82350884895e084e764202e26c2c5873d944038">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -169,6 +169,19 @@ replaced with custom timer]]></changelog>
         <source platform="darwin-arm64" file="reaper_reablink-arm64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-arm64.dylib</source>
         <source platform="darwin64" file="reaper_reablink-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-x86_64.dylib</source>
         <source platform="darwin32" file="reaper_reablink-i386.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-i386.dylib</source>
+      </version>
+      <version name="0.5.7" author="ak5k" time="2025-07-29T00:06:49Z">
+        <changelog><![CDATA[SetPuppet option to not push local tempo changes to Link session.]]></changelog>
+        <source platform="win64" file="reaper_reablink-x64.dll">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x64.dll</source>
+        <source main="main" type="script" file="ReaBlink_Monitor.lua">https://github.com/ak5k/reablink/releases/download/0.5.7/ReaBlink_Monitor.lua</source>
+        <source platform="win32" file="reaper_reablink-x86.dll">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86.dll</source>
+        <source platform="linux32" file="reaper_reablink-i686.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-i686.so</source>
+        <source platform="linux64" file="reaper_reablink-x86_64.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_reablink-armv7l.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_reablink-aarch64.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reablink-arm64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-arm64.dylib</source>
+        <source platform="darwin64" file="reaper_reablink-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86_64.dylib</source>
+        <source platform="darwin32" file="reaper_reablink-i386.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-i386.dylib</source>
       </version>
     </reapack>
     <reapack name="ak5k_ReaMCULive Programmable ReaScript API control surface extension.ext" type="extension" desc="ReaMCULive: Programmable ReaScript API control surface extension">
