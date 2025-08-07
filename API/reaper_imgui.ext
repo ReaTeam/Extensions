@@ -1,70 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.10
+@version 0.10.0.1
 @changelog
-  • Automatically fallback to another system font when encountering missing glyphs
-  • Decouple line height from the font size (compute value from the font)
-  • Display the current window name in asynchronous error reports
-  • Enable keyboard navigation by default and add user settings
-  • Improve accuracy of anti-aliasing on HiDPI monitors
-  • Increase EEL user string length limit from 16384 to 65536 (same as REAPER)
-  • Lift requirement to Attach fonts before use & before a frame starts
-  • Lift U+0020 to U+00FF restriction of usable glyphs from fonts [#5]
-  • Make the font size be the em square's height for consistency between fonts
-  • Reduce the default vertical frame padding to 2px
-  • Report clean error messages without assertion decorations when possible
-  • Silence unnecessary secondary assertion failure on debug break
-  • Support loading OpenType Variations when resolving system fonts
-  • Update to dear imgui 1.92.1
-  • Update Zig bindings and extension example to Zig 0.14
-  • Use the system's sans-serif font by default (removed Proggy Clean)
-  • Linux: add an option to disable hardware blitting to workaround Wayland compositors that hang occluded windows (Gnome, COSMIC...)
-  • Linux: add support for the Menu key
-  • Linux: fix number row key inputs when Shift is down
-  • Linux: improve the standard cursors shapes
-  • macOS: fix native context menu incorrectly opening when focus is lost before the RMB is released
-  • macOS: map sans-serif to the system's default font
-  • Windows: disable the default context menu when the Menu key is pressed
-  • Windows: don't generate input characters from key combinations using Ctrl
-  • Windows: fix logical window position desync after changing system DPI scale
-  • Windows: map sans-serif to Segoe UI
-
-  gfx2imgui:
-  • Avoid unnecessarily reloading images on repeated calls to gfx.loadimg
-  • Remove the font creation scheduler and related workarounds
-
-  API changes:
-  • Add a full 32-bit 'index' parameter to CreateFontFrom{File,Mem} instead of sharing 'flags'
-  • Add ButtonFlags_EnableNav, ConfigVar_Nav* and SetNavCursorVisible
-  • Add Col_InputTextCursor and InputTextFlags_ElideLeft
-  • Add Col_TreeLines, StyleVar_TreeLinesSize and StyleVar_TreeLinesRounding
-  • Add ColorEditFlags_Alpha{Opaque,NoBg}
-  • Add ConfigVar_DebugHighlightIdConflicts and DebugLog
-  • Add ConfigVar_ScrollbarScrollByPage
-  • Add CreateImageFromSize and Image_{Get,Set}Pixels_Array [p=2839943]
-  • Add ImageFlags_NoErrors [p=2738043]
-  • Add ImageWithBg and StyleVar_ImageBorderSize
-  • Add Key_Oem102, IsMouseReleasedWithDelay and MouseCursor_{Progress,Wait}
-  • Add ListClipper_SeekCursorForItem
-  • Add PushStyleVar{X,Y} and StyleVar_TabBarOverlineSize
-  • Add SelectableFlags_Highlight
-  • Add SliderFlags_Clamp{OnInput,ZeroRange} and SliderFlags_NoSpeedTweaks
-  • Add TextLink, TextLinkOpenURL and Col_TextLink
-  • Add TreeNodeFlags_{LabelSpanAllColumns,NavLeftJumpsToParent,DrawLines*}
-  • Add {Push,Pop}ItemFlag and ItemFlags_*
-  • Move the 'size' parameter from CreateFont{,FromMem} to PushFont
-  • Remove ColorEditFlags_AlphaPreview
-  • Remove GetContentRegionMax and GetWindowContentRegion{Min,Max}
-  • Remove Image's tint_col and border_col parameters
-  • Rename ChildFlags_Border to _Borders
-  • Rename Col_NavHighlight to Col_NavCursor
-  • Rename SelectableFlags_DontClosePopups to SelectableFlags_NoAutoClosePopups
-  • Rename TreeNodeFlags_SpanTextWidth to _SpanLabelWidth
-  • Replace ConfigFlags_Nav{EnableSetMousePos,NavNoCaptureKeyboard} with ConfigVar_Nav{MoveSetMousePos,CaptureKeyboard}
-  • Replace {Push,Pop}ButtonRepeat and {Push,Pop}TabStop with {Push,Pop}ItemFlag
-  • Split CreateFont into CreateFont and CreateFontFromFile
-
-  Note: the saved state of most windows will be reset after this update
+  • macOS: fix font selection when a system font file contains mixed widths variations or family names
+  • Windows: repair IME character input [p=2883427]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
