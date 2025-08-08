@@ -12,7 +12,7 @@
   • Fix Y offset in hit detection of envelope points and segments [#954]
   • Implement hit detection of envelope points within automation items [#922]
 
-  List view: (issue 1947)
+  List view: [#1947]
   • Fix incorrect width when enabling columns and more than one is hidden
   • Fix position of inserted columns ignoring preceding hidden ones
   • Preserve custom order when adding or removing columns
