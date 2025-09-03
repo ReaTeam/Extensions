@@ -1,27 +1,9 @@
 @description SWS/S&M extension
 @author reaper-oss
-@version 2.14.0.5-beta
+@version 2.14.0.6
 @changelog
-  Actions:
-  • Fix a crash in "SWS: Reset item rate, preserving length, clear 'preserve pitch'" when a selected item contains an empty take (issue 1939)
-
-  Cycle actions:
-  • Add support for REAPER v7.40's new Crossfade Editor section
-
-  Hit detection:
-  • Fix Y offset in hit detection of envelope points and segments [#954]
-  • Implement hit detection of envelope points within automation items [#922]
-
-  List view: [#1947]
-  • Fix incorrect width when enabling columns and more than one is hidden
-  • Fix position of inserted columns ignoring preceding hidden ones
-  • Preserve custom order when adding or removing columns
-
-  Notes:
-  • Clear cached previous text when closing the window [#1942]
-
-  MIDI Editor:
-  • Repair regression caused by the MIDI Editor HiDPI fix on Windows and macOS [p=2858128]
+  • Disable "SWS: Redo/Undo zoom" actions by default to remove unnecessary CPU overhead
+  • Fix excessive CPU usage when many hidden tracks have visual spacers [p=2883811]
 @provides
   [darwin-arm64] reaper_sws-arm64.dylib https://github.com/reaper-oss/sws/releases/download/v$version/$path
   [darwin32] reaper_sws-i386.dylib https://github.com/reaper-oss/sws/releases/download/v$version/$path
