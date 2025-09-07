@@ -1,9 +1,13 @@
 @description SWS/S&M extension
 @author reaper-oss
-@version 2.14.0.6
+@version 2.14.0.7
 @changelog
-  • Disable "SWS: Redo/Undo zoom" actions by default to remove unnecessary CPU overhead
-  • Fix excessive CPU usage when many hidden tracks have visual spacers [p=2883811]
+  Hit detection:
+  - Repair hit detection of envelope segment in non-first tracks [p=2889179]
+  - Update automation item point hit testing to support REAPER v7.46 API fixes [p=2888669]
+
+  Notes:
+  - Fix empty notes when re-opening the window after closing it using an action [#1965]
 @provides
   [darwin-arm64] reaper_sws-arm64.dylib https://github.com/reaper-oss/sws/releases/download/v$version/$path
   [darwin32] reaper_sws-i386.dylib https://github.com/reaper-oss/sws/releases/download/v$version/$path
