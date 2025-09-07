@@ -1,9 +1,12 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.10.0.1
+@version 0.10.0.2
 @changelog
-  • macOS: fix font selection when a system font file contains mixed widths variations or family names
-  • Windows: repair IME character input [p=2883427]
+  • Update modifiers on window focus instead of only on mouse down
+  • Linux: fix creation of textures pending an update on new windows [p=2884972]
+  • Linux: remove focus when none of the hidden windows are active
+  • macOS: fix selection of the default font face within files containing variations on macOS 11 & 12 [p=2887560]
+  • Windows: ignore system fonts using the Microsoft Symbol encoding [p=2884504]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
