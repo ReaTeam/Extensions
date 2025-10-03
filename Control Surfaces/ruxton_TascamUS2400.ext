@@ -1,6 +1,6 @@
 @description Tascam US-2400 Control Surface Native Mode
 @author Greg Tangey (Ruxton)
-@version 1.2.1
+@version 1.2.1-1
 @changelog Fixes overlay crash
 @provides
   [win64] reaper_csurf_us2400.dll https://github.com/Ruxton/reaper-csurf-us2400/releases/download/$version/reaper_csurf_us2400.dll
@@ -29,13 +29,13 @@
   [script main win64] General/Save (US-2400 - FKey - Play).py https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/General/Save%20(US-2400%20-%20FKey%20-%20Play).py
   [script main win64] General/Undo (US-2400 - FKey - Rew).py https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/General/Undo%20(US-2400%20-%20FKey%20-%20Rew).py
   [script main win64] Splits/JS/(Auto Vol - Add Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)
-  [script main win64] Splits/JS/(Auto Vol - Send) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)
-  [script main win64] Splits/JS/(Auto Vol - Split Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)
-  [script main win64] Splits/JS/(LH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LH-Split)
-  [script main win64] Splits/JS/(LMH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LMH-Split)
-  [script main win64] Splits/JS/(LMMH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LMMH-Split)
-  [script main win64] Splits/JS/(LR-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LR-Split)
-  [script main win64] Splits/JS/(MS-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(MS-Split)
+  [effect win64] Splits/JS/(Auto Vol - Send) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)
+  [effect win64] Splits/JS/(Auto Vol - Split Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)
+  [effect win64] Splits/JS/(LH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LH-Split)
+  [effect win64] Splits/JS/(LMH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LMH-Split)
+  [effect win64] Splits/JS/(LMMH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LMMH-Split)
+  [effect win64] Splits/JS/(LR-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(LR-Split)
+  [effect win64] Splits/JS/(MS-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/JS/(MS-Split)
   [script main win64] Splits/ReaScript/Add parallel processor to first selected track (US-2400 - MKey - 6).py https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/ReaScript/Add%20parallel%20processor%20to%20first%20selected%20track%20(US-2400%20-%20MKey%20-%206).py
   [script main win64] Splits/ReaScript/Split first selected track LFHF (US-2400 - MKey - 3).py https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LFHF%20(US-2400%20-%20MKey%20-%203).py
   [script main win64] Splits/ReaScript/Split first selected track LMH (US-2400 - MKey - 4).py https://github.com/Ruxton/reaper-csurf-us2400/raw/$version/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMH%20(US-2400%20-%20MKey%20-%204).py
