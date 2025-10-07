@@ -1,6 +1,6 @@
 @description Tascam US-2400 Control Surface Native Mode
 @author Greg Tangey (Ruxton)
-@version 1.2.1-1
+@version 1.2.1-2
 @changelog Fixes effects being registered as scripts
 @provides
   [win64] reaper_csurf_us2400.dll https://github.com/Ruxton/reaper-csurf-us2400/releases/download/1.2.1/reaper_csurf_us2400.dll
@@ -28,7 +28,7 @@
   [script main win64] General/Render (US-2400 - FKey - Rec).py https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Render%20(US-2400%20-%20FKey%20-%20Rec).py
   [script main win64] General/Save (US-2400 - FKey - Play).py https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Save%20(US-2400%20-%20FKey%20-%20Play).py
   [script main win64] General/Undo (US-2400 - FKey - Rew).py https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Undo%20(US-2400%20-%20FKey%20-%20Rew).py
-  [script main win64] Splits/JS/(Auto Vol - Add Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)
+  [effect win64] Splits/JS/(Auto Vol - Add Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)
   [effect win64] Splits/JS/(Auto Vol - Send) https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)
   [effect win64] Splits/JS/(Auto Vol - Split Receive) https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)
   [effect win64] Splits/JS/(LH-Split) https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LH-Split)
