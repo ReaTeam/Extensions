@@ -1,37 +1,17 @@
 @description ReaSonus Native
 @author Navelpluisje
-<<<<<<< Updated upstream
-@version 0.1.4
-=======
 @version 0.3.0
->>>>>>> Stashed changes
 @changelog
 > NEW REQUIREMENT: Also needs ReaImGui v0.10.*
 
 # What's Changed
 
-<<<<<<< Updated upstream
-  * Fixed functions and filters dialog states (After closing the dialog, you had to click the button twice)
-  * Added the version number to the settings dialog
-  * Show the correct functions window when calling it from the actions list
-=======
 ## All devices
->>>>>>> Stashed changes
 
 * Moved the dialogs to ReaImgui. See the documentation for more details.
 * Fixed issue with saw-tooth like envelopes in touch mode
 
-<<<<<<< Updated upstream
-  * Fixed issue where pressing the link button with no tracks crashed Reaper
-  * When loading larger project, some buttons were not lit
-  * Reset the faders and buttons on load and close of a project and reaper
-  * When closing Reaper a good bye message is displayed
-  * Right Shift Select now selected a range
-  * Added setting to untouch the l;ast touched param after learn in menu mapping
-  * Added descriptions to the on-device menu
-=======
 ### FaderPort 8/16
->>>>>>> Stashed changes
 
 * Added pan channel: The pan button now makes the faders handle the pan. Removed the shift + fader behaviour
 * Moved the receives channel to [Shift] + [Send] to make space for the Pan channel
@@ -42,14 +22,9 @@
 * When on-device menu is open, it will now close with any click on the [Touch] button
 * Added option in the settings to change the Display layout in track mode. This also available in the on-device menu
 
-<<<<<<< Updated upstream
-  * Set track color on the Channel button
-  * Updated the documentation link in the settings dialog
-=======
 ### FaderPort V2
 
 * Fixed bug where fader became inresponsive after adding a new track
->>>>>>> Stashed changes
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
