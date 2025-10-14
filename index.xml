@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="5e6f0cde2c7eb22a441f3a4b23c70188f4af961e">
+<index version="1" name="ReaTeam Extensions" commit="9bb1642d185da4a3d5d0fbfef76531e65b7dac03">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -169,6 +169,19 @@ replaced with custom timer]]></changelog>
         <source platform="darwin-arm64" file="reaper_reablink-arm64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-arm64.dylib</source>
         <source platform="darwin64" file="reaper_reablink-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-x86_64.dylib</source>
         <source platform="darwin32" file="reaper_reablink-i386.dylib">https://github.com/ak5k/reablink/releases/download/0.5.6/reaper_reablink-i386.dylib</source>
+      </version>
+      <version name="0.5.7" author="ak5k" time="2025-07-29T00:06:49Z">
+        <changelog><![CDATA[SetPuppet option to not push local tempo changes to Link session.]]></changelog>
+        <source platform="win64" file="reaper_reablink-x64.dll">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x64.dll</source>
+        <source main="main" type="script" file="ReaBlink_Monitor.lua">https://github.com/ak5k/reablink/releases/download/0.5.7/ReaBlink_Monitor.lua</source>
+        <source platform="win32" file="reaper_reablink-x86.dll">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86.dll</source>
+        <source platform="linux32" file="reaper_reablink-i686.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-i686.so</source>
+        <source platform="linux64" file="reaper_reablink-x86_64.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_reablink-armv7l.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_reablink-aarch64.so">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-aarch64.so</source>
+        <source platform="darwin-arm64" file="reaper_reablink-arm64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-arm64.dylib</source>
+        <source platform="darwin64" file="reaper_reablink-x86_64.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-x86_64.dylib</source>
+        <source platform="darwin32" file="reaper_reablink-i386.dylib">https://github.com/ak5k/reablink/releases/download/0.5.7/reaper_reablink-i386.dylib</source>
       </version>
     </reapack>
     <reapack name="ak5k_ReaMCULive Programmable ReaScript API control surface extension.ext" type="extension" desc="ReaMCULive: Programmable ReaScript API control surface extension">
@@ -2108,6 +2121,124 @@ gfx2imgui:
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.9.3.3/shims/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.9.3.3/gfx2imgui.lua</source>
       </version>
+      <version name="0.10" author="cfillion" time="2025-08-06T14:51:24Z">
+        <changelog><![CDATA[• Automatically fallback to another system font when encountering missing glyphs
+• Decouple line height from the font size (compute value from the font)
+• Display the current window name in asynchronous error reports
+• Enable keyboard navigation by default and add user settings
+• Improve accuracy of anti-aliasing on HiDPI monitors
+• Increase EEL user string length limit from 16384 to 65536 (same as REAPER)
+• Lift requirement to Attach fonts before use & before a frame starts
+• Lift U+0020 to U+00FF restriction of usable glyphs from fonts [#5]
+• Make the font size be the em square's height for consistency between fonts
+• Reduce the default vertical frame padding to 2px
+• Report clean error messages without assertion decorations when possible
+• Silence unnecessary secondary assertion failure on debug break
+• Support loading OpenType Variations when resolving system fonts
+• Update to dear imgui 1.92.1
+• Update Zig bindings and extension example to Zig 0.14
+• Use the system's sans-serif font by default (removed Proggy Clean)
+• Linux: add an option to disable hardware blitting to workaround Wayland compositors that hang occluded windows (Gnome, COSMIC...)
+• Linux: add support for the Menu key
+• Linux: fix number row key inputs when Shift is down
+• Linux: improve the standard cursors shapes
+• macOS: fix native context menu incorrectly opening when focus is lost before the RMB is released
+• macOS: map sans-serif to the system's default font
+• Windows: disable the default context menu when the Menu key is pressed
+• Windows: don't generate input characters from key combinations using Ctrl
+• Windows: fix logical window position desync after changing system DPI scale
+• Windows: map sans-serif to Segoe UI
+
+gfx2imgui:
+• Avoid unnecessarily reloading images on repeated calls to gfx.loadimg
+• Remove the font creation scheduler and related workarounds
+
+API changes:
+• Add a full 32-bit 'index' parameter to CreateFontFrom{File,Mem} instead of sharing 'flags'
+• Add ButtonFlags_EnableNav, ConfigVar_Nav* and SetNavCursorVisible
+• Add Col_InputTextCursor and InputTextFlags_ElideLeft
+• Add Col_TreeLines, StyleVar_TreeLinesSize and StyleVar_TreeLinesRounding
+• Add ColorEditFlags_Alpha{Opaque,NoBg}
+• Add ConfigVar_DebugHighlightIdConflicts and DebugLog
+• Add ConfigVar_ScrollbarScrollByPage
+• Add CreateImageFromSize and Image_{Get,Set}Pixels_Array [p=2839943]
+• Add ImageFlags_NoErrors [p=2738043]
+• Add ImageWithBg and StyleVar_ImageBorderSize
+• Add Key_Oem102, IsMouseReleasedWithDelay and MouseCursor_{Progress,Wait}
+• Add ListClipper_SeekCursorForItem
+• Add PushStyleVar{X,Y} and StyleVar_TabBarOverlineSize
+• Add SelectableFlags_Highlight
+• Add SliderFlags_Clamp{OnInput,ZeroRange} and SliderFlags_NoSpeedTweaks
+• Add TextLink, TextLinkOpenURL and Col_TextLink
+• Add TreeNodeFlags_{LabelSpanAllColumns,NavLeftJumpsToParent,DrawLines*}
+• Add {Push,Pop}ItemFlag and ItemFlags_*
+• Move the 'size' parameter from CreateFont{,FromMem} to PushFont
+• Remove ColorEditFlags_AlphaPreview
+• Remove GetContentRegionMax and GetWindowContentRegion{Min,Max}
+• Remove Image's tint_col and border_col parameters
+• Rename ChildFlags_Border to _Borders
+• Rename Col_NavHighlight to Col_NavCursor
+• Rename SelectableFlags_DontClosePopups to SelectableFlags_NoAutoClosePopups
+• Rename TreeNodeFlags_SpanTextWidth to _SpanLabelWidth
+• Replace ConfigFlags_Nav{EnableSetMousePos,NavNoCaptureKeyboard} with ConfigVar_Nav{MoveSetMousePos,CaptureKeyboard}
+• Replace {Push,Pop}ButtonRepeat and {Push,Pop}TabStop with {Push,Pop}ItemFlag
+• Split CreateFont into CreateFont and CreateFontFromFile
+
+Note: the saved state of most windows will be reset after this update]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10/gfx2imgui.lua</source>
+      </version>
+      <version name="0.10.0.1" author="cfillion" time="2025-08-07T17:08:11Z">
+        <changelog><![CDATA[• macOS: fix font selection when a system font file contains mixed widths variations or family names
+• Windows: repair IME character input [p=2883427]]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.1/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.1/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.1/gfx2imgui.lua</source>
+      </version>
+      <version name="0.10.0.2" author="cfillion" time="2025-09-07T16:29:10Z">
+        <changelog><![CDATA[• Update modifiers on window focus instead of only on mouse down
+• Linux: fix creation of textures pending an update on new windows [p=2884972]
+• Linux: remove focus when none of the hidden windows are active
+• macOS: fix selection of the default font face within files containing variations on macOS 11 & 12 [p=2887560]
+• Windows: ignore system fonts using the Microsoft Symbol encoding [p=2884504]]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.2/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.2/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/gfx2imgui.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Control Surfaces">
@@ -2278,14 +2409,40 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.4/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.1.4/reaper_ReasonusNative-arm64-x86_64.dylib</source>
       </version>
+      <version name="0.2.0" author="Navelpluisje" time="2025-07-09T23:51:52Z">
+        <changelog><![CDATA[# What's Changed
+
+## All devices
+
+* Better dialog handling via actions. Show meassage when dialog not supported for installed device
+
+## FaderPort 8/16
+
+* Added Master Fader Mode with plugin control
+* Added Master Fader Automation
+* Fixed issue with wrong assigned solo buttons on FP16
+
+## FaderPort V2
+
+* Added separate action for functions dialog
+* Disable fader and controls when no track selected
+* Make all the track buttons work on master track as well
+* Added option to select and control hidden selected tracks
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+      </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Tascam US-2400 Control Surface Native Mode\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Tascam US-2400 Control Surface Native Mode\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Requires:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab SWS Extensions\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows x64\par}
@@ -2337,6 +2494,124 @@ view the README on github
         <source main="main" platform="win64" type="script" file="Splits/JS/(LMMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMMH-Split)</source>
         <source main="main" platform="win64" type="script" file="Splits/JS/(LR-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LR-Split)</source>
         <source main="main" platform="win64" type="script" file="Splits/JS/(MS-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(MS-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Add parallel processor to first selected track (US-2400 - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Add%20parallel%20processor%20to%20first%20selected%20track%20(US-2400%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LFHF (US-2400 - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LFHF%20(US-2400%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMH (US-2400 - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMH%20(US-2400%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMMH (US-2400 - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMMH%20(US-2400%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LR (US-2400 - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LR%20(US-2400%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track MS (US-2400 - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20MS%20(US-2400%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Unsplit first selected split (US-2400 - MKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Unsplit%20first%20selected%20split%20(US-2400%20-%20MKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Next POI (US-2400 - NoKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Next%20POI%20(US-2400%20-%20NoKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Previous POI (US-2400 - NoKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Previous%20POI%20(US-2400%20-%20NoKey%20-%20Rew).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Show playpos (US-2400 - FKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Show%20playpos%20(US-2400%20-%20FKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Toggle scroll playpos (US-2400 - FKey - Stop).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Toggle%20scroll%20playpos%20(US-2400%20-%20FKey%20-%20Stop).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom time selection (US-2400 - NoKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20time%20selection%20(US-2400%20-%20NoKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom track selection (US-2400 - Shift - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20track%20selection%20(US-2400%20-%20Shift%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Delete selected tracks (US-2400 - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Delete%20selected%20tracks%20(US-2400%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Duplicate selected tracks (US-2400 - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Duplicate%20selected%20tracks%20(US-2400%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Fold or unfold selected folders (US-2400 - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Fold%20or%20unfold%20selected%20folders%20(US-2400%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Group selected tracks (US-2400 - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Group%20selected%20tracks%20(US-2400%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Insert track before first selected (US-2400 - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Insert%20track%20before%20first%20selected%20(US-2400%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks left (US-2400 - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20left%20(US-2400%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks right (US-2400 - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20right%20(US-2400%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Rename selected tracks (US-2400 - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Rename%20selected%20tracks%20(US-2400%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Ungroup selected tracks (US-2400 - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Ungroup%20selected%20tracks%20(US-2400%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Wrap or unwrap selected tracks (US-2400 - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Wrap%20or%20unwrap%20selected%20tracks%20(US-2400%20-%20Shift%20-%201).py</source>
+      </version>
+      <version name="1.2.1-1" author="Greg Tangey (Ruxton)" time="2025-10-03T17:36:18Z">
+        <changelog><![CDATA[Fixes effects being registered as scripts]]></changelog>
+        <source platform="win64" file="reaper_csurf_us2400.dll">https://github.com/Ruxton/reaper-csurf-us2400/releases/download/1.2.1/reaper_csurf_us2400.dll</source>
+        <source main="main" platform="win64" type="script" file="Automation/Remove envelopes from selected tracks (US-2400 - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Remove%20envelopes%20from%20selected%20tracks%20(US-2400%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Automation/Show or hide envelopes (US-2400 - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Show%20or%20hide%20envelopes%20(US-2400%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="General/Redo (US-2400 - FKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Redo%20(US-2400%20-%20FKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="General/Render (US-2400 - FKey - Rec).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Render%20(US-2400%20-%20FKey%20-%20Rec).py</source>
+        <source main="main" platform="win64" type="script" file="General/Save (US-2400 - FKey - Play).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Save%20(US-2400%20-%20FKey%20-%20Play).py</source>
+        <source main="main" platform="win64" type="script" file="General/Undo (US-2400 - FKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Undo%20(US-2400%20-%20FKey%20-%20Rew).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/JS/(Auto Vol - Add Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(Auto Vol - Send)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(Auto Vol - Split Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LMMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMMH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LR-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LR-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(MS-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(MS-Split)</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Add parallel processor to first selected track (US-2400 - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Add%20parallel%20processor%20to%20first%20selected%20track%20(US-2400%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LFHF (US-2400 - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LFHF%20(US-2400%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMH (US-2400 - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMH%20(US-2400%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMMH (US-2400 - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMMH%20(US-2400%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LR (US-2400 - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LR%20(US-2400%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track MS (US-2400 - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20MS%20(US-2400%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Splits/ReaScript/Unsplit first selected split (US-2400 - MKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Unsplit%20first%20selected%20split%20(US-2400%20-%20MKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Next POI (US-2400 - NoKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Next%20POI%20(US-2400%20-%20NoKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Previous POI (US-2400 - NoKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Previous%20POI%20(US-2400%20-%20NoKey%20-%20Rew).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Show playpos (US-2400 - FKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Show%20playpos%20(US-2400%20-%20FKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Toggle scroll playpos (US-2400 - FKey - Stop).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Toggle%20scroll%20playpos%20(US-2400%20-%20FKey%20-%20Stop).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom time selection (US-2400 - NoKey - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20time%20selection%20(US-2400%20-%20NoKey%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Time Zoom Scroll/Zoom track selection (US-2400 - Shift - Null).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Time%20Zoom%20Scroll/Zoom%20track%20selection%20(US-2400%20-%20Shift%20-%20Null).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Delete selected tracks (US-2400 - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Delete%20selected%20tracks%20(US-2400%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Duplicate selected tracks (US-2400 - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Duplicate%20selected%20tracks%20(US-2400%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Fold or unfold selected folders (US-2400 - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Fold%20or%20unfold%20selected%20folders%20(US-2400%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Group selected tracks (US-2400 - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Group%20selected%20tracks%20(US-2400%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Insert track before first selected (US-2400 - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Insert%20track%20before%20first%20selected%20(US-2400%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks left (US-2400 - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20left%20(US-2400%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Move selected tracks right (US-2400 - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Move%20selected%20tracks%20right%20(US-2400%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Rename selected tracks (US-2400 - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Rename%20selected%20tracks%20(US-2400%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Ungroup selected tracks (US-2400 - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Ungroup%20selected%20tracks%20(US-2400%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Track Actions/Wrap or unwrap selected tracks (US-2400 - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Track%20Actions/Wrap%20or%20unwrap%20selected%20tracks%20(US-2400%20-%20Shift%20-%201).py</source>
+      </version>
+      <version name="1.2.1-2" author="Greg Tangey (Ruxton)" time="2025-10-07T18:25:38Z">
+        <changelog><![CDATA[Fixes effects being registered as scripts]]></changelog>
+        <source platform="win64" file="reaper_csurf_us2400.dll">https://github.com/Ruxton/reaper-csurf-us2400/releases/download/1.2.1/reaper_csurf_us2400.dll</source>
+        <source main="main" platform="win64" type="script" file="Automation/Remove envelopes from selected tracks (US-2400 - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Remove%20envelopes%20from%20selected%20tracks%20(US-2400%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="Automation/Show or hide envelopes (US-2400 - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Automation/Show%20or%20hide%20envelopes%20(US-2400%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - FKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20FKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20MKey%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 1).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%201).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 2).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%202).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%203).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%204).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 5).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%205).py</source>
+        <source main="main" platform="win64" type="script" file="FX Favorites/Insert Plug-in - XXX (US-2400 - Chan - Shift - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/FX%20Favorites/Insert%20Plug-in%20-%20XXX%20(US-2400%20-%20Chan%20-%20Shift%20-%206).py</source>
+        <source main="main" platform="win64" type="script" file="General/Redo (US-2400 - FKey - FFwd).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Redo%20(US-2400%20-%20FKey%20-%20FFwd).py</source>
+        <source main="main" platform="win64" type="script" file="General/Render (US-2400 - FKey - Rec).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Render%20(US-2400%20-%20FKey%20-%20Rec).py</source>
+        <source main="main" platform="win64" type="script" file="General/Save (US-2400 - FKey - Play).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Save%20(US-2400%20-%20FKey%20-%20Play).py</source>
+        <source main="main" platform="win64" type="script" file="General/Undo (US-2400 - FKey - Rew).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/General/Undo%20(US-2400%20-%20FKey%20-%20Rew).py</source>
+        <source platform="win64" type="effect" file="Splits/JS/(Auto Vol - Add Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Add%20Receive)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(Auto Vol - Send)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Send)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(Auto Vol - Split Receive)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(Auto%20Vol%20-%20Split%20Receive)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LMMH-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LMMH-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(LR-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(LR-Split)</source>
+        <source platform="win64" type="effect" file="Splits/JS/(MS-Split)">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/JS/(MS-Split)</source>
         <source main="main" platform="win64" type="script" file="Splits/ReaScript/Add parallel processor to first selected track (US-2400 - MKey - 6).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Add%20parallel%20processor%20to%20first%20selected%20track%20(US-2400%20-%20MKey%20-%206).py</source>
         <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LFHF (US-2400 - MKey - 3).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LFHF%20(US-2400%20-%20MKey%20-%203).py</source>
         <source main="main" platform="win64" type="script" file="Splits/ReaScript/Split first selected track LMH (US-2400 - MKey - 4).py">https://github.com/Ruxton/reaper-csurf-us2400/raw/1.2.1/Install/Custom%20Actions/Splits/ReaScript/Split%20first%20selected%20track%20LMH%20(US-2400%20-%20MKey%20-%204).py</source>
@@ -2968,6 +3243,340 @@ Region playlist:
         <source type="data" file="Grooves/SP1200_67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.4-beta/FingersExtras/Grooves/SP1200_67%25.rgt</source>
         <source type="data" file="Grooves/SP1200_71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.4-beta/FingersExtras/Grooves/SP1200_71%25.rgt</source>
         <source type="data" file="Grooves/energyXT_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.4-beta/FingersExtras/Grooves/energyXT_50%25.rgt</source>
+      </version>
+      <version name="2.14.0.5-beta" author="reaper-oss" time="2025-08-08T10:59:58Z">
+        <changelog><![CDATA[Actions:
+• Fix a crash in "SWS: Reset item rate, preserving length, clear 'preserve pitch'" when a selected item contains an empty take (issue 1939)
+
+Cycle actions:
+• Add support for REAPER v7.40's new Crossfade Editor section
+
+Hit detection:
+• Fix Y offset in hit detection of envelope points and segments [#954]
+• Implement hit detection of envelope points within automation items [#922]
+
+List view: [#1947]
+• Fix incorrect width when enabling columns and more than one is hidden
+• Fix position of inserted columns ignoring preceding hidden ones
+• Preserve custom order when adding or removing columns
+
+Notes:
+• Clear cached previous text when closing the window [#1942]
+
+MIDI Editor:
+• Repair regression caused by the MIDI Editor HiDPI fix on Windows and macOS [p=2858128]]]></changelog>
+        <source platform="darwin-arm64" file="reaper_sws-arm64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-arm64.dylib</source>
+        <source platform="darwin32" file="reaper_sws-i386.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-i386.dylib</source>
+        <source platform="darwin64" file="reaper_sws-x86_64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-x86_64.dylib</source>
+        <source platform="linux-aarch64" file="reaper_sws-aarch64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-aarch64.so</source>
+        <source platform="linux-armv7l" file="reaper_sws-armv7l.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-armv7l.so</source>
+        <source platform="linux32" file="reaper_sws-i686.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-i686.so</source>
+        <source platform="linux64" file="reaper_sws-x86_64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-x86_64.so</source>
+        <source platform="win32" file="reaper_sws-x86.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-x86.dll</source>
+        <source platform="win64" file="reaper_sws-x64.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/reaper_sws-x64.dll</source>
+        <source platform="darwin-arm64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python64.py</source>
+        <source platform="darwin64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python64.py</source>
+        <source platform="linux-aarch64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python64.py</source>
+        <source platform="linux64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python64.py</source>
+        <source platform="win64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python64.py</source>
+        <source platform="darwin32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python32.py</source>
+        <source platform="linux-armv7l" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python32.py</source>
+        <source platform="linux32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python32.py</source>
+        <source platform="win32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.5-beta/sws_python32.py</source>
+        <source type="data" file="Grooves/16th Quantize.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/16th%20Quantize.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%2016'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%2016'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%2032'nd%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%2032'nd%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%208'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/ASR10%208'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 54% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2054%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 58% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2058%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 62% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2062%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 70% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_16_%2070%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_32_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_32_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 83% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/DX_32_%2083%25%20swing.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2050%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2054%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2058%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2063%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2067%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2071%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 75%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2075%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 79%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2079%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 83%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2083%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 88%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16%2088%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-16T%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-8T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Korg%20DDD-1-8T%25.rgt</source>
+        <source type="data" file="Grooves/Logic_16A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16A.rgt</source>
+        <source type="data" file="Grooves/Logic_16B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16B.rgt</source>
+        <source type="data" file="Grooves/Logic_16C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16C.rgt</source>
+        <source type="data" file="Grooves/Logic_16D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16D.rgt</source>
+        <source type="data" file="Grooves/Logic_16E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16E.rgt</source>
+        <source type="data" file="Grooves/Logic_16F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_16F.rgt</source>
+        <source type="data" file="Grooves/Logic_8A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8A.rgt</source>
+        <source type="data" file="Grooves/Logic_8B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8B.rgt</source>
+        <source type="data" file="Grooves/Logic_8C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8C.rgt</source>
+        <source type="data" file="Grooves/Logic_8D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8D.rgt</source>
+        <source type="data" file="Grooves/Logic_8E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8E.rgt</source>
+        <source type="data" file="Grooves/Logic_8F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/Logic_8F.rgt</source>
+        <source type="data" file="Grooves/MPC 16'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2016'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2032'nd%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2032'nd%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 50% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2050%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 51% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2051%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 52% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2052%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 53% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2053%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 54% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2054%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 55% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2055%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 56% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2056%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 57% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2057%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 58% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2058%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 59% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2059%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 60% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2060%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 61% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2061%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 62% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2062%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 63% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2063%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 64% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2064%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 65% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2065%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 66% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2066%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 67% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2067%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 68% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2068%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 69% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2069%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 70% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2070%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 71% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2071%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 72% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2072%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 73% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2073%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 74% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2074%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 75% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%2075%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 8'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/MPC%208'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_50%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_50%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_32_2bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_50%25_32_2bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_50%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_54%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_54%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_54%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_58%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_63%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_67%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/SP1200_71%25.rgt</source>
+        <source type="data" file="Grooves/energyXT_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.5-beta/FingersExtras/Grooves/energyXT_50%25.rgt</source>
+      </version>
+      <version name="2.14.0.6" author="reaper-oss" time="2025-09-03T19:04:03Z">
+        <changelog><![CDATA[• Disable "SWS: Redo/Undo zoom" actions by default to remove unnecessary CPU overhead
+• Fix excessive CPU usage when many hidden tracks have visual spacers [p=2883811]]]></changelog>
+        <source platform="darwin-arm64" file="reaper_sws-arm64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-arm64.dylib</source>
+        <source platform="darwin32" file="reaper_sws-i386.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-i386.dylib</source>
+        <source platform="darwin64" file="reaper_sws-x86_64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-x86_64.dylib</source>
+        <source platform="linux-aarch64" file="reaper_sws-aarch64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-aarch64.so</source>
+        <source platform="linux-armv7l" file="reaper_sws-armv7l.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-armv7l.so</source>
+        <source platform="linux32" file="reaper_sws-i686.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-i686.so</source>
+        <source platform="linux64" file="reaper_sws-x86_64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-x86_64.so</source>
+        <source platform="win32" file="reaper_sws-x86.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-x86.dll</source>
+        <source platform="win64" file="reaper_sws-x64.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/reaper_sws-x64.dll</source>
+        <source platform="darwin-arm64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python64.py</source>
+        <source platform="darwin64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python64.py</source>
+        <source platform="linux-aarch64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python64.py</source>
+        <source platform="linux64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python64.py</source>
+        <source platform="win64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python64.py</source>
+        <source platform="darwin32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python32.py</source>
+        <source platform="linux-armv7l" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python32.py</source>
+        <source platform="linux32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python32.py</source>
+        <source platform="win32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.6/sws_python32.py</source>
+        <source type="data" file="Grooves/16th Quantize.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/16th%20Quantize.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%2016'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%2016'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%2032'nd%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%2032'nd%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%208'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/ASR10%208'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 54% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2054%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 58% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2058%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 62% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2062%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 70% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_16_%2070%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_32_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_32_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 83% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/DX_32_%2083%25%20swing.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2050%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2054%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2058%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2063%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2067%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2071%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 75%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2075%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 79%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2079%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 83%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2083%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 88%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16%2088%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-16T%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-8T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Korg%20DDD-1-8T%25.rgt</source>
+        <source type="data" file="Grooves/Logic_16A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16A.rgt</source>
+        <source type="data" file="Grooves/Logic_16B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16B.rgt</source>
+        <source type="data" file="Grooves/Logic_16C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16C.rgt</source>
+        <source type="data" file="Grooves/Logic_16D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16D.rgt</source>
+        <source type="data" file="Grooves/Logic_16E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16E.rgt</source>
+        <source type="data" file="Grooves/Logic_16F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_16F.rgt</source>
+        <source type="data" file="Grooves/Logic_8A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8A.rgt</source>
+        <source type="data" file="Grooves/Logic_8B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8B.rgt</source>
+        <source type="data" file="Grooves/Logic_8C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8C.rgt</source>
+        <source type="data" file="Grooves/Logic_8D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8D.rgt</source>
+        <source type="data" file="Grooves/Logic_8E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8E.rgt</source>
+        <source type="data" file="Grooves/Logic_8F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/Logic_8F.rgt</source>
+        <source type="data" file="Grooves/MPC 16'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2016'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2032'nd%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2032'nd%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 50% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2050%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 51% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2051%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 52% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2052%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 53% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2053%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 54% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2054%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 55% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2055%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 56% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2056%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 57% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2057%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 58% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2058%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 59% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2059%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 60% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2060%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 61% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2061%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 62% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2062%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 63% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2063%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 64% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2064%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 65% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2065%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 66% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2066%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 67% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2067%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 68% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2068%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 69% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2069%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 70% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2070%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 71% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2071%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 72% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2072%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 73% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2073%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 74% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2074%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 75% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%2075%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 8'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/MPC%208'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_50%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_50%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_32_2bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_50%25_32_2bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_50%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_54%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_54%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_54%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_58%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_63%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_67%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/SP1200_71%25.rgt</source>
+        <source type="data" file="Grooves/energyXT_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.6/FingersExtras/Grooves/energyXT_50%25.rgt</source>
+      </version>
+      <version name="2.14.0.7" author="reaper-oss" time="2025-09-07T20:58:38Z">
+        <changelog><![CDATA[Hit detection:
+- Repair hit detection of envelope segment in non-first tracks [p=2889179]
+- Update automation item point hit testing to support REAPER v7.46 API fixes [p=2888669]
+
+Notes:
+- Fix empty notes when re-opening the window after closing it using an action [#1965]]]></changelog>
+        <source platform="darwin-arm64" file="reaper_sws-arm64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-arm64.dylib</source>
+        <source platform="darwin32" file="reaper_sws-i386.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-i386.dylib</source>
+        <source platform="darwin64" file="reaper_sws-x86_64.dylib">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-x86_64.dylib</source>
+        <source platform="linux-aarch64" file="reaper_sws-aarch64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-aarch64.so</source>
+        <source platform="linux-armv7l" file="reaper_sws-armv7l.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-armv7l.so</source>
+        <source platform="linux32" file="reaper_sws-i686.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-i686.so</source>
+        <source platform="linux64" file="reaper_sws-x86_64.so">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-x86_64.so</source>
+        <source platform="win32" file="reaper_sws-x86.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-x86.dll</source>
+        <source platform="win64" file="reaper_sws-x64.dll">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/reaper_sws-x64.dll</source>
+        <source platform="darwin-arm64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python64.py</source>
+        <source platform="darwin64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python64.py</source>
+        <source platform="linux-aarch64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python64.py</source>
+        <source platform="linux64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python64.py</source>
+        <source platform="win64" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python64.py</source>
+        <source platform="darwin32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python32.py</source>
+        <source platform="linux-armv7l" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python32.py</source>
+        <source platform="linux32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python32.py</source>
+        <source platform="win32" type="script" file="../API/sws.py">https://github.com/reaper-oss/sws/releases/download/v2.14.0.7/sws_python32.py</source>
+        <source type="data" file="Grooves/16th Quantize.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/16th%20Quantize.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%2016'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 16'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%2016'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%2032'nd%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 32'nd triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%2032'nd%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%208'th%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/ASR10 8'th triplet Subz 2 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/ASR10%208'th%20triplet%20Subz%202%20bar.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 54% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2054%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 58% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2058%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 62% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2062%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_16_ 70% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_16_%2070%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 50% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_32_%2050%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 66% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_32_%2066%25%20swing.rgt</source>
+        <source type="data" file="Grooves/DX_32_ 83% swing.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/DX_32_%2083%25%20swing.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2050%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2054%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2058%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2063%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2067%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2071%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 75%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2075%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 79%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2079%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 83%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2083%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16 88%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16%2088%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-16T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-16T%25.rgt</source>
+        <source type="data" file="Grooves/Korg DDD-1-8T%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Korg%20DDD-1-8T%25.rgt</source>
+        <source type="data" file="Grooves/Logic_16A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16A.rgt</source>
+        <source type="data" file="Grooves/Logic_16B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16B.rgt</source>
+        <source type="data" file="Grooves/Logic_16C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16C.rgt</source>
+        <source type="data" file="Grooves/Logic_16D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16D.rgt</source>
+        <source type="data" file="Grooves/Logic_16E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16E.rgt</source>
+        <source type="data" file="Grooves/Logic_16F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_16F.rgt</source>
+        <source type="data" file="Grooves/Logic_8A.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8A.rgt</source>
+        <source type="data" file="Grooves/Logic_8B.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8B.rgt</source>
+        <source type="data" file="Grooves/Logic_8C.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8C.rgt</source>
+        <source type="data" file="Grooves/Logic_8D.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8D.rgt</source>
+        <source type="data" file="Grooves/Logic_8E.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8E.rgt</source>
+        <source type="data" file="Grooves/Logic_8F.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/Logic_8F.rgt</source>
+        <source type="data" file="Grooves/MPC 16'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2016'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2032'nd%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 32'nd Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2032'nd%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 50% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2050%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 51% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2051%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 52% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2052%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 53% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2053%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 54% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2054%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 55% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2055%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 56% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2056%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 57% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2057%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 58% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2058%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 59% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2059%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 60% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2060%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 61% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2061%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 62% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2062%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 63% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2063%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 64% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2064%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 65% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2065%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 66% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2066%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 67% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2067%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 68% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2068%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 69% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2069%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 70% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2070%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 71% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2071%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 72% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2072%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 73% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2073%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 74% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2074%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 75% Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%2075%25%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/MPC 8'th Triplet Subz 4 bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/MPC%208'th%20Triplet%20Subz%204%20bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_50%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_50%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_32_2bar.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_50%25_32_2bar.rgt</source>
+        <source type="data" file="Grooves/SP1200_50%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_50%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_54%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_16T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_54%25_16T.rgt</source>
+        <source type="data" file="Grooves/SP1200_54%_8T.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_54%25_8T.rgt</source>
+        <source type="data" file="Grooves/SP1200_58%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_58%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_63%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_63%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_67%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_67%25.rgt</source>
+        <source type="data" file="Grooves/SP1200_71%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/SP1200_71%25.rgt</source>
+        <source type="data" file="Grooves/energyXT_50%.rgt">https://github.com/reaper-oss/sws/raw/v2.14.0.7/FingersExtras/Grooves/energyXT_50%25.rgt</source>
       </version>
     </reapack>
   </category>

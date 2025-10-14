@@ -1,24 +1,12 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.9.3.3
+@version 0.10.0.2
 @changelog
-  • Accurately detect when script execution is suspended (REAPER v7.28+ only)
-  • Fix default flags in Demo > Widgets > Text Input > Multi-line
-  • Fix empty lines in imgui_defs.lua due to empty section help text
-  • Fix gaining logical focus when the OS window gets it from a window outside the context
-  • Fix omitting ColorPick4's ref_col parameter
-  • Fix splash screen detection being off by one frame
-  • Limit user window sizes to 8192px per axis to avoid crashes
-  • macOS: report hit-testing transparency to SWELL's WindowFromPoint
-  • Windows: fix Alt key input while holding down a mouse button when "Allow keyboard commands when mouse-editing" is disabled
-
-  gfx2imgui:
-  • Accept passing a nil and other non-string names to gfx.init
-  • Fix gfx.getchar returning a nil second value when closing
-  • Fix unattached font fallback nearest lookup
-  • Implement inverted text effect approximation
-  • Repair rectangle rotation
-  • Support uppercase font flag bytes
+  • Update modifiers on window focus instead of only on mouse down
+  • Linux: fix creation of textures pending an update on new windows [p=2884972]
+  • Linux: remove focus when none of the hidden windows are active
+  • macOS: fix selection of the default font face within files containing variations on macOS 11 & 12 [p=2887560]
+  • Windows: ignore system fonts using the Microsoft Symbol encoding [p=2884504]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
