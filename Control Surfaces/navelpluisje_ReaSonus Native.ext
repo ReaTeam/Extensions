@@ -1,17 +1,27 @@
 @description ReaSonus Native
 @author Navelpluisje
+<<<<<<< Updated upstream
 @version 0.1.4
+=======
+@version 0.3.0
+>>>>>>> Stashed changes
 @changelog
-  # What's Changed
+> NEW REQUIREMENT: Also needs ReaImGui v0.10.*
 
-  ## All devices
+# What's Changed
 
+<<<<<<< Updated upstream
   * Fixed functions and filters dialog states (After closing the dialog, you had to click the button twice)
   * Added the version number to the settings dialog
   * Show the correct functions window when calling it from the actions list
+=======
+## All devices
+>>>>>>> Stashed changes
 
-  ## FaderPort 8/16
+* Moved the dialogs to ReaImgui. See the documentation for more details.
+* Fixed issue with saw-tooth like envelopes in touch mode
 
+<<<<<<< Updated upstream
   * Fixed issue where pressing the link button with no tracks crashed Reaper
   * When loading larger project, some buttons were not lit
   * Reset the faders and buttons on load and close of a project and reaper
@@ -19,11 +29,27 @@
   * Right Shift Select now selected a range
   * Added setting to untouch the l;ast touched param after learn in menu mapping
   * Added descriptions to the on-device menu
+=======
+### FaderPort 8/16
+>>>>>>> Stashed changes
 
-  ## FaderPort V2
+* Added pan channel: The pan button now makes the faders handle the pan. Removed the shift + fader behaviour
+* Moved the receives channel to [Shift] + [Send] to make space for the Pan channel
+* Added option to make [Left Shift] + [Fader Touch] reset the fader value. This is a setting and off by default
+* Changed the shift behaviour for all channel related modi (track, plugin, send, etc...). Now when the shift(left or right), this does not reflect on these modi.
+* Fixed issue where all faders right of the last send fader also moved.
+* Added converter for the old zon plugin mapping files (It is always recommanded doing a test run on a portable install)
+* When on-device menu is open, it will now close with any click on the [Touch] button
+* Added option in the settings to change the Display layout in track mode. This also available in the on-device menu
 
+<<<<<<< Updated upstream
   * Set track color on the Channel button
   * Updated the documentation link in the settings dialog
+=======
+### FaderPort V2
+
+* Fixed bug where fader became inresponsive after adding a new track
+>>>>>>> Stashed changes
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
