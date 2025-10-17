@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="9bb1642d185da4a3d5d0fbfef76531e65b7dac03">
+<index version="1" name="ReaTeam Extensions" commit="70c3194076f7339d495d6854581c22ff315e39f1">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2434,6 +2434,37 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-x64.dll</source>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.2.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+      </version>
+      <version name="0.3.0" author="Navelpluisje" time="2025-10-17T16:25:03Z">
+        <changelog><![CDATA[> NEW REQUIREMENT: Also needs ReaImGui v0.10.*
+
+# What's Changed
+
+## All devices
+
+* Moved the dialogs to ReaImgui. See the documentation for more details.
+* Fixed issue with saw-tooth like envelopes in touch mode
+
+### FaderPort 8/16
+
+* Added pan channel: The pan button now makes the faders handle the pan. Removed the shift + fader behaviour
+* Moved the receives channel to [Shift] + [Send] to make space for the Pan channel
+* Added option to make [Left Shift] + [Fader Touch] reset the fader value. This is a setting and off by default
+* Changed the shift behaviour for all channel related modi (track, plugin, send, etc...). Now when the shift(left or right), this does not reflect on these modi.
+* Fixed issue where all faders right of the last send fader also moved.
+* Added converter for the old zon plugin mapping files (It is always recommanded doing a test run on a portable install)
+* When on-device menu is open, it will now close with any click on the [Touch] button
+* Added option in the settings to change the Display layout in track mode. This also available in the on-device menu
+
+### FaderPort V2
+
+* Fixed bug where fader became inresponsive after adding a new track
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.3.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.3.0/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.3.0/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.3.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
