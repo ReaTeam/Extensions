@@ -32,6 +32,7 @@
   [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x64.dll
   [win32] reaper_ReasonusNative-x86.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x86.dll
   [darwin64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
+  ReaSonus/en-US.ini https://github.com/navelpluisje/Reasonus-Native/releases/download/0.3.0-pre1/en-US.ini
 @link
   Documentation https://navelpluisje.github.io/reasonus/
   Report Issue https://github.com/navelpluisje/Reasonus-Native/issues
