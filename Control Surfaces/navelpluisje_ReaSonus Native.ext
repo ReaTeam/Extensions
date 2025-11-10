@@ -1,30 +1,16 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.4.0
+@version 0.4.1
 @changelog
-  > The UI is now translatable and som etrickery has been done to lod the initial translations. 
-  > Please let me now if there is anything wrong with the translations.
-
   # What's Changed
 
   ## All devices
 
-  * UI for the Control Panel is translatable now.
-  * Some UI improvements. Added snackbar for messages instead of popups.
+  * Fixed an issue where REAPER freezes when selecting the master track
 
-  ### FaderPort 8/16
-
-  * Re-organized the settings page and added tabs
-  * Added 8 extra function buttons by using the right Shift button. 
-  * The configutation for the Functionm keys now has 2 tabs. One for the Left Shift functions and one for the right Shift functions
-  * Fixed an issue with the pan encoder in track mode
-  * Added distraction free mode (Removes the blinking buttons and some of the active states of buttons)
-  * TCP now follows the FaderPort (respects the offset created by pinned tracks)
-  * Fixed issue where hidden tracks were not taken in account for the offset on the FaderPort
-  
   ### FaderPort V2
 
-  * Added options to disable the fader with [Shift] + [Channel]. This has to be enabled in the settings
+  * Fixed issue where master track did not respond in Master Session mode
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
