@@ -1,16 +1,12 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.4.2
+@version 0.4.3
 @changelog
   # What's Changed
 
   ## All devices
 
-  * Fixed issue where REAPER crashed when selecting a hidden track in the track manager
-
-  ### FaderPort 8/16
-
-  * Fixed issue where the FaderPort was not following the selected track in REAPER
+  * Fixed issue where Touch mode was overwriting Pan or volume envelopes
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
