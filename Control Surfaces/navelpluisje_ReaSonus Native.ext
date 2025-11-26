@@ -1,12 +1,23 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.4.3
+@version 0.5.0
 @changelog
   # What's Changed
 
   ## All devices
 
-  * Fixed issue where Touch mode was overwriting Pan or volume envelopes
+  - Added option to reset the action of a function key. This can be done by clicking the refresh icon in the UI.
+  - Most of the settings are now also available as actions.
+
+  ## FaderPort 8/16
+
+  - Added option to manage sends and receives on-device
+  - Added option to use multiple filters
+  - Added exclusive solo. This can be done by presiing the Solo button while having the [Left Shift] button pressed as well
+
+  ## FaderPort V2
+
+  - Added infinite scroll through tracks. When the last track is selected and pressing the next button you'll go to the first track. This also works the other way around. This feature should be enabled in the settings.
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
