@@ -1,23 +1,24 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.5.0
+@version 0.6.0
 @changelog
   # What's Changed
 
   ## All devices
 
-  - Added option to reset the action of a function key. This can be done by clicking the refresh icon in the UI.
-  - Most of the settings are now also available as actions.
+  - Improved Latch Preview automation mode. You can now select a function for the Latch Preview button. When in Latch Preview mode, adjusting the parameter, and pressing the button will perform the selected action to apply the value.
+  - Add footswitch functionality. The Function Keys page is a new tab with Footswitch Functions. You can set actions for default, [Left Shift] + Footswitch and [Right Shift] + Footswitch
 
   ## FaderPort 8/16
 
-  - Added option to manage sends and receives on-device
-  - Added option to use multiple filters
-  - Added exclusive solo. This can be done by presiing the Solo button while having the [Left Shift] button pressed as well
+  - Added option to the filters to make it case insesnitive.
+  - Added ability to set the brightness of the select buttons in unselected state.
+  - Added width/right pan and Plugin Parameters to work with Touch automation mode
 
   ## FaderPort V2
 
-  - Added infinite scroll through tracks. When the last track is selected and pressing the next button you'll go to the first track. This also works the other way around. This feature should be enabled in the settings.
+  - Mode the Arm All button behave as a toggle button.
+  - Fixed issue with disabled fader.
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
