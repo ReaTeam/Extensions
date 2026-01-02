@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="4ee53cac513abd6950642e4025b196c0bd7441f5">
+<index version="1" name="ReaTeam Extensions" commit="a102f8f6b1b7c4bf3e39e8487318b2e45bbaf3a4">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2598,6 +2598,26 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/en-US.ini</source>
+      </version>
+      <version name="0.7.0" author="Navelpluisje" time="2026-01-02T17:19:51Z">
+        <changelog><![CDATA[# What's Changed
+
+## FaderPort 8/16
+
+- Fixed issue with wrong time code when `Use ruler time unit` was selected.
+- Added the abilty to uninvert labels for the plugin mapping. This is a drop down select on the plugin Mapping page in the ReaSonus Control Panel.
+- Added option to set the scroll size for controlling plugins. This can be set in 3 ways:
+  - In the ReaSonus Control panel under the Plugin Control tab
+  - In the on-device menu
+  - When controlling a plugin, press the Pan/Param encoder. The first display will show the step size. Set the step size with the encoder and click the encoder again to save the value
+- When selecting a track in REAPER and this track is already visible on the FaderPort, it will not change the tracks on the FaderPort. If teh track is not visible on the device, it will scroll with bank-size steps.
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
