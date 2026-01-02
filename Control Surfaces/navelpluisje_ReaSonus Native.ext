@@ -1,23 +1,18 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.5.0
+@version 0.7.0
 @changelog
   # What's Changed
 
-  ## All devices
-
-  - Added option to reset the action of a function key. This can be done by clicking the refresh icon in the UI.
-  - Most of the settings are now also available as actions.
-
   ## FaderPort 8/16
 
-  - Added option to manage sends and receives on-device
-  - Added option to use multiple filters
-  - Added exclusive solo. This can be done by presiing the Solo button while having the [Left Shift] button pressed as well
-
-  ## FaderPort V2
-
-  - Added infinite scroll through tracks. When the last track is selected and pressing the next button you'll go to the first track. This also works the other way around. This feature should be enabled in the settings.
+  - Fixed issue with wrong time code when `Use ruler time unit` was selected.
+  - Added the abilty to uninvert labels for the plugin mapping. This is a drop down select on the plugin Mapping page in the ReaSonus Control Panel.
+  - Added option to set the scroll size for controlling plugins. This can be set in 3 ways:
+    - In the ReaSonus Control panel under the Plugin Control tab
+    - In the on-device menu
+    - When controlling a plugin, press the Pan/Param encoder. The first display will show the step size. Set the step size with the encoder and click the encoder again to save the value
+  - When selecting a track in REAPER and this track is already visible on the FaderPort, it will not change the tracks on the FaderPort. If teh track is not visible on the device, it will scroll with bank-size steps.
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
