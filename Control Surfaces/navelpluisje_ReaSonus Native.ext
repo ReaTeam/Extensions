@@ -1,24 +1,18 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.6.0
+@version 0.7.0
 @changelog
   # What's Changed
 
-  ## All devices
-
-  - Improved Latch Preview automation mode. You can now select a function for the Latch Preview button. When in Latch Preview mode, adjusting the parameter, and pressing the button will perform the selected action to apply the value.
-  - Add footswitch functionality. The Function Keys page is a new tab with Footswitch Functions. You can set actions for default, [Left Shift] + Footswitch and [Right Shift] + Footswitch
-
   ## FaderPort 8/16
 
-  - Added option to the filters to make it case insesnitive.
-  - Added ability to set the brightness of the select buttons in unselected state.
-  - Added width/right pan and Plugin Parameters to work with Touch automation mode
-
-  ## FaderPort V2
-
-  - Mode the Arm All button behave as a toggle button.
-  - Fixed issue with disabled fader.
+  - Fixed issue with wrong time code when `Use ruler time unit` was selected.
+  - Added the abilty to uninvert labels for the plugin mapping. This is a drop down select on the plugin Mapping page in the ReaSonus Control Panel.
+  - Added option to set the scroll size for controlling plugins. This can be set in 3 ways:
+    - In the ReaSonus Control panel under the Plugin Control tab
+    - In the on-device menu
+    - When controlling a plugin, press the Pan/Param encoder. The first display will show the step size. Set the step size with the encoder and click the encoder again to save the value
+  - When selecting a track in REAPER and this track is already visible on the FaderPort, it will not change the tracks on the FaderPort. If teh track is not visible on the device, it will scroll with bank-size steps.
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
