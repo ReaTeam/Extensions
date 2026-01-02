@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="1d4d904950dae17277cda8730bea1421d44d563a">
+<index version="1" name="ReaTeam Extensions" commit="4ee53cac513abd6950642e4025b196c0bd7441f5">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2572,6 +2572,32 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.5.0/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.5.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.5.0/en-US.ini</source>
+      </version>
+      <version name="0.6.0" author="Navelpluisje" time="2025-12-10T22:10:50Z">
+        <changelog><![CDATA[# What's Changed
+
+## All devices
+
+- Improved Latch Preview automation mode. You can now select a function for the Latch Preview button. When in Latch Preview mode, adjusting the parameter, and pressing the button will perform the selected action to apply the value.
+- Add footswitch functionality. The Function Keys page is a new tab with Footswitch Functions. You can set actions for default, [Left Shift] + Footswitch and [Right Shift] + Footswitch
+
+## FaderPort 8/16
+
+- Added option to the filters to make it case insesnitive.
+- Added ability to set the brightness of the select buttons in unselected state.
+- Added width/right pan and Plugin Parameters to work with Touch automation mode
+
+## FaderPort V2
+
+- Mode the Arm All button behave as a toggle button.
+- Fixed issue with disabled fader.
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.6.0/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
