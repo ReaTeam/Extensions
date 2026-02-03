@@ -24,6 +24,13 @@
 
   - The automation buttons were not illuminated correct
 
+  > During development also an issue was found with not taking the plugin type in account. This can cause issues with the mapping as a VST and VST do not have the same mapping.
+  > A tool has been created to help you fixing this. In the action list search for plugin type and run it.
+
+  ## FaderPort V2
+
+  - Fixed issue where translations in the UI were not loaded
+
   Thanx a lot to DesertEagleDerek for the code contributions and testing
 
   Thanx to anyone reporting issues and help me debug them.
