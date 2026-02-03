@@ -1,18 +1,37 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.7.0
+@version 0.8.0
 @changelog
   # What's Changed
 
   ## FaderPort 8/16
 
-  - Fixed issue with wrong time code when `Use ruler time unit` was selected.
-  - Added the abilty to uninvert labels for the plugin mapping. This is a drop down select on the plugin Mapping page in the ReaSonus Control Panel.
-  - Added option to set the scroll size for controlling plugins. This can be set in 3 ways:
-    - In the ReaSonus Control panel under the Plugin Control tab
-    - In the on-device menu
-    - When controlling a plugin, press the Pan/Param encoder. The first display will show the step size. Set the step size with the encoder and click the encoder again to save the value
-  - When selecting a track in REAPER and this track is already visible on the FaderPort, it will not change the tracks on the FaderPort. If teh track is not visible on the device, it will scroll with bank-size steps.
+  This release has a lot of improvements for the UI for Plugin Mapping:
+
+  - Added the option to set the step size in Plugin Control mode on the device. The step size can be set both on-device as in the settings.
+  - You can now per control set the invert of the label. This can help you grouping sets of controls.
+  - All parameters of the plugin are now in the parameters list.
+  - Parameter list is now searchable.
+  - Added option to go to a group by number. This way you can go fairly quick to group 100 (or further of course).
+  - You can now add a new group at any place and delete any group.
+  - Drag and drop has been implemented to change the order of the groups.
+  - The limit for the maximum number of groups is set to 1024
+  - There is an indicator now that tells per group if it has changed or not.
+  - Added option to undo changes per group or all at once
+  - Some minor bugs with the UI have been fixed
+
+  One more bug has been fixed:
+
+  - The automation buttons were not illuminated correct
+
+  > During development also an issue was found with not taking the plugin type in account. This can cause issues with the mapping as a VST and VST do not have the same mapping.
+  > A tool has been created to help you fixing this. In the action list search for plugin type and run it.
+
+  ## FaderPort V2
+
+  - Fixed issue where translations in the UI were not loaded
+
+  Thanx a lot to DesertEagleDerek for the code contributions and testing
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
