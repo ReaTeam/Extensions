@@ -1,12 +1,16 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.10.0.2
+@version 0.10.0.3
 @changelog
-  • Update modifiers on window focus instead of only on mouse down
-  • Linux: fix creation of textures pending an update on new windows [p=2884972]
-  • Linux: remove focus when none of the hidden windows are active
-  • macOS: fix selection of the default font face within files containing variations on macOS 11 & 12 [p=2887560]
-  • Windows: ignore system fonts using the Microsoft Symbol encoding [p=2884504]
+  • Demo: fix incorrect colors when ColorEditFlags_NoAlpha is enabled in Widgets > Color/Picker Widgets
+  • Fix a crash when the font fallback callback adds more than one source at once
+  • Fix fallback fonts not being re-installed when a font is re-instantiated
+  • Fix fonts rendering at 1x scaling for the first frame of a window
+  • Support translation via REAPER langpacks
+  • Update Zig bindings for 0.15
+  • Linux: trick Hyprland into removing its borders
+  • Windows: disable topmost while windows are disabled
+  • Windows: extend hit-test transparency to windows in other processes
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
