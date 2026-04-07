@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="5a58b0a77b913bd55416601301a23fbc850e8b0d">
+<index version="1" name="ReaTeam Extensions" commit="e965ffc2db8297891f57210e6ac5866b4026a133">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2238,6 +2238,31 @@ Note: the saved state of most windows will be reset after this update]]></change
         <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/reaper_imgui_doc.html</source>
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.2/shims/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/gfx2imgui.lua</source>
+      </version>
+      <version name="0.10.0.3" author="cfillion" time="2026-04-07T02:07:41Z">
+        <changelog><![CDATA[• Demo: fix incorrect colors when ColorEditFlags_NoAlpha is enabled in Widgets > Color/Picker Widgets
+• Fix a crash when the font fallback callback adds more than one source at once
+• Fix fallback fonts not being re-installed when a font is re-instantiated
+• Fix fonts rendering at 1x scaling for the first frame of a window
+• Support translation via REAPER langpacks
+• Update Zig bindings for 0.15
+• Linux: trick Hyprland into removing its borders
+• Windows: disable topmost while windows are disabled
+• Windows: extend hit-test transparency to windows in other processes]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.3/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.3/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/gfx2imgui.lua</source>
       </version>
     </reapack>
   </category>
