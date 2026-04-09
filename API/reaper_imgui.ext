@@ -1,16 +1,9 @@
 @description ReaImGui: ReaScript binding for Dear ImGui
 @author cfillion
-@version 0.10.0.3
+@version 0.10.0.4
 @changelog
-  • Demo: fix incorrect colors when ColorEditFlags_NoAlpha is enabled in Widgets > Color/Picker Widgets
-  • Fix a crash when the font fallback callback adds more than one source at once
-  • Fix fallback fonts not being re-installed when a font is re-instantiated
-  • Fix fonts rendering at 1x scaling for the first frame of a window
-  • Support translation via REAPER langpacks
-  • Update Zig bindings for 0.15
-  • Linux: trick Hyprland into removing its borders
-  • Windows: disable topmost while windows are disabled
-  • Windows: extend hit-test transparency to windows in other processes
+  • Linux: fix crash when docking on Linux since 0.10.0.3
+  • Windows: fix docked windows being invisible until resized since 0.10.0.3 [p=2934941]
 @provides
   [darwin32] reaper_imgui-i386.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
   [darwin64] reaper_imgui-x86_64.dylib https://github.com/cfillion/reaimgui/releases/download/v$version/$path
