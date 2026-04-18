@@ -1,18 +1,16 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.7.0
+@version 0.8.1
 @changelog
   # What's Changed
 
   ## FaderPort 8/16
 
-  - Fixed issue with wrong time code when `Use ruler time unit` was selected.
-  - Added the abilty to uninvert labels for the plugin mapping. This is a drop down select on the plugin Mapping page in the ReaSonus Control Panel.
-  - Added option to set the scroll size for controlling plugins. This can be set in 3 ways:
-    - In the ReaSonus Control panel under the Plugin Control tab
-    - In the on-device menu
-    - When controlling a plugin, press the Pan/Param encoder. The first display will show the step size. Set the step size with the encoder and click the encoder again to save the value
-  - When selecting a track in REAPER and this track is already visible on the FaderPort, it will not change the tracks on the FaderPort. If teh track is not visible on the device, it will scroll with bank-size steps.
+  This release has a lot of improvements for the UI for Plugin Mapping:
+
+  - Fixed issue where the FderPort could disconnect when an action had a popup like Edit Marker
+  - Fixed issue where the valuebar looked faded when working with plugins
+  - Fixed issue where the displays got weird after switching quick between different fader modes
 
   Thanx to anyone reporting issues and help me debug them.
 @provides

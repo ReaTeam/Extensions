@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="a102f8f6b1b7c4bf3e39e8487318b2e45bbaf3a4">
+<index version="1" name="ReaTeam Extensions" commit="78b92867402cd4b31c64c6dd85acf6809aa50f1f">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2239,6 +2239,66 @@ Note: the saved state of most windows will be reset after this update]]></change
         <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.2/shims/imgui.lua</source>
         <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.2/gfx2imgui.lua</source>
       </version>
+      <version name="0.10.0.3" author="cfillion" time="2026-04-07T02:07:41Z">
+        <changelog><![CDATA[• Demo: fix incorrect colors when ColorEditFlags_NoAlpha is enabled in Widgets > Color/Picker Widgets
+• Fix a crash when the font fallback callback adds more than one source at once
+• Fix fallback fonts not being re-installed when a font is re-instantiated
+• Fix fonts rendering at 1x scaling for the first frame of a window
+• Support translation via REAPER langpacks
+• Update Zig bindings for 0.15
+• Linux: trick Hyprland into removing its borders
+• Windows: disable topmost while windows are disabled
+• Windows: extend hit-test transparency to windows in other processes]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.3/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.3/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.3/gfx2imgui.lua</source>
+      </version>
+      <version name="0.10.0.4" author="cfillion" time="2026-04-09T21:25:03Z">
+        <changelog><![CDATA[• Linux: fix crash when docking on Linux since 0.10.0.3
+• Windows: fix docked windows being invisible until resized since 0.10.0.3 [p=2934941]]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.4/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.4/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.4/gfx2imgui.lua</source>
+      </version>
+      <version name="0.10.0.5" author="cfillion" time="2026-04-16T01:22:41Z">
+        <changelog><![CDATA[• Linux: fix unmovable and unresizable windows in KDE since 0.10.0.3 [#31]]]></changelog>
+        <source platform="darwin32" file="reaper_imgui-i386.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-i386.dylib</source>
+        <source platform="darwin64" file="reaper_imgui-x86_64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-x86_64.dylib</source>
+        <source platform="darwin-arm64" file="reaper_imgui-arm64.dylib">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-arm64.dylib</source>
+        <source platform="linux32" file="reaper_imgui-i686.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-i686.so</source>
+        <source platform="linux64" file="reaper_imgui-x86_64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-x86_64.so</source>
+        <source platform="linux-armv7l" file="reaper_imgui-armv7l.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-armv7l.so</source>
+        <source platform="linux-aarch64" file="reaper_imgui-aarch64.so">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-aarch64.so</source>
+        <source platform="win32" file="reaper_imgui-x86.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-x86.dll</source>
+        <source platform="win64" file="reaper_imgui-x64.dll">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui-x64.dll</source>
+        <source main="main" type="script" file="ReaImGui_Demo.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.5/examples/demo.lua</source>
+        <source type="script" file="imgui.py">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/imgui.py</source>
+        <source type="data" file="reaper_imgui_doc.html">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/reaper_imgui_doc.html</source>
+        <source type="script" file="imgui.lua">https://github.com/cfillion/reaimgui/raw/v0.10.0.5/shims/imgui.lua</source>
+        <source type="script" file="gfx2imgui.lua">https://github.com/cfillion/reaimgui/releases/download/v0.10.0.5/gfx2imgui.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Control Surfaces">
@@ -2618,6 +2678,63 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.7.0/en-US.ini</source>
+      </version>
+      <version name="0.8.0" author="Navelpluisje" time="2026-02-03T21:30:16Z">
+        <changelog><![CDATA[# What's Changed
+
+## FaderPort 8/16
+
+This release has a lot of improvements for the UI for Plugin Mapping:
+
+- Added the option to set the step size in Plugin Control mode on the device. The step size can be set both on-device as in the settings.
+- You can now per control set the invert of the label. This can help you grouping sets of controls.
+- All parameters of the plugin are now in the parameters list.
+- Parameter list is now searchable.
+- Added option to go to a group by number. This way you can go fairly quick to group 100 (or further of course).
+- You can now add a new group at any place and delete any group.
+- Drag and drop has been implemented to change the order of the groups.
+- The limit for the maximum number of groups is set to 1024
+- There is an indicator now that tells per group if it has changed or not.
+- Added option to undo changes per group or all at once
+- Some minor bugs with the UI have been fixed
+
+One more bug has been fixed:
+
+- The automation buttons were not illuminated correct
+
+> During development also an issue was found with not taking the plugin type in account. This can cause issues with the mapping as a VST and VST do not have the same mapping.
+> A tool has been created to help you fixing this. In the action list search for plugin type and run it.
+
+## FaderPort V2
+
+- Fixed issue where translations in the UI were not loaded
+
+Thanx a lot to DesertEagleDerek for the code contributions and testing
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.0/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.0/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.0/en-US.ini</source>
+      </version>
+      <version name="0.8.1" author="Navelpluisje" time="2026-02-09T04:42:59Z">
+        <changelog><![CDATA[# What's Changed
+
+## FaderPort 8/16
+
+This release has a lot of improvements for the UI for Plugin Mapping:
+
+- Fixed issue where the FderPort could disconnect when an action had a popup like Edit Marker
+- Fixed issue where the valuebar looked faded when working with plugins
+- Fixed issue where the displays got weird after switching quick between different fader modes
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
