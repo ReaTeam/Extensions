@@ -15,6 +15,7 @@
   ## FaderPort 8/16
 
   - Disable the last touched fader mode when switching to any plugin related channel mode
+  - Improved/Fixed last touched param implementation
 
   ## FaderPort V2
   - Fixed issue where disabled fader was not working
