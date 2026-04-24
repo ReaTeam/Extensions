@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="78b92867402cd4b31c64c6dd85acf6809aa50f1f">
+<index version="1" name="ReaTeam Extensions" commit="658507e83e870068d0a352027599558fd159423c">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2393,7 +2393,7 @@ Note: the saved state of most windows will be reset after this update]]></change
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u8216'Unlimited\u8217' custom editable filters\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MIDI learn style plugin mapping\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Swap Shift buttons\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Controll last touched plugin param\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Control last touched plugin param\sa180\par}
 }
 ]]></description>
         <link rel="website" href="https://navelpluisje.github.io/reasonus/">Documentation</link>
@@ -2735,6 +2735,32 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.1/en-US.ini</source>
+      </version>
+      <version name="0.8.2" author="Navelpluisje" time="2026-04-24T18:36:26Z">
+        <changelog><![CDATA[# What's Changed
+
+This release fixes some bugs
+
+## All devices
+
+- Fixed issue where the selected track was not visible in the mixer
+- Fixed issue where REAPER could crash when no translation file was loaded yet
+- Some code cleanup
+
+## FaderPort 8/16
+
+- Disable the last touched fader mode when switching to any plugin related channel mode
+- Improved/Fixed last touched param implementation
+
+## FaderPort V2
+- Fixed issue where disabled fader was not working
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.2/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.2/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.2/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.2/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.8.2/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
