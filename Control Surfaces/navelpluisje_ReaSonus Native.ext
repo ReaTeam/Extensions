@@ -1,16 +1,24 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.8.1
+@version 0.8.2
 @changelog
   # What's Changed
 
+  This release fixes some bugs
+
+  ## All devices
+
+  - Fixed issue where the selected track was not visible in the mixer
+  - Fixed issue where REAPER could crash when no translation file was loaded yet
+  - Some code cleanup
+
   ## FaderPort 8/16
 
-  This release has a lot of improvements for the UI for Plugin Mapping:
+  - Disable the last touched fader mode when switching to any plugin related channel mode
+  - Improved/Fixed last touched param implementation
 
-  - Fixed issue where the FderPort could disconnect when an action had a popup like Edit Marker
-  - Fixed issue where the valuebar looked faded when working with plugins
-  - Fixed issue where the displays got weird after switching quick between different fader modes
+  ## FaderPort V2
+  - Fixed issue where disabled fader was not working
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
@@ -42,5 +50,5 @@
   - ‘Unlimited’ custom editable filters
   - MIDI learn style plugin mapping
   - Swap Shift buttons
-  - Controll last touched plugin param
+  - Control last touched plugin param
 
