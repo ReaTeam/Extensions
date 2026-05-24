@@ -17,6 +17,7 @@
   - Option to Fast forward and rewind without sound (muting the master track) (Setting)
   - Solo in Front, with option to set the dim value with the pan-encoder
   - Improvements for plugin type checks in the plugin mapper
+  - Fixed issue where Select buttons had the wrong color after applying user filters
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
