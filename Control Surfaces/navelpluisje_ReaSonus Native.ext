@@ -1,24 +1,23 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.8.2
+@version 0.9.0
 @changelog
   # What's Changed
 
-  This release fixes some bugs
+  This release has the following fixes and improvements
 
   ## All devices
 
-  - Fixed issue where the selected track was not visible in the mixer
-  - Fixed issue where REAPER could crash when no translation file was loaded yet
-  - Some code cleanup
+  - Fixed issue with message popping up on start
 
   ## FaderPort 8/16
 
-  - Disable the last touched fader mode when switching to any plugin related channel mode
-  - Improved/Fixed last touched param implementation
-
-  ## FaderPort V2
-  - Fixed issue where disabled fader was not working
+  - Instant applying filters in multi select mode (Setting)
+  - Displays are fully configurable. You can select all display modes, value-bar modes and assign values and settings to every line
+  - Option to Fast forward and rewind without sound (muting the master track) (Setting)
+  - Solo in Front, with option to set the dim value with the pan-encoder
+  - Improvements for plugin type checks in the plugin mapper
+  - Fixed issue where Select buttons had the wrong color after applying user filters
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
