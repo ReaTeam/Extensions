@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="34be4f0fd0ed8901986628a128140f0443e54bc5">
+<index version="1" name="ReaTeam Extensions" commit="1c4257a3d4efa84b867168c6ab20838ec9923f9f">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2786,6 +2786,22 @@ Thanx to anyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.0/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.0/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.0/en-US.ini</source>
+      </version>
+      <version name="0.9.1" author="Navelpluisje" time="2026-06-02T01:31:00Z">
+        <changelog><![CDATA[# What's Changed
+
+This release has the following fix
+
+## FaderPort 8/16
+
+- Fixed issue where the valuebar value was not displaying the correct value
+
+Thanx to anyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.1/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.1/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.9.1/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
