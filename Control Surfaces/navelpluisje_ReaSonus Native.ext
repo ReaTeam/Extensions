@@ -1,23 +1,14 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.9.0
+@version 0.9.1
 @changelog
   # What's Changed
 
-  This release has the following fixes and improvements
-
-  ## All devices
-
-  - Fixed issue with message popping up on start
+  This release has the following fix
 
   ## FaderPort 8/16
 
-  - Instant applying filters in multi select mode (Setting)
-  - Displays are fully configurable. You can select all display modes, value-bar modes and assign values and settings to every line
-  - Option to Fast forward and rewind without sound (muting the master track) (Setting)
-  - Solo in Front, with option to set the dim value with the pan-encoder
-  - Improvements for plugin type checks in the plugin mapper
-  - Fixed issue where Select buttons had the wrong color after applying user filters
+  - Fixed issue where the valuebar value was not displaying the correct value
 
   Thanx to anyone reporting issues and help me debug them.
 @provides
