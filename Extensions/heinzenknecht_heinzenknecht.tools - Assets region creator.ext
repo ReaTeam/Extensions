@@ -1,0 +1,294 @@
+@description heinzenknecht.tools - Assets region creator
+@author Heinzenknecht
+@version 1.0
+@provides [script] heinzenknecht_heinzenknecht.tools - Assets region creator/heinzenknecht.tools - Assets region creator.lua > heinzenknecht_heinzenknecht.tools - Assets region creator/heinzenknecht.tools - Assets region creator
+@about
+  Create regions from selected items, grouped by time overlap across tracks.
+
+  Extra behavior:
+  - Before creating regions, delete any existing regions and markers that overlap the new region spans.
+  - Region naming uses the topmost parent track name + incremental number.
+  - Region color is copied from that same topmost parent track.
+  - Creates one outer region per parent track spanning all created regions for that parent, extended by 0.1 second before the first and after the last.
+  - Outer region is named GROUP_<parent track> and forced to dark grey.
+  - Ensures the project has at least 3 ruler lanes.
+    - Sets:
+       - lane 0 = parent region
+       - lane 1 = asset regions
+       - lane 2 = parent marker
+
+--  Create regions from selected items, grouped by time overlap across tracks.
+--
+--  Extra behavior:
+--  - Before creating regions, delete any existing regions and markers that overlap
+--    the new region spans.
+--  - Region naming uses the topmost parent track name + incremental number.
+--  - Region color is copied from that same topmost parent track.
+--  - Creates one outer region per parent track spanning all created regions
+--    for that parent, extended by 0.1 second before the first and after the last.
+--  - Outer region is named GROUP_<parent track> and forced to dark grey.
+--  - Ensures the project has at least 3 ruler lanes.
+--  - Sets:
+--      lane 0 = parent region
+--      lane 1 = asset regions
+--      lane 2 = parent marker
+
+local proj = 0
+local GAP_TOLERANCE = 0.01 -- seconds
+local OUTER_PAD = 0.1 -- seconds
+
+local item_count = reaper.CountSelectedMediaItems(proj)
+if item_count == 0 then
+  reaper.MB("No selected items found.", "Create regions from selected items", 0)
+  return
+end
+
+local function get_top_parent_track(track)
+  local parent = reaper.GetParentTrack(track)
+  while parent do
+    track = parent
+    parent = reaper.GetParentTrack(parent)
+  end
+  return track
+end
+
+local function ranges_overlap(a_start, a_end, b_start, b_end)
+  return a_start < b_end and b_start < a_end
+end
+
+local function get_track_sort_key(track)
+  return reaper.GetMediaTrackInfo_Value(track, "IP_TRACKNUMBER")
+end
+
+local function ensure_ruler_lanes(min_count)
+  local current = reaper.GetSetProjectInfo(proj, "RULER_LANE_COUNT", 0, false)
+  if current < min_count then
+    reaper.GetSetProjectInfo(proj, "RULER_LANE_COUNT", min_count, true)
+  end
+end
+
+local function find_region_or_marker_by_data(is_region, start_pos, end_pos, name)
+  local total = reaper.GetNumRegionsOrMarkers(proj)
+
+  for i = 0, total - 1 do
+    local obj = reaper.GetRegionOrMarker(proj, i, "")
+    if obj then
+      local obj_is_region = reaper.GetRegionOrMarkerInfo_Value(proj, obj, "B_ISREGION")
+      if (is_region and obj_is_region == 1) or ((not is_region) and obj_is_region == 0) then
+        local obj_start = reaper.GetRegionOrMarkerInfo_Value(proj, obj, "D_STARTPOS")
+        local obj_end = reaper.GetRegionOrMarkerInfo_Value(proj, obj, "D_ENDPOS")
+        local _, obj_name = reaper.GetSetRegionOrMarkerInfo_String(proj, obj, "P_NAME", "", false)
+
+        if math.abs(obj_start - start_pos) < 0.000001
+          and math.abs(obj_end - end_pos) < 0.000001
+          and obj_name == name then
+          return obj
+        end
+      end
+    end
+  end
+
+  return nil
+end
+
+local function set_lane_for_created_object(is_region, start_pos, end_pos, name, lane_number)
+  local obj = find_region_or_marker_by_data(is_region, start_pos, end_pos, name)
+  if obj then
+    reaper.SetRegionOrMarkerInfo_Value(proj, obj, "I_LANENUMBER", lane_number)
+  end
+end
+
+ensure_ruler_lanes(3)
+
+local items_by_parent = {}
+local parent_tracks = {}
+
+for i = 0, item_count - 1 do
+  local item = reaper.GetSelectedMediaItem(proj, i)
+  local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+  local len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+  local track = reaper.GetMediaItemTrack(item)
+  local parent_track = get_top_parent_track(track)
+
+  if not items_by_parent[parent_track] then
+    items_by_parent[parent_track] = {}
+    parent_tracks[#parent_tracks + 1] = parent_track
+  end
+
+  items_by_parent[parent_track][#items_by_parent[parent_track] + 1] = {
+    item = item,
+    start_pos = pos,
+    end_pos = pos + len,
+    track = track
+  }
+end
+
+table.sort(parent_tracks, function(a, b)
+  return get_track_sort_key(a) < get_track_sort_key(b)
+end)
+
+local new_regions = {}
+local new_markers = {}
+local counters = {}
+
+for _, parent_track in ipairs(parent_tracks) do
+  local items = items_by_parent[parent_track]
+
+  table.sort(items, function(a, b)
+    if a.start_pos == b.start_pos then
+      return a.end_pos < b.end_pos
+    end
+    return a.start_pos < b.start_pos
+  end)
+
+  local groups = {}
+  local current = {
+    start_pos = items[1].start_pos,
+    end_pos = items[1].end_pos,
+    tracks = { items[1].track }
+  }
+
+  for i = 2, #items do
+    local it = items[i]
+
+    if it.start_pos <= current.end_pos + GAP_TOLERANCE then
+      if it.end_pos > current.end_pos then
+        current.end_pos = it.end_pos
+      end
+      if it.start_pos < current.start_pos then
+        current.start_pos = it.start_pos
+      end
+      table.insert(current.tracks, it.track)
+    else
+      groups[#groups + 1] = current
+      current = {
+        start_pos = it.start_pos,
+        end_pos = it.end_pos,
+        tracks = { it.track }
+      }
+    end
+  end
+
+  groups[#groups + 1] = current
+
+  local _, track_name = reaper.GetTrackName(parent_track, "")
+  if not counters[parent_track] then
+    counters[parent_track] = 1
+  end
+
+  local parent_min_start = nil
+  local parent_max_end = nil
+
+  for _, g in ipairs(groups) do
+    local idx = counters[parent_track]
+    counters[parent_track] = idx + 1
+
+    local region_name = string.format("%s_%03d", track_name, idx)
+    local region_color = reaper.GetTrackColor(parent_track)
+
+    new_regions[#new_regions + 1] = {
+      start_pos = g.start_pos,
+      end_pos = g.end_pos,
+      name = region_name,
+      color = region_color,
+      lane = 1
+    }
+
+    if not parent_min_start or g.start_pos < parent_min_start then
+      parent_min_start = g.start_pos
+    end
+    if not parent_max_end or g.end_pos > parent_max_end then
+      parent_max_end = g.end_pos
+    end
+  end
+
+  if parent_min_start and parent_max_end then
+    local outer_region_start = math.max(0, parent_min_start - OUTER_PAD)
+    local outer_region_end = parent_max_end + OUTER_PAD
+    local outer_region_name = string.format("GROUP_%s", track_name)
+    local outer_region_color = reaper.ColorToNative(64, 64, 64) | 0x1000000
+
+    new_regions[#new_regions + 1] = {
+      start_pos = outer_region_start,
+      end_pos = outer_region_end,
+      name = outer_region_name,
+      color = outer_region_color,
+      lane = 0
+    }
+
+    new_markers[#new_markers + 1] = {
+      start_pos = outer_region_start,
+      end_pos = outer_region_end,
+      name = track_name,
+      lane = 2
+    }
+  end
+end
+
+local regions_to_delete = {}
+local markers_to_delete = {}
+local num_markers, num_regions = reaper.CountProjectMarkers(proj)
+
+for i = 0, num_markers + num_regions - 1 do
+  local retval, isrgn, pos, rgnend, name, markrgnindexnumber, color =
+    reaper.EnumProjectMarkers3(proj, i)
+
+  if retval then
+    if isrgn then
+      for _, nr in ipairs(new_regions) do
+        if ranges_overlap(pos, rgnend, nr.start_pos, nr.end_pos) then
+          regions_to_delete[#regions_to_delete + 1] = markrgnindexnumber
+          break
+        end
+      end
+    else
+      for _, nm in ipairs(new_markers) do
+        if pos >= nm.start_pos and pos <= nm.end_pos then
+          markers_to_delete[#markers_to_delete + 1] = markrgnindexnumber
+          break
+        end
+      end
+    end
+  end
+end
+
+reaper.Undo_BeginBlock2(proj)
+reaper.PreventUIRefresh(1)
+
+for i = 1, #regions_to_delete do
+  reaper.DeleteProjectMarker(proj, regions_to_delete[i], true)
+end
+
+for i = 1, #markers_to_delete do
+  reaper.DeleteProjectMarker(proj, markers_to_delete[i], false)
+end
+
+for _, r in ipairs(new_regions) do
+  reaper.AddProjectMarker2(
+    proj,
+    true,
+    r.start_pos,
+    r.end_pos,
+    r.name,
+    -1,
+    r.color
+  )
+  set_lane_for_created_object(true, r.start_pos, r.end_pos, r.name, r.lane)
+end
+
+for _, m in ipairs(new_markers) do
+  reaper.AddProjectMarker2(
+    proj,
+    false,
+    m.start_pos,
+    m.start_pos,
+    m.name,
+    -1,
+    0
+  )
+  set_lane_for_created_object(false, m.start_pos, m.start_pos, m.name, m.lane)
+end
+
+reaper.PreventUIRefresh(-1)
+reaper.UpdateArrange()
+reaper.Undo_EndBlock2(proj, "Replace overlapping regions from selected items", -1)
