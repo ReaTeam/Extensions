@@ -12,7 +12,7 @@
   - Ability to delete plugin mappings
   - Option to set the color of a mapping group (will be set to the select button)
   - Plugin caching (this will cache the parameters and its value) for more performant plugin mapping
-  - Plugin parameter filtering to reduce tha length of the parameters list
+  - Plugin parameter filtering to reduce the length of the parameters list
 
   Thanx to everyone reporting issues and help me debug them.
 @provides
