@@ -1,16 +1,20 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.9.2
+@version 0.10.0
 @changelog
   # What's Changed
 
-  This release has the following fix
+  This release is focussed on plugin mappings. Changes made contain:
 
   ## FaderPort 8/16
 
-  - Fixed issue with jittering fader
+  - Ability to add plugin mappings in the ReaSonus Control Panel
+  - Ability to delete plugin mappings
+  - Option to set the color of a mapping group (will be set to the select button)
+  - Plugin caching (this will cache the parameters and its value) for more performant plugin mapping
+  - Plugin parameter filtering to reduce tha length of the parameters list
 
-  Thanx to anyone reporting issues and help me debug them.
+  Thanx to everyone reporting issues and help me debug them.
 @provides
   [darwin-arm64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
   [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x64.dll
