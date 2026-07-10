@@ -1,18 +1,14 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.10.0
+@version 0.10.1
 @changelog
   # What's Changed
 
-  This release is focussed on plugin mappings. Changes made contain:
+  This release is a bugfix release:
 
   ## FaderPort 8/16
 
-  - Ability to add plugin mappings in the ReaSonus Control Panel
-  - Ability to delete plugin mappings
-  - Option to set the color of a mapping group (will be set to the select button)
-  - Plugin caching (this will cache the parameters and its value) for more performant plugin mapping
-  - Plugin parameter filtering to reduce the length of the parameters list
+  - Fixed issue where the sends did not work proper when a hardware out was in the list
 
   Thanx to everyone reporting issues and help me debug them.
 @provides
