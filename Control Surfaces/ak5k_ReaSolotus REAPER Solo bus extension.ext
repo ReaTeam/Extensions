@@ -1,7 +1,10 @@
 @description ReaSolotus: REAPER Solo bus extension
 @author ak5k
-@version 0.2.1
-@changelog Add multi-channel support (by kronihias)
+@version 0.3.0
+@changelog
+  project overhaul
+  improve multichannel handling
+  mix/solo bus sync related bug fix
 @provides
   [linux-aarch64] reaper_reasolotus-aarch64.so https://github.com/ak5k/reasolotus/releases/download/$version/$path
   [darwin-arm64] reaper_reasolotus-arm64.dylib https://github.com/ak5k/reasolotus/releases/download/$version/$path
