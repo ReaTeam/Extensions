@@ -1,0 +1,605 @@
+@description Inseglet
+@author James Livingston
+@version 1.13.2alpha
+@changelog
+  # Changelog
+
+  All notable changes to Inseglet are documented here. The format is based on
+  [Keep a Changelog](https://keepachangelog.com/), and the project aims to follow
+  [Semantic Versioning](https://semver.org/).
+
+  ## [Unreleased]
+
+  ## [1.13.2] — 2026-08-24
+
+  Documentation release. No functional change; the only source edit is a comment.
+
+  The standards basis now says which loudness engine implements which revision of ITU-R BS.1770.
+  Two paths ship and they cite different revisions on purpose: REAPER's native `RENDER_STATS`
+  program measure — `analysis.meter`'s program loudness and every deliverable-spec check — follows
+  **BS.1770-5**, while the in-box C++ gated engine, which measures stems, objects, the isolated
+  dialog bus and folds that exist only in memory, implements **BS.1770-4** and is pinned to it by
+  unit test. `docs/CONVENTIONS.md` had said "throughout", which was the only false statement.
+
+  `README.md` claimed CI builds the three-OS matrix on every push. It does not: CI compiles and
+  unit-tests on Ubuntu on every push, and the macOS / Windows / Linux matrix runs on a version tag
+  or a manual dispatch.
+
+  `docs/MANUAL.md` hedged on the published ReaPack index URL. It now states it, and states the
+  macOS signing posture plainly: the shipped `reaper_mcp.dylib` is ad-hoc codesigned — the
+  signature Apple Silicon requires to load it at all — and is not notarized.
+
+  Surface 190 tools / 4 resources / 5 prompts — unmoved. Unit suite 28, unmoved.
+
+
+  ## [1.13.1] — 2026-08-18
+
+  Hygiene release: a user-facing warning no longer cites an internal engineering document.
+
+  `analysis.meter`'s `CROSS_NO_SIBLING` warning — the one that fires when a digital-silence
+  render has no independent read path to check it against — carried a parenthetical citation
+  to an internal document. The sentence is unchanged in meaning; the citation is removed.
+
+  Surface 190 tools / 4 resources / 5 prompts — unmoved. Unit suite 28, unmoved.
+
+  ## [1.13.0] — 2026-08-18
+
+  Refusal release: `analysis.meter` will no longer REPORT a digital silence that two
+  independent read paths disagree about over the same bounded window.
+
+  `analysis.meter` renders to measure. When that render comes back all-zero the tool used to
+  report the silence as a measurement, and a dead render path is byte-for-byte
+  indistinguishable from a genuinely silent one -- the same `-144.0` on every channel, the
+  same `rawStats` carrying `LENGTH` alone, no `error` key, and elapsed times that do not
+  discriminate either. The tool now cross-reads the same window through
+  `analysis.accessor_meter`, which reads the track without rendering, and when the two paths
+  disagree it refuses the CLAIM rather than the call: `render_silent_unconfirmed`. Pass
+  `allowSilent` and it reports anyway, attaching BOTH readings and `windowMatched` so the
+  disagreement is in the payload rather than in a footnote.
+
+  Two things it deliberately does NOT do. It does not refuse when the two reads covered
+  DIFFERENT windows -- an unmatched window downgrades the refusal to a report and says so,
+  because two readings over different windows are not a comparison. And it does not treat
+  "the accessor sees content" as proof the render is dead: the accessor reads PRE track FX,
+  volume and pan, so a MUTED track legitimately reads content and renders to silence.
+
+  The warning now names WHICH branch produced the cross-read, as `crossRead.pathKind`:
+  `accessor_read`, `accessor_failed`, or `no_sibling_path`. It previously selected on a bare
+  availability boolean, so a read whose accessor path EXISTED AND FAILED was reported as
+  "no independent read path exists for this target" -- the right verdict attached to the
+  wrong reason. A fail-closed fourth branch names an unaccounted state rather than borrowing
+  the nearest plausible one.
+
+  *** Behaviour change: a call that previously returned a silent measurement can now refuse.
+  *** Pass allowSilent:true for the previous behaviour, with both readings attached.
+
+  Surface 190 tools / 4 resources / 5 prompts -- UNMOVED. ctest 28, unmoved.
+
+  ## [1.12.0] — 2026-08-15
+
+  Inseglet can now tell you whether a take's media is actually **there**. The surface grows to
+  **190 tools / 4 resources / 5 prompts**; the release is **purely additive** — no tool changes
+  what it returns, refuses anything it previously accepted, or reads different samples.
+
+  ### Added
+
+  - **`reaper://track/{trackIndex}/item/{itemIndex}/take/{takeIndex}/source` — a source-validity
+    panel.** A per-source readout for one take: the ReaScript-API rows (file name, type, channel
+    count, sample rate, length) alongside the SDK vtable rows, including
+    **`PCM_source::IsAvailable()`**. `IsAvailable` is not exposed by the ReaScript API at any
+    version, so this is the only route to a take's source-validity state — online, offline, or
+    missing.
+    ⚠️ **Read `vtable.controlPassed` before trusting any vtable row.** When it is false, the SDK
+    header and the running REAPER disagree about the vtable layout and no vtable figure is
+    believable. The panel carries that control itself rather than letting the numbers quietly lie.
+  - **A `sourceValidity` block on every accessor read** — `analysis.accessor_meter`,
+    `analysis.accessor_levels` and `analysis.accessor_gaps`. It reports how many sources the read
+    interrogated, how many reported unavailable, the **raw** sample rate / channel count / length
+    the source gave, and **`defaulted`**, which names every field a fallback stood in for. When a
+    source is unavailable the block carries the remedy: `action.run {command: 40101}` revalidates
+    the project's sources.
+    `available` is **null**, never `true`, when a read queried no source at all, and the three
+    single-source raw figures are **null** rather than `0` on any read that did not interrogate
+    exactly one source — a zero there would be indistinguishable from a source reporting zero.
+
+  ### Fixed
+
+  - **The accessor reported an identical read whether a take's media was there or not.**
+    `src/audio_accessor.h` substituted a plausible sample rate for a source that reported `0`, and
+    a channel count of `2` for one that reported less than `1` — exactly the two fields REAPER
+    zeroes when it cannot open a source. The evidence that anything was missing was destroyed
+    before it could be read. The reads still fall back, so behaviour is unchanged, but every
+    substitution now names itself and the raw readings travel beside it.
+  - **The track-read path interrogated no source at all**, so removing the fallbacks alone would
+    not have helped it. It now asks every take of every item on the track.
+  - **`docs/REFERENCE.md` regenerated** — it still advertised three resources.
+
+  ### Testing
+
+  - **New `unit.source_probe`** (unit suite 27 → 28). The predicate lives in its own REAPER-free
+    header so its whole truth table runs on a host build, and it carries two controls that must
+    **fire**: the pre-fix defaults reproducing the identical-read result, and the predicate
+    stripped of its quarter-note guard reporting an ordinary **MIDI take** as a broken source — a
+    source measured in quarter notes legitimately has no sample rate, and a detector that fires on
+    healthy content is a detector its users switch off.
+
+  ## [1.11.0] — 2026-08-12
+
+  The export tools can now **fail to measure**. The surface is unchanged at **190 tools /
+  3 resources / 5 prompts**, but three tools gain one parameter — a schema change the
+  tool-count triple cannot see.
+
+  ### Fixed
+
+  - **`spatial.export_adm`, `spatial.export_damf` and `spatial.export_loom_manifest` authored
+    deliverables from renders that never happened.** All three read a render in which *every
+    sample of every channel* was exactly zero and emitted a complete, well-formed,
+    permanently archivable file whose loudness claims were the arithmetic image of "no
+    samples": `-120` dB RMS, a `-70` LUFS floor, `0.0` active fraction. The previous
+    `render_empty` guard only ever caught a render of zero *length*. All three now refuse
+    with a named `render_silent` error and **write nothing**.
+    ⚠️ **BREAKING: authoring a deliberately silent master now requires `allowSilent: true`**,
+    which reproduces the previous bytes exactly — verified byte-identical on three fixtures.
+  - **The guard is the whole image, never a threshold.** A legitimate 7.1.4 deliverable with a
+    single channel fed has **eleven of twelve** channels on the exact floor triple, so a
+    per-channel rule would reject real work. One `1e-9` sample clears it: whether a quiet
+    master is too quiet is not this tool's judgement to make, and the `-70` floor is correct.
+  - **It was never one site.** `export_damf` authored its triad from the same unmeasured
+    render, and `export_loom_manifest` emitted the same floor triple through
+    `intentFillLevels` / `intentBedLufs` plus a whole-bed `expectLufs: -70`.
+
+  ### Documentation
+
+  - **`docs/REFERENCE.md` regenerated.** `allowSilent` had existed in three tools' input
+    schemas and in no user-facing document, because the standing surface gate counts tools,
+    resources and prompts — a new *parameter* is invisible to it.
+
+  ## [1.10.0] — 2026-08-11
+
+  A correctness release. The surface is unchanged at **190 tools / 3 resources / 5 prompts** —
+  no new verbs, no new parameters. Released as a **minor** rather than a patch because reported
+  values move.
+
+  > ⚠️ **Absolute loudness figures are not numerically comparable with v1.9.0 and earlier.**
+  > Figures reported by any prior release are low by **0.047099 / 0.043277 / 0.023566 /
+  > 0.021652 LU** at 44.1 / 48 / 88.2 / 96 kHz. **Relative** quantities — channel balances,
+  > deltas, ratios, LRA, activity fractions — are unaffected: the correction is a pure gain at
+  > every frequency, so the shift cancels. To compare archived absolute figures against v1.10.0
+  > output, add the constant for your sample rate.
+
+  ### Fixed
+
+  - **The BS.1770-4 RLB filter was non-conformant, and every per-channel loudness figure read
+    low by a constant.** The K-weighting stage-2 highpass divided its numerator by `a0`, forcing
+    the passband gain to exactly `1.000000000000`. BS.1770-4 Table 1 keeps that numerator as
+    exactly `[1, -2, 1]` — it is not normalised — and its gain is `a0` = `1.004994898715` at
+    48 kHz. The `-0.691` calibration term is defined against the *tabulated* filter, so the
+    normalised form read low at every frequency. Moved by the fix: `analysis.meter`'s
+    `channelsDetail[].kLevelLkfs`, `accessor_meter`, `object_loudness`, `stem_loudness`,
+    `dialog_loudness`, `downmix_loudness`, `gatedLoudness()`, and the intent sidecar's
+    `expectLufs` claims.
+  - **The K-weighting shelf gain constant was truncated to 12 significant digits** where the
+    reference carries 16, reaching `b1` as a `1.044942e-12` error against Table 1. Worth about
+    `3.3e-12` LU — below every measurement — but it accounted for the whole of a discrepancy
+    that had been attributed to the table's own precision rather than to this code.
+
+  ### Verified
+
+  - Live against a running REAPER on 28 windows: the shift reproduced to `3.5e-12` LU, and the
+    cross-engine residual column came back invariant to `3.5e-12` LU.
+  - Cross-checked against a second, independent BS.1770-4 implementation on 13 rows: the two
+    now agree to `1.7799e-12` LU, where before the fix they differed by exactly the constant
+    above — with this implementation on the low side and the other one conformant.
+  - `unit.meter` now gates all five coefficients of **both** filter stages against Table 1 at
+    `1e-12`, with a negative control that rejects the pre-fix numerator. The previous check
+    gated the K-curve against flatness at 1 kHz to ±1.2 dB, which is 28× too loose to see a
+    0.043 dB error.
+
+  ## [1.9.0] — 2026-08-11
+
+  A correctness release. No new tools: the surface is unchanged at **190 tools / 3 resources /
+  5 prompts**, and this release adds one parameter and no verbs.
+
+  ### Fixed
+
+  - **`analysis.verify_routing` reported false faults on 22.2 beds.** 22.2 is the only bed layout
+    that declares two LFE slots, and the identifier-tone plan assigned the same 40 Hz LFE tone to
+    both — so the tone set was not unique and the detector could not tell a real fault from a
+    collision. A **correctly routed** 24-channel render came back `ok=false`, with channel 3
+    reported as `bleed` at a margin of exactly 0.000000000 dB and channel 9 as `duplicated`, both
+    at full plan coverage — there was nothing in the reported numbers to indicate the verdict was
+    wrong. Reaching it required following the tool's own guidance and passing back the
+    `lfeChannels` it echoes; callers who omitted them saw a clean 24/24, which is why it went
+    unnoticed. The detector now **refuses** a plan whose tones are not unique and returns no
+    per-channel verdicts at all, rather than attaching a warning to an answer it cannot stand
+    behind. Only 22.2 was affected; every other layout declares exactly one LFE.
+  - **7.1.2 beds were measured without BS.1770-4 channel weights, reading 0.350 LU low.** Channel
+    labelling enumerated the other bed widths but had no entry for 10 channels, and the weight
+    table derives entirely from labels — so a 7.1.2 bed silently received a flat weight vector
+    while being reported as `"multichannel"`. 7.1.2 is the **default bed layout in three spatial
+    tools**, and the predicted bed loudness written into the intent sidecar inherited the error.
+    Every accepted layout now comes from one canonical table that the test suite walks, so a
+    layout added later cannot repeat it.
+  - **`spatial.inject_identity_tones` advertised `"7.1.2"` and then refused it at runtime.** The
+    layout appeared in the tool's own schema enum while its width lookup had no entry for it. All
+    bed-layout widths now derive from the single canonical table, and five separate hand-written
+    width mappings have been removed. A new guard walks the whole tool registry and asserts that
+    every layout any tool advertises is actually accepted, so this class cannot return.
+  - **`spatial.inject_identity_tones` could serve stale audio after a parameter change.** Generated
+    files were named by slot index alone, so two calls with different parameters wrote to the same
+    path. REAPER caches PCM per path from the second access onward, after which a rewrite of that
+    path is not picked up — the tool reported the parameters you asked for while REAPER played the
+    earlier audio. Filenames now include a hash of the audio content, so identical parameters still
+    produce identical paths (determinism is unchanged, and the cache hit is then correct) while
+    different parameters can no longer collide.
+
+  ### Added
+
+  - **`spatial.inject_identity_tones` gains `constantHz`** — put a single frequency on every
+    channel, LFE included, instead of the per-channel identifier ladder. Useful for level and
+    loudness measurement, where a common tone across channels is what you want. The response now
+    reports `routingDetectable`, and no longer suggests routing verification for a plan whose
+    tones are deliberately identical, since routing cannot be inferred from such a render.
+
+  ### Changed
+
+  - Documentation and packaging metadata corrected: the citation file and the manual's version
+    header had drifted behind the released version.
+
+  ## [1.8.0] — 2026-08-06
+
+  Feature release: **IAMF ingest** — an Inseglet ADM export is now accepted by
+  [iamf-tools](https://github.com/AOMediaCodec/iamf-tools) — plus in-DAW channel-identity QC and an
+  FX-parameter authoring seam. Surface **190 tools / 3 resources / 5 prompts** (was 187 / 3 / 4);
+  unit suite 23 → 27.
+
+  ### Added
+
+  - **`spatial.export_adm` gains `dolbyMetadataChunk` — the opt-in `dbmd` chunk that lets an
+    export's objects survive IAMF ingest.** `"none"` (the default) is **byte-identical to the
+    previous writer**; `"placeholder"` emits a 32-byte `dbmd` after `fmt ` and before `chna` **and**
+    renames the bed to Dolby's `RoomCentric*` vocabulary — one switch, because the consumer makes
+    them one: iamf-tools reads the chunk's *existence* only, that existence selects its Dolby
+    validation path, and only that path consults channel names at all. Without a `dbmd` the importer
+    takes its default path, rejects every `audioObject` as "Not under common definition" and **fails
+    the encode with "No audioObject present" — no IAMF file is produced at all**, not even a bed-only
+    one (measured 2026-08-06 against iamf-tools `main` `19019e3`; certified Dolby/EBU renderers are
+    unaffected and ingest either form). **Independent of `profile`** — `profile:"dolby-atmos"` still
+    emits no `dbmd`. **Fails closed**, with the remedy named, on every combination that consumer
+    rejects: bit depth ≠ 24 and sample rate ∉ {48 kHz, 96 kHz} (both refused at the *reader*, before
+    any metadata is parsed, so taking the switch unguarded would be worse than declining it), and any
+    bed outside **5.1 / 7.1 / 7.1.2**, because the importer's pack-layout check is an allow-list of
+    eight *ordered* layout strings — a legal channel-name set is necessary but not sufficient. Taking
+    the switch **asserts the file is a Dolby ADM deliverable**, so a runtime advisory discloses the
+    trade on four surfaces — `spatial.export_adm`, `analysis.adm_inspect`,
+    `analysis.adm_profile_check` (in `warnings`, deliberately not `violations`: the Atmos profile
+    does not require a `dbmd`) and a new fifth prompt `author_dolby_adm` — firing only when objects
+    are present *and* the switch is off, because a hint that always fires gets filtered. Prompts
+    **4 → 5**; tool surface unchanged at 190 — a parameter is not a verb. ⚠️ The advisory is a claim
+    about third-party software: it carries its measurement date, because upstream is actively
+    reworking this importer.
+
+  - **`envelope.ensure_fx_envelope` — the FX-parameter authoring seam.** `envelope.add_point` could
+    only write to an *already-active* envelope, and `autoActivate` reaches only REAPER's built-in
+    track envelopes; FX-parameter envelopes need the FX + parameter context. This verb ensures the
+    envelope exists and returns the **name** `add_point` looks up. Address the parameter by index or
+    by name — resolution is tiered (exact → case-insensitive → substring) and an **ambiguous request
+    is refused and names its candidates** rather than picking one, so `paramName:"Angle"` on an IEM
+    encoder reports all three Angle parameters instead of silently automating azimuth. Reports
+    `addPointSafe`: when two FX on a track expose an identically-named parameter the envelope name
+    does not identify one envelope. Idempotent. Surface **189 → 190 tools**.
+
+  - **In-DAW channel-identity QC — `spatial.inject_identity_tones` + `analysis.verify_routing`.**
+    The first lays a unique identifier sine per bed channel or object track (313 + 139·k Hz, LFE
+    40 Hz, −18 dBFS); the second reads any downstream point — an external or rendered WAV, or a
+    render-free track accessor — and reports which tone actually arrived on each channel: identity /
+    swapped / duplicated / dropped / bleed / silent, each with a measured `marginDb` and
+    `planCoverage`. Catches swapped, dropped and duplicated channels and inter-channel bleed inside
+    the session, before export, and independently verifies the send encodings. Surface
+    **187 → 189 tools** (spatial 23 → 24, analysis 18 → 19).
+
+  ### Fixed
+
+  - **ADM `audioObject` emission order — `spatial.export_adm` output is no longer refused by
+    iamf-tools' ADM importer.** The writer emitted each object as `audioObject` → `audioPackFormat` →
+    `audioChannelFormat` (whose blocks carry `<gain>`) → *next* `audioObject`. That importer sets its
+    `gain` tag for **any** element named `gain` without checking the parent, and registers no
+    end-element handler, so the tag latches and `parent` is never reset; an `<audioObject>` starting
+    while the tag is live makes it parse our indentation as a gain and refuse the whole file with
+    `INVALID_ARGUMENT: Failed to parse gain`. The failure is a **conjunction** of element order and
+    inter-element whitespace — neither alone triggers it — and is invariant to the gain value,
+    position format, coordinate mode and `dbmd`, which is why it resisted diagnosis. Every
+    `audioObject` is now emitted before any `audioChannelFormat`. **No emitted byte changed** — only
+    the order in which the three groups are joined; ids, IDRefs and `audioTrackUID` numbering are
+    untouched.
+
+  ### Changed
+
+  - **Live-gate surface checks assert a floor, not an equality.** Each `scripts/verify_*.py` gate
+    pinned the absolute tool count as of the beat that wrote it, so every earlier gate failed its
+    first check against any later build. The count only ever supported a floor — the gate's real
+    claim, that its own verbs are on the wire, is asserted by name on the following lines — and a
+    floor still catches the failure these gates exist to catch: running one against an *older*
+    installed binary than it needs.
+
+  ## [1.7.0] — 2026-08-05
+
+  Feature release: the authoring-side intent sidecar + representation-aware positioning.
+  No surface-count change (**187 tools / 3 resources / 4 prompts**).
+
+  ### Added
+  - **Intent sidecar emission** — `intentSidecar: true` on `spatial.export_adm` and
+    `spatial.export_loom_manifest` writes the session's own predictions beside the export
+    (`<base>.intent.json` / `manifest.intent.json`, schema `intent: 0`): a bed roster with
+    measured per-channel `expect*` levels (the whole-bed figure under the BS.1770-4-conformant
+    weights), object trajectories at block reach times, SN3D projection-decode
+    dominance/coverage predictions (order 3), and per-ACN scene RMS. Never a declared
+    deliverable loudness — every level is an `expect*` claim to be *checked*, not copied; the
+    consumer is [iamf-sentinel-pro](https://github.com/jlivingston-Cipher/iamf-sentinel-pro)'s
+    `sentinel intent-compare` (findings S-340…S-346). Beds outside the consumer's judged set
+    (2.0/5.1/7.1/7.1.4) and v0 VO stems emit no claims (absent block = absent claim). Emitted
+    `expectLufs` claims floor at −70 LKFS (the BS.1770 absolute-gate silence convention) so
+    silent bed channels round-trip clean while added content is still caught — verified end to
+    end through a live REAPER → export → consumer gate. Sidecar write failure is a warning,
+    never a failed export. New SDK-free `src/intent_sidecar.h`, pinned by the
+    `unit.intent_sidecar` suite (byte-goldens held cross-platform).
+  - **One in-source version constant** — `src/inseglet_version.h` now feeds
+    `serverInfo.version`, the discovery file, and the sidecar's producer stamp, so the
+    version-drift class (a hardcoded string nobody bumped) can no longer recur one literal at
+    a time.
+
+  ### Fixed
+  - **`spatial.set_source_position` drives the representation the exporter reads** —
+    angle-representation panners (IEM/SPARTA-style encoders exposing Azimuth/Elevation
+    params) are now driven in azimuth/elevation, derived from a cartesian request when needed
+    via each param's own degree range; partial writes preserve the untouched axis (z alone
+    never recenters azimuth; a single horizontal component composes against the current
+    azimuth). Previously the bare-letter name scan could land on `Quaternion X` for x — and
+    on `aZimuth Angle` for z, so a height write silently rewrote azimuth — moving params
+    `spatial.export_adm`'s trajectory sampling never reads. The cartesian path
+    (ReaSurroundPan) is unchanged (regression-pinned against the old scan) and now refuses
+    quaternion params with an explanatory message; auto-detect finds angle panners without an
+    explicit `fx` index; explicit `paramX/paramY/paramZ` or `normalizedInput` still forces
+    deterministic cartesian writes. New SDK-free `src/position_params.h` +
+    `unit.position_params` (the negative control reproduces the old defect in-test).
+
+  ## [1.6.0] — 2026-08-04
+
+  Feature release: IAMF delivery. Surface **186 → 187 tools**; expert prompts **3 → 4**.
+
+  ### Added
+  - **`spatial.export_loom_manifest`** (Render) — a one-call bridge to the open
+    [iamf-loom](https://github.com/jlivingston-Cipher/iamf-loom) packager: renders the
+    session's bed (stereo/5.1/7.1.4) and/or ambisonic scene (order 1–4, ACN/SN3D) plus
+    per-language VO stems as 48 kHz integer-PCM WAVs in Loom's channel order, and emits the
+    `loom: 0` manifest (+ optional season.yaml) beside them — `loom compile` accepts the
+    output as-is, and the response echoes the exact next command. The channel mapping is
+    identity (label spellings only: Lsr/Rsr==Lrs/Rrs, Ltr/Rtr==Ltb/Rtb), verified with
+    per-channel identity tones. Never emits a loudness value (Loom measures — that is the
+    point of it); objects fail closed toward the ADM route (`spatial.export_adm`);
+    known-invalid target combinations fail closed (youtube-without-video, archive/normalize
+    constraints, non-48k renders).
+  - **`deliver_to_iamf` expert prompt** (prompts 3 → 4) — inventory → per-mix
+    channel-budget check (a 7.1.4 bed + an order-3 scene + a stereo VO = 30 channels exceeds
+    IAMF base_enhanced's 28-per-mix cap; order 2 fits at 23) → dryRun preview → export →
+    `loom compile` / `loom run` with the iamf-sentinel gate.
+  - **MANUAL §9 “Delivering to IAMF”** — the pipeline end to end, the channel-budget
+    note, and the validate/repair loop; REFERENCE.md regenerated (187 tools / 3 resources /
+    4 prompts).
+
+  ## [1.5.1] — 2026-08-04
+
+  Correctness-first patch release; no surface change (186 tools).
+
+  ### Fixed
+  - **BS.1770-4 bed channel weights are now read from Tables 4/5 exactly** (boundary-inclusive:
+    the 1.41 surround weight applies only at ear level within |az| 60°–120°). Two cells move:
+    rear surrounds `Lsr/Rsr` (M±135) 1.41 → 1.00, and wides `Lw/Rw` (M±060, 9.1.6 — exactly on
+    the inclusive boundary) 1.00 → 1.41. Every loudness tool inherits (meter, stem / dialog /
+    object loudness, loudness timelines, deliverable checks). Readings move only where the
+    affected channels carry energy: rear-bearing 7.1-family content reads cooler (equal-energy
+    7.1.4 ≈ 0.3 LU), 9.1.6 wide-bearing content warmer; 5.1 / stereo / 22.2 are unchanged
+    (22.2 stays documented-unweighted). The weight table now lives in an SDK-free
+    `src/bed_weights.h`, pinned by the new `unit.bed_weights` suite whose expected vectors
+    mirror iamf-sentinel-pro's independently published BS.1770-4 conformance test; a negative
+    control fails at exactly the four moved cells, and the power-domain delta is
+    1.4922 dB = 10·log₁₀(1.41).
+  - **ADM writer**: object azimuths wrap to (−180°, 180°] and elevations clamp to ±90° at
+    spherical block serialization (an az = 270° trajectory no longer produces a file the EBU
+    EAR renderer hard-rejects); the LFE `<frequency>` element is emitted at its BS.2076
+    position as an `audioChannelFormat` child; BW64 output carries the real `ds64.riffSize`
+    instead of 0.
+
+  ### Changed
+  - **`analysis.adm_profile_check`** classifies pack types from chna packRef IDs, so
+    common-definitions ADM is no longer invisible: HOA / binaural / Matrix content, beds beyond
+    the profile's list, multi-programme and non-24-bit files now correctly report
+    non-conformant (previously they blind-passed). Bed layouts gate against the published
+    BS.2094 common-definitions table plus a channel-count check, and the interpolation check
+    verifies the actual per-block ramp (new violation code `interpolation_ramp`, distinct from
+    presence). **Verdicts CHANGE on common-definitions ADM** — third-party masters that
+    previously "passed" may now correctly fail.
+  - **`analysis.adm_inspect`** reports a bounded per-channel summary (`adm.channels[]`), a
+    `packTypes` census (with a common-definitions flag), and a corrected ADM `version` readout.
+
+  ### Fixed
+  - Version reporting: the MCP `initialize` handshake now reports `serverInfo.version` as the package
+    version; it had been hardcoded to an early `0.1.0` and was out of sync with the discovery file and the
+    ReaPack package metadata (the index and package header are likewise brought to the current version).
+  - Windows build: the cross-platform release build failed to compile on MSVC with
+    `error C2065: 'M_PI' undeclared` in the spatial tools. MSVC's `<cmath>` only defines `M_PI` when
+    `_USE_MATH_DEFINES` is set before the header is included — glibc and Apple's libc++ expose it
+    unconditionally, so the Linux and macOS builds were unaffected. Fixed by defining `_USE_MATH_DEFINES`
+    project-wide for MSVC in `CMakeLists.txt`, and added an explicit `ws2_32` link on Windows so non-MSVC
+    toolchains (MinGW / clang) link the loopback HTTP sockets too.
+  - Windows tests: the metering WAV round-trip test wrote scratch files to a hardcoded `/tmp/` path, which
+    doesn't exist on Windows — the failed write left an empty buffer that was then read out of bounds and
+    crashed the test. It now uses the OS temp directory via `std::filesystem::temp_directory_path()`.
+
+  ## [1.5.0] — 2026-07-10
+
+  ### Added
+  - **`analysis.object_decode_timeline`** — a read-only, purely geometric decode-coverage timeline for
+    immersive objects, complementing `analysis.decode_coverage` (which decodes a whole ambisonic scene
+    bus). For each object it reads the position trajectory — sampled from a live object track's panner
+    automation (azimuth/elevation/distance) or supplied as explicit keyframes — and at every time slice
+    encodes the object direction to SN3D spherical harmonics and projection-decodes it onto the chosen
+    delivery layout's nominal loudspeakers, picking the dominant speaker. It reports the dominant-speaker
+    timeline, the migration run-path, per-speaker time-weighted dwell fractions, the great-circle angular
+    travel and elevation reach, and a time-weighted coverage footprint (hemisphere balance, uniformity,
+    dead zones, speakers touched). Azimuth is +left / counter-clockwise, matching `spatial.ambisonic_encode`
+    and `spatial.export_adm`; distance is carried for reporting only. It reads position metadata only —
+    no render, no audio — auto-discovers the `Object N` tracks when no inputs are given, and fails closed
+    on an unknown layout, empty keyframes, or more than 128 objects.
+
+  The direction encode, the projection-decode speaker basis, the dominant-speaker timeline, and the
+  dwell / travel / footprint statistics are a new SDK-free `src/decode_timeline.h`, unit-tested off-REAPER.
+  Surface is now **186 tools**.
+
+  ## [1.4.0] — 2026-07-10
+
+  ### Added
+  - **`spatial.orchestrate_sends`** — automatically wire and reconcile the bed-plus-object send layout
+    that feeds an external Dolby Atmos Renderer (or DAPS) input bus. It routes the bed onto renderer
+    channels 1…bed-width and each mono object onto one subsequent channel (bed first, matching the roster
+    `spatial.export_adm` and `spatial.export_damf` emit), taking an explicit object-track list or
+    auto-discovering the mono `Object N` tracks. Reconciliation is idempotent — an existing send already
+    on the right channel is reused, a right-source/wrong-channel send is corrected in place, and only
+    missing sends are added, so re-running never stacks duplicates. Stray sends with no roster slot are
+    reported (and optionally pruned), and it fails closed on the Dolby master limits (at most 118 objects
+    / 128 renderer channels). The renderer bus is resized and all sends reconciled inside a single undo
+    block; a `dryRun` preview is the default.
+  - **`analysis.send_layout_inspect`** — read-only inspection and QC of a renderer bus's incoming
+    receives: it decodes the send channel assignments, reconstructs the roster, and flags collisions,
+    gaps, over-limit object/channel counts, bed-width mismatches, non-mono objects, and unrouted objects.
+
+  The send-channel roster and its encode/decode round-trip, the Dolby master constraint validator, the
+  idempotent reconciliation diff, and the read-back inspector are a new SDK-free `src/send_layout.h`,
+  unit-tested off-REAPER. Surface is now **185 tools**.
+
+  ## [1.3.0] — 2026-07-10
+
+  ### Added
+  - **`spatial.export_damf`** — author a native Dolby Atmos Master File (DAMF) triad: a `.atmos` YAML
+    manifest (version, presentation, and the bed/object roster with 1-based input IDs), a
+    `.atmos.metadata` YAML sidecar (sample rate plus a flat, ID-keyed event list — bed channels static,
+    each object one event per trajectory block), and a `.atmos.audio` big-endian Core Audio Format (CAF)
+    PCM file (interleaved essence, bed channels first then objects in roster order). It reuses the same
+    model and stem-render path as `spatial.export_adm` (so `export_adm` is unchanged) and enforces the
+    Dolby Atmos Master constraints — 48 kHz, a bed no larger than 7.1.2, and at most 118 objects / 128
+    channels — failing closed on anything it cannot conform. The room frame is x left→right, y back→front,
+    z floor→ceiling.
+  - **`analysis.damf_inspect`** — read-only inspection and QC of a DAMF triad: it round-trips the manifest
+    roster, the metadata events, and the CAF header (with endianness warnings), and reports the same for a
+    third-party master authored by another tool.
+
+  DAMF serialization is a new SDK-free `src/damf.h` (ADM-spherical → room coordinate map, big-endian CAF
+  writer, YAML manifest/metadata emitters, and the inspect parser), unit-tested off-REAPER. Surface is now
+  **183 tools**.
+
+  ## [1.2.0] — 2026-07-10
+
+  ### Added
+  - **Groove & quantization (MIDI).** `midi.quantize` (snap note starts to a grid with adjustable
+    strength and swing; optionally snap note ends too), `midi.humanize` (seeded, reproducible timing and
+    velocity randomization), `midi.apply_groove` (stamp a per-slot timing/velocity template — from
+    `midi.extract_groove` or a named `swing8`/`swing16` — onto notes), `midi.extract_groove` (derive a
+    reusable groove template from a reference take), `midi.transpose`, `midi.scale_velocity`,
+    `midi.legato`, `midi.nudge`, and `midi.stretch`.
+  - **Takes & comping.** `take.add`, `take.delete`, `take.crop_to_active`, the per-take audio properties
+    `take.set_vol` / `take.set_pan` / `take.set_pitch` / `take.set_playrate`, and `items.implode_to_takes`
+    (stack items across tracks into one multi-take comp item).
+  - **Transport.** `transport.set_repeat` (loop on/off), `transport.set_playrate` (master play rate), and
+    `transport.set_metronome` (click on/off).
+
+  The MIDI groove/quantization math is a new SDK-free `src/groove.h`, unit-tested off-REAPER. Surface is
+  now **181 tools**.
+
+  ## [1.1.0] — 2026-07-10
+
+  ### Added
+  - **`analysis.read_samples`** — direct, render-free PCM read of a track's item content or a take's
+    source via a REAPER audio accessor (no render round-trip). Reports per-channel sample peak, RMS,
+    oversampled true-peak, K-weighted level, DC offset, and full-scale clip count, plus an optional
+    decimated min/max waveform overview. Bound the window with `start`/`duration`; resample with
+    `sampleRate`.
+  - **`analysis.accessor_meter`** — the render-free companion to `analysis.meter`: per-channel level /
+    peak / true-peak / K-level with SMPTE bed labels, L/R correlation, and BS.1770-4 gated loudness,
+    computed in-box from accessor samples. A *track* target measures item content **before** track
+    FX/volume/pan; `analysis.meter` remains the post-FX render measurement.
+  - **`analysis.detect_silence`** — frame-accurate leading/trailing silence, internal silent gaps, and
+    the content-bearing span for trimming, from a windowed cross-channel RMS scan.
+
+  New `src/audio_accessor.h` handles the accessor lifecycle (create → validate → chunked read → destroy)
+  into the shared metering buffer; the SDK-free helpers (DC offset, clip count, waveform overview,
+  silence scan) live in `src/ambisonic_meter.h`. Surface is now **161 tools**.
+
+  ### Fixed
+  - The extension now reports its release version (**1.1.0**) in the discovery file and build metadata;
+    earlier builds reported `0.1.0` regardless of the published release.
+
+  ## [1.0.1] — 2026-07-10
+
+  ### Fixed
+  - **Surround-panner azimuth handedness.** `spatial.set_source_position` and
+    `spatial.spatialize_stems` placed a positive azimuth on the *right* of a channel bed —
+    the opposite of the ambisonic encoder, ADM writer, and metering, where `+az = left`.
+    ReaSurroundPan's `in 1 X` parameter runs `0 = right … 1 = left`, so the panner tools now
+    negate the x coordinate when writing to it; a channel bed and an ambisonic scene now agree
+    on handedness. (`y`/`z` unchanged.)
+  - **`analysis.check_deliverable` bus measurement.** It now measures the requested bus/track
+    instead of silently grading the master mix when the target is not the sole route to the
+    master (`RENDER_SETTINGS` source fix).
+
+  ## [1.0.0] — 2026-07-10
+
+  Initial public release. Inseglet is a native REAPER extension that exposes a
+  Model Context Protocol (MCP) interface to the DAW, with immersive/spatial audio and
+  native ADM (Dolby Atmos) authoring as its focus. 158 tools; live-verified on macOS.
+
+  ### Core control surface
+  - Project, track, item, take, envelope, FX, send/routing, tempo, and master control
+    over a JSON-RPC 2.0 MCP server (protocol 2025-06-18), with bearer-token auth bound
+    to a loopback port.
+  - Granular state setters with consolidated reads; elicitation-gated wholesale state
+    replacement with dry-run diffs; an action/command passthrough; and resource
+    subscriptions for event-driven workflows.
+
+  ### Immersive & spatial audio
+  - Channel beds from 5.1 through 7.1, 7.1.4, 9.1.6, and 22.2, with correct LFE handling
+    and layout-aware surround positions.
+  - Ambisonic scene work — encode/decode, order and format conversion, scene rotation
+    (yaw/pitch/roll, head-tracking ready), mirroring, beamforming, and distance/room
+    placement — via IEM and SPARTA plug-ins.
+  - Binaural monitoring with live head-tracking.
+
+  ### Native ADM / Dolby Atmos authoring
+  - Author ITU-R BS.2076 ADM Broadcast-Wave deliverables in-box (bed plus object
+    trajectories), with per-object metadata (extent, divergence, importance) and
+    round-trip inspection.
+  - Dolby Atmos Master ADM Profile conformance mode, plus a standalone conformance
+    validator for any ADM BWF.
+
+  ### Metering & analysis
+  - Immersive metering beyond LUFS: loudness, per-channel and correlation metering;
+    ambisonic spatial-field analysis (direction of arrival, diffuseness, energy vectors);
+    object, stem, dialog, and downmix loudness with timelines; binaural checks; and
+    decode-coverage analysis.
+
+  ### Agent ergonomics
+  - MCP prompts and a deterministic macro-DSL for composing multi-step operations, with
+    outcome-level spatial and deliverable-conformance verbs.
+
+  Runs on REAPER for macOS; Windows and Linux load-verification are in progress. See
+  [`docs/MANUAL.md`](docs/MANUAL.md) to get started and [`docs/REFERENCE.md`](docs/REFERENCE.md)
+  for the full tool, resource, and prompt reference.
+@provides [darwin] reaper_mcp.ext https://github.com/inseglet-audio/inseglet/commit/aa68b8b48d2e5af9a122891c9acdf2cfea281c62
+@link
+  https://github.com/inseglet-audio/inseglet
+  https://forum.cockos.com/showthread.php?p=2960561
+@about
+  Inseglet — a native REAPER extension which vends a Model Context Protocol (MCP) interface, with immersive / spatial audio and native ADM authoring.
+
+
+  https://github.com/inseglet-audio/inseglet
+
