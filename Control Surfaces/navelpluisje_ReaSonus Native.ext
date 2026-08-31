@@ -1,14 +1,22 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.10.1
+@version 0.11.0
 @changelog
-  # What's Changed
+  ## What's Changed
 
-  This release is a bugfix release:
+  This release has the following fixes and improvements:
 
-  ## FaderPort 8/16
+  ### FaderPort 8/16
 
-  - Fixed issue where the sends did not work proper when a hardware out was in the list
+  - **Single Point Automation;** With single point automation you set an envelope point while touching the fader. You can then adjust the fader to where you want it to be and release it. On release another envelope point will get set. This will reduce the amount of automation points. Check the Automation settings in the reaSonus Control Panel for settings and info. (Implementation for the FaderPort V2 is on the road map)
+  - **Able to create project specific filters**; The custom filters can now also be stored per project. Above the filter list select `Project Filter`. The filters added here will be saved in the project. This way you can also add custom filters to project templates
+  - **Add option to set colors to custom filters**; You can now set a color per filter. This makes selecting filters from your list a bit easier.
+  - **Add option to set custom colors to the automation buttons**: In the Automation settings in the ReaSonus Control Panel select the colors you like for use with the automation buttons. This way you can align them better with your Reaper theme colors.
+  - **Overhaul of the settings page**; Added an extra tab for automation, moved some settings around and implemented a better grouping for a better overview (Implementation for the FaderPort V2 is on the road map)
+
+  ### All
+
+  - **Add extension info for the new extension screen in the REAPER settings (from v7.79)**: Since v7.79 in the REAPER settings there is an Extension menu item. This displays all the extensions installed. ReaSonus is now displaying extended information in here like a link to the documentation and the name with version number
 
   Thanx to everyone reporting issues and help me debug them.
 @provides
@@ -18,7 +26,7 @@
   [darwin64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
   ReaSonus/en-US.ini https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/en-US.ini
 @link
-  Documentation https://navelpluisje.github.io/reasonus/
+  Documentation https://reasonus.net
   Report Issue https://github.com/navelpluisje/Reasonus-Native/issues
   Repository https://github.com/navelpluisje/Reasonus-Native
 @donation
