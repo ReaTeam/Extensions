@@ -1,18 +1,16 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.8.1
+@version 0.10.1
 @changelog
   # What's Changed
 
+  This release is a bugfix release:
+
   ## FaderPort 8/16
 
-  This release has a lot of improvements for the UI for Plugin Mapping:
+  - Fixed issue where the sends did not work proper when a hardware out was in the list
 
-  - Fixed issue where the FderPort could disconnect when an action had a popup like Edit Marker
-  - Fixed issue where the valuebar looked faded when working with plugins
-  - Fixed issue where the displays got weird after switching quick between different fader modes
-
-  Thanx to anyone reporting issues and help me debug them.
+  Thanx to everyone reporting issues and help me debug them.
 @provides
   [darwin-arm64] reaper_ReasonusNative-arm64-x86_64.dylib https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-arm64-x86_64.dylib
   [win64] reaper_ReasonusNative-x64.dll https://github.com/navelpluisje/Reasonus-Native/releases/download/$version/reaper_ReasonusNative-x64.dll
@@ -42,5 +40,5 @@
   - ‘Unlimited’ custom editable filters
   - MIDI learn style plugin mapping
   - Swap Shift buttons
-  - Controll last touched plugin param
+  - Control last touched plugin param
 
