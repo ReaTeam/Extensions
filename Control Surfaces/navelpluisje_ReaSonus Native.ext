@@ -1,6 +1,6 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.11.0
+@version 0.11.1
 @changelog
   ## What's Changed
 
@@ -17,6 +17,7 @@
   ### All
 
   - **Add extension info for the new extension screen in the REAPER settings (from v7.79)**: Since v7.79 in the REAPER settings there is an Extension menu item. This displays all the extensions installed. ReaSonus is now displaying extended information in here like a link to the documentation and the name with version number
+  - Updated all the documentation urls to https://reasonus.net
 
   Thanx to everyone reporting issues and help me debug them.
 @provides
