@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam Extensions" commit="7632f52d7e17e413240a2aed6b2ace0529711ebd">
+<index version="1" name="ReaTeam Extensions" commit="1643ebb681b11a55ba54092976cc36217d13f857">
   <category name="API">
     <reapack name="ak5k_ReaBlink.ext" type="extension" desc="ReaBlink: Ableton Link REAPER plug-in extension">
       <metadata>
@@ -2400,9 +2400,9 @@ mix/solo bus sync related bug fix]]></changelog>
 {\pard \ql \f0 \sa180 \li0 \fi0 Rather than forcing you to revise your mixing method, the FaderPort augments the way you currently mix. You still use your faithful keyboard and mouse for things they do well, and the FaderPort handles the features you want to get your fingers on, allowing you to customize your workflow.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Studio One and more\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 ReaSonus Native has beside \u177 ?95% of the Studio One features also:\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u8216'Unlimited\u8217' custom editable filters\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MIDI learn style plugin mapping\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Swap Shift buttons\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \u8216'Unlimited\u8217' custom editable global and project filters\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MIDI learn style and UI style plugin mapping\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Single Point Automation\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Control last touched plugin param\sa180\par}
 }
 ]]></description>
@@ -2889,6 +2889,22 @@ Thanx to everyone reporting issues and help me debug them.]]></changelog>
         <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.1/reaper_ReasonusNative-x86.dll</source>
         <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.1/reaper_ReasonusNative-arm64-x86_64.dylib</source>
         <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.1/en-US.ini</source>
+      </version>
+      <version name="0.11.2" author="Navelpluisje" time="2026-09-27T13:51:21Z">
+        <changelog><![CDATA[## What's Changed
+
+This release has the following bug fix:
+
+### FaderPort 8/16
+
+- Values could get lost while saving plugin mappings. A lot of smaller changes have been made to make it work as intended
+
+Thanx to everyone reporting issues and help me debug them.]]></changelog>
+        <source platform="darwin-arm64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.2/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source platform="win64" file="reaper_ReasonusNative-x64.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.2/reaper_ReasonusNative-x64.dll</source>
+        <source platform="win32" file="reaper_ReasonusNative-x86.dll">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.2/reaper_ReasonusNative-x86.dll</source>
+        <source platform="darwin64" file="reaper_ReasonusNative-arm64-x86_64.dylib">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.2/reaper_ReasonusNative-arm64-x86_64.dylib</source>
+        <source file="ReaSonus/en-US.ini">https://github.com/navelpluisje/Reasonus-Native/releases/download/0.11.2/en-US.ini</source>
       </version>
     </reapack>
     <reapack name="ruxton_TascamUS2400.ext" type="extension" desc="Tascam US-2400 Control Surface Native Mode">
