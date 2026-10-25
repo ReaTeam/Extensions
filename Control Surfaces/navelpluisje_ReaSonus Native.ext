@@ -1,6 +1,6 @@
 @description ReaSonus Native
 @author Navelpluisje
-@version 0.11.2
+@version 0.12.0
 @changelog
   ## What's Changed
 
@@ -8,7 +8,15 @@
 
   ### FaderPort 8/16
 
-  - Values could get lost while saving plugin mappings. A lot of smaller changes have been made to make it work as intended
+  - Respect plugin and send slots. This can be enabled in the settings under the Controller and Plugin Control tabs
+  - Settings to start with track mode for send, receive and plugin control. This can be enabled in the settings under the Controller and Plugin Control tabs
+  - Control input plugins: Added the option to control the input plugins
+  - 3th line  in Send mode configurable. In the ReaSonus Control pannel under Settings > Displays, you can now set the value for the third line in send mode
+
+  ### All devices
+
+  - MIDI device disable check: Added MIDI-device disabled check in the setup window (REAPER settings)
+  - Custom Forward and Rewind actions. In the ReaSonus Control Panel  under the Function Keys you can now set custom actions for the Forward and Rewind buttons
 
   Thanx to everyone reporting issues and help me debug them.
 @provides
@@ -22,7 +30,7 @@
   Report Issue https://github.com/navelpluisje/Reasonus-Native/issues
   Repository https://github.com/navelpluisje/Reasonus-Native
 @donation
-  Tipee https://en.tipeee.com/navelpluisje
+  Tipeee https://en.tipeee.com/navelpluisje
   Buy me a coffee https://buymeacoffee.com/navelpluisje
 @about
   # ReaSonus Native
